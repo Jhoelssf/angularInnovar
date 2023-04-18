@@ -4,12 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonModuleRoutingModule } from './pokemon-module-routing.module';
 import { PokemonsComponent } from './pokemons/pokemons.component';
+import { PokemonListComponent } from './pokemons/pokemon-list/pokemon-list.component';
 
 
 
 @NgModule({
   declarations: [
-    PokemonsComponent
+    PokemonsComponent,
+    PokemonListComponent,
   ],
   imports: [
     CommonModule,

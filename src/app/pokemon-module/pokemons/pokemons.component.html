@@ -1,1 +1,5 @@
-<p>pokemons works!</p>
+<h1>Poke web</h1>
+<app-pokemon-list
+  (onChangePokemon)="onChangePokemon($event)"
+  [pokemonList]="pokemonList"
+></app-pokemon-list>
