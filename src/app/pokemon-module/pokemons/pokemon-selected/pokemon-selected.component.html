@@ -1,0 +1,13 @@
+<div *ngIf="pokemon">
+  <h2>Detalles de {{pokemon.name}}</h2>
+  <div>
+    <p>Id: <span>{{pokemon.id}}</span></p>
+    <p>Peso: <span>{{pokemon.weight}}</span></p>
+    <p>Altura: <span>{{pokemon.height}}</span></p>
+  </div>
+  <div [formGroup]="formGroupAbilities">
+    <ng-container *ngFor="let ability of pokemon.abilities">
+      <h4>Slot: {{ability.slot}}, Especie: {{ability.ability.name}}</h4>
+    </ng-container>
+  </div>
+</div>

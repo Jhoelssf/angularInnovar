@@ -3,3 +3,10 @@
   (onChangePokemon)="onChangePokemon($event)"
   [pokemonList]="pokemonList"
 ></app-pokemon-list>
+
+<app-pokemon-selected
+  *ngIf="pokemonSelected; else noPokemon"
+  [pokemon]="pokemonSelected"
+></app-pokemon-selected>
+
+<ng-template #noPokemon>No hay Pokemon</ng-template>

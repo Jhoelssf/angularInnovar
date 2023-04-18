@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonModuleRoutingModule } from './pokemon-module-routing.module';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokemonListComponent } from './pokemons/pokemon-list/pokemon-list.component';
+import { PokemonSelectedComponent } from './pokemons/pokemon-selected/pokemon-selected.component';
 
 
 
@@ -12,6 +13,7 @@ import { PokemonListComponent } from './pokemons/pokemon-list/pokemon-list.compo
   declarations: [
     PokemonsComponent,
     PokemonListComponent,
+    PokemonSelectedComponent
   ],
   imports: [
     CommonModule,
