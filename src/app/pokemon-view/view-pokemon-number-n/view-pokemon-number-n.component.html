@@ -1,8 +1,3 @@
-<h1>OBTEN INFORMACIÓN DE UN POKEMON</h1>
-
-<!--
-<app-pokemon-basic-info [pokemonName]="objectPokemon?.name"></app-pokemon-basic-info>
--->
 <ng-template #NonPokemonGeneralInfo>
     Sin información general del pokemon
 </ng-template>
@@ -10,21 +5,10 @@
 <ng-template #NonPokemonBasicInfo>
     Sin información básica del pokemon
 </ng-template>
+
 <div class="pokemonFormWrapp">
-    <div class="getPokemon">
-        <form [formGroup]="getNewPokemonFormGroup">
-            <input type="text" formControlName="newPokemonId">
-        </form>
-        <button  class="buttongetpokemon" (click)="changePokemon()">Obtener información del pokemon</button>
-    </div>
         
     <app-pokemon-basic-info *ngIf="objectPokemon, else NonPokemonBasicInfo" [pokemonName]="objectPokemon.name" [pokemonImage]="objectPokemon.sprites.front_default"></app-pokemon-basic-info>  
-    
     <app-pokemon-general-info *ngIf="objectPokemon, else NonPokemonGeneralInfo" [pokemonStats]="objectPokemon.stats"></app-pokemon-general-info>
     
 </div>
-
-<p>---------------</p>
-<h1>OBTEN INFORMACIÓN DE VARIOS POKEMONES</h1><br><br>
-<app-form-array-try></app-form-array-try>
-

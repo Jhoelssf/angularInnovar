@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RootObject } from '../pokemon-template';
 import { HttpClient } from '@angular/common/http';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon-page',

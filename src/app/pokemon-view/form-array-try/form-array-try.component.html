@@ -13,7 +13,8 @@
     <div class="mostrarPokemones">
         <div *ngIf="listOfPokemonId">
             <ng-container *ngFor="let pokeId of listOfPokemonId">
-                <p>{{pokeId}}</p>
+                <h3>POKEMON NÚMERO: {{pokeId}}</h3>
+                <app-view-pokemon-number-n [NumberPokemon]="pokeId"></app-view-pokemon-number-n>
             </ng-container>
         </div>
     </div>   

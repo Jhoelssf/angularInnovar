@@ -9,6 +9,7 @@ import { PokemonGeneralInfoComponent } from './pokemon-general-info/pokemon-gene
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormArrayTryComponent } from './form-array-try/form-array-try.component';
+import { ViewPokemonNumberNComponent } from './view-pokemon-number-n/view-pokemon-number-n.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormArrayTryComponent } from './form-array-try/form-array-try.component
     PokemonPageComponent,
     PokemonBasicInfoComponent,
     PokemonGeneralInfoComponent,
-    FormArrayTryComponent
+    FormArrayTryComponent,
+    ViewPokemonNumberNComponent
   ],
   imports: [
     CommonModule,
