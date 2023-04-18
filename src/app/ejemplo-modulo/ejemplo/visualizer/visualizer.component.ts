@@ -22,13 +22,13 @@ export class VisualizerComponent implements OnInit {
 
   nextButton(){
     this.idPokemon++;
-    if(this.idPokemon===1011) this.idPokemon = 1;
+    if(this.idPokemon===1009) this.idPokemon = 1;
     this.changeNextPokemon.emit(this.idPokemon);
   }
 
   prevButton(){
     this.idPokemon--;
-    if(this.idPokemon===0) this.idPokemon = 1010;
+    if(this.idPokemon===0) this.idPokemon = 1008;
     this.changeNextPokemon.emit(this.idPokemon);
   }
 

@@ -14,6 +14,17 @@ const routes: Routes = [
         (mod) => mod.EjemploModuloModule
       ),
   },
+  {
+    path: 'catalogo',
+    loadChildren: () =>
+      import('./catalogo/catalogo.module').then(
+        (mod) => mod.CatalogoModule
+      ),
+  },
+  {
+    path: '**',
+    redirectTo:'ejemplo'  
+  }
 ];
 
 @NgModule({
@@ -22,6 +33,7 @@ const routes: Routes = [
       // enableTracing: true, // <-- debugging purposes only
       useHash: false,
       relativeLinkResolution: 'legacy',
+      enableTracing:true
     }),
   ],
   exports: [RouterModule],

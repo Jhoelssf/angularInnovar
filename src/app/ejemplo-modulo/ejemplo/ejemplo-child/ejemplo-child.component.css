@@ -1,28 +1,52 @@
 .wrapper-child1{
   background-color: crimson;
-  width: 220px;
+  width: 200px;
   padding: 10px;
   border-radius: 0px 10px 10px 0px;
 }
 
 .wrapper-child1 form{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 1em;
   margin: 0 auto;
 }
 
-.wrapper-child1 form input{
-  width: 70%;
+.wrapper-child1 form .fila1, .fila2{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper-child1 form .fila1 input{
+  width: 75%;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
-.wrapper-child1 form button{
-  width: 25%;
+.wrapper-child1 form .fila1 button{
+  width: 20%;
   border-radius: 5px;
   background-color: gold;
 }
 
-.wrapper-child1 form button:active{
+.wrapper-child1 form .fila1 button:active{
   background-color: goldenrod;
+}
+
+.wrapper-child1 form .fila2 button{
+  width: 48%;
+  background-color: gold;
+  padding: 3px;
+  border-radius: 5px;
+}
+.wrapper-child1 form .fila2 button:active{
+  background-color: goldenrod;
+}
+
+.wrapper-child1 form .fila2 span{
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  color:steelblue;
 }

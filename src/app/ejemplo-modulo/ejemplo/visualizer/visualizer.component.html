@@ -1,10 +1,14 @@
 <div class="visualizer-container">
   <div class="visualizer-media">
-    <button (click)="prevButton()"><</button>
+    <button (click)="prevButton()">
+      <span class="material-symbols-outlined">arrow_left</span>
+    </button>
     <div class="image-wrapper">
       <img src={{imgPokemon}} alt="">
     </div>
-    <button (click)="nextButton()">></button>
+    <button (click)="nextButton()">
+      <span class="material-symbols-outlined">arrow_right</span>
+    </button>
   </div>
 
   <div class="pokemon-info">

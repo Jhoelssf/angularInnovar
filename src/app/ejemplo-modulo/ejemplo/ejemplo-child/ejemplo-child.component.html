@@ -1,6 +1,15 @@
 <div class="wrapper-child1">
   <form [formGroup]="formGroupPokemon">
-    <input type="text" formControlName="idpokemon">
-    <button (click)="changePokemon()">Search</button>
+    <div class="fila1">
+      <input type="text" placeholder="Enter id or Name" formControlName="idpokemon">
+      <button (click)="changePokemon()">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+    </div>
+    <div class="fila2">
+      <button>Mas Info de <br>
+        <span>{{namePokemon}}</span></button>
+      <button>Ver catalogo</button>
+    </div>
   </form>
 </div>

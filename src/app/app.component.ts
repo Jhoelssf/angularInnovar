@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'primer-proyecto';
   ngOnInit(): void {
-    const str1: string = 'ejemplo';
-    this.ejemplo(str1);
   }
 
-  ejemplo(str: string = 'ejemplo2') {}
+  // ejemplo(str: string = 'cartila-pokemon') {
+  //   console.log(str);
+  // }
 }

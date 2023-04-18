@@ -42,6 +42,14 @@
   width: 30px;
   height: 30px;
   border-radius: 5px;
+  color: cornflowerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualizer-media button span{
+  font-size:40px;
 }
 
 .visualizer-media button:active{

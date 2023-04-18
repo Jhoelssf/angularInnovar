@@ -1,0 +1,14 @@
+.catalogo-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.catalogo-card{
+  width: 100px;
+  border: 1px solid red;
+  margin: 10px 20px;
+}
