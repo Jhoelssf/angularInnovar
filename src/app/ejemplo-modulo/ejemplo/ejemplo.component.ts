@@ -37,4 +37,12 @@ export class EjemploComponent implements OnInit {
       },
     });
   }
+  
+  getNextPokemon(idPokemon: string | number){
+    this.onChangePokemon(idPokemon);
+  }
+
+  getPrevPokemon(idPokemon: string | number){
+    this.onChangePokemon(idPokemon);
+  }
 }
