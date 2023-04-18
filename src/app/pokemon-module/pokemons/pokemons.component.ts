@@ -31,6 +31,7 @@ export class PokemonsComponent implements OnInit {
   }
 
   onChangePokemon(idPokemon: number | string){
+    this.pokemonSelected = undefined;
     const url = `${this.baseUrl}/pokemon/${idPokemon}`;
     this.http.get<Pokemon>(url)
     .subscribe({
@@ -53,8 +54,6 @@ export class PokemonsComponent implements OnInit {
       this.pokemonList = response.results;
       this.page = page;
       this.n_pages = Math.floor(response.count / this.limit)
-
-      console.log(response.count);
     });
   }
 }
