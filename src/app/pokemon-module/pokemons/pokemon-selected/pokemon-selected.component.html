@@ -11,10 +11,13 @@
         <p>Altura: <span>{{pokemon.height}}</span></p>
       </div>
       <h2>Habilidades</h2>
-      <div [formGroup]="formGroupAbilities">
-        <ng-container *ngFor="let ability of pokemon.abilities">
-          <h4>Slot: {{ability.slot}}, Especie: {{ability.ability.name}}</h4>
+      <div [formGroup]="formGroupAbilities" class="abilities">
+        <ng-container formArrayName="abilities">
+          <div *ngFor="let ability of abilities['controls'], index as i">
+            <input type="text" placeholder="Ingresa habilidad..." formControlName="{{i}}">
+          </div>
         </ng-container>
+        <button type="button" (click)="addAbility(null)">Agregar habilidad</button>
       </div>
     </div>
   </div>

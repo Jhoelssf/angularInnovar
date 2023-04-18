@@ -10,3 +10,9 @@
   box-shadow: -5px 5px 5px #DDD;
   margin-right: 1rem;
 }
+.abilities input{
+  margin: 5px 0;
+}
+.abilities button{
+  margin: 10px 0;
+}
