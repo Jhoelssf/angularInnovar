@@ -1,0 +1,20 @@
+<form [formGroup]="formGetMorePokemons">
+    <div formArrayName="items">
+      <div *ngFor="let item of items.controls; let i = index">
+        <div [formGroupName]="i">
+          <input formControlName="idPokemon" placeholder="0">
+          <button (click)="removeItem(i)">Remove Item</button>
+        </div>
+      </div>
+      <button (click)="addItem()">Add Item</button>
+    </div>
+    <button (click)="submitItems()">Submit</button>
+
+    <div class="mostrarPokemones">
+        <div *ngIf="listOfPokemonId">
+            <ng-container *ngFor="let pokeId of listOfPokemonId">
+                <p>{{pokeId}}</p>
+            </ng-container>
+        </div>
+    </div>   
+</form>

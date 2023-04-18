@@ -8,13 +8,15 @@ import { PokemonBasicInfoComponent } from './pokemon-basic-info/pokemon-basic-in
 import { PokemonGeneralInfoComponent } from './pokemon-general-info/pokemon-general-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormArrayTryComponent } from './form-array-try/form-array-try.component';
 
 
 @NgModule({
   declarations: [
     PokemonPageComponent,
     PokemonBasicInfoComponent,
-    PokemonGeneralInfoComponent
+    PokemonGeneralInfoComponent,
+    FormArrayTryComponent
   ],
   imports: [
     CommonModule,
