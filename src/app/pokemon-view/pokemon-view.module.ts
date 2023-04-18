@@ -7,6 +7,7 @@ import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
 import { PokemonBasicInfoComponent } from './pokemon-basic-info/pokemon-basic-info.component';
 import { PokemonGeneralInfoComponent } from './pokemon-general-info/pokemon-general-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     PokemonViewRoutingModule
   ]
 })
