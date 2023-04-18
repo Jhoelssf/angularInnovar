@@ -1,13 +1,21 @@
 <div *ngIf="pokemon">
-  <h2>Detalles de {{pokemon.name}}</h2>
-  <div>
-    <p>Id: <span>{{pokemon.id}}</span></p>
-    <p>Peso: <span>{{pokemon.weight}}</span></p>
-    <p>Altura: <span>{{pokemon.height}}</span></p>
-  </div>
-  <div [formGroup]="formGroupAbilities">
-    <ng-container *ngFor="let ability of pokemon.abilities">
-      <h4>Slot: {{ability.slot}}, Especie: {{ability.ability.name}}</h4>
-    </ng-container>
+  <div class="pokemon-details">
+    <div>
+      <img src={{pokemon.sprites.other.home.front_default}} alt="pokemon img" >
+    </div>
+    <div>
+      <h2>Detalles de {{pokemon.name}}</h2>
+      <div>
+        <p>Id: <span>{{pokemon.id}}</span></p>
+        <p>Peso: <span>{{pokemon.weight}}</span></p>
+        <p>Altura: <span>{{pokemon.height}}</span></p>
+      </div>
+      <h2>Habilidades</h2>
+      <div [formGroup]="formGroupAbilities">
+        <ng-container *ngFor="let ability of pokemon.abilities">
+          <h4>Slot: {{ability.slot}}, Especie: {{ability.ability.name}}</h4>
+        </ng-container>
+      </div>
+    </div>
   </div>
 </div>

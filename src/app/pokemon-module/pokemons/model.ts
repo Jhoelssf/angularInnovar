@@ -92,7 +92,7 @@ export interface Sprites {
   front_female: null;
   front_shiny: string;
   front_shiny_female: null;
-  other?: Other;
+  other: Other;
   versions?: Versions;
 }
 

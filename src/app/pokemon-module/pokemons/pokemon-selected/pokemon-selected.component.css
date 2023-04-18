@@ -1,0 +1,12 @@
+.pokemon-details{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem
+}
+.pokemon-details img{
+  width: 400px;
+  box-shadow: -5px 5px 5px #DDD;
+  margin-right: 1rem;
+}
