@@ -1,7 +1,10 @@
 <h1>Poke web</h1>
 <app-pokemon-list
   (onChangePokemon)="onChangePokemon($event)"
+  (onChangePage)="onChangePage($event)"
   [pokemonList]="pokemonList"
+  [page]="page"
+  [n_pages]="n_pages"
 ></app-pokemon-list>
 
 <app-pokemon-selected

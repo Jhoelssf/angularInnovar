@@ -16,7 +16,9 @@ interface PageInterface{
 })
 export class PokemonsComponent implements OnInit {
   baseUrl = 'https://pokeapi.co/api/v2';
-  limit = 10;
+  limit = 20;
+  page = 0;
+  n_pages = 0;
 
   pokemonSelected!: Pokemon | undefined;
   pokemonList: PokemonItem[] = [];
@@ -42,14 +44,17 @@ export class PokemonsComponent implements OnInit {
     });
   }
   
-  onChangePage(offset: number){
+  onChangePage(page: number){
+    const offset = page*this.limit
     const url = `${this.baseUrl}/pokemon?limit=${this.limit}&offset=${offset}}`;
 
     this.http.get<PageInterface>(url)
-    .subscribe((respose) => {
-      this.pokemonList = respose.results;
-      console.log(this.pokemonList);
+    .subscribe((response) => {
+      this.pokemonList = response.results;
+      this.page = page;
+      this.n_pages = Math.floor(response.count / this.limit)
+
+      console.log(response.count);
     });
   }
-
 }
