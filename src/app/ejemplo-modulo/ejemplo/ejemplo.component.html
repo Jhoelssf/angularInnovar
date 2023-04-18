@@ -6,9 +6,18 @@
   <app-ejemplo-child *ngIf="objectPokemon; else noPokemon"
   (onChangePokemon)="onChangePokemon($event)"
   [namePokemon]="objectPokemon.name"></app-ejemplo-child>
+  
+  <app-visualizer *ngIf="objectPokemon; else noPokemonImg"
+  [imgPokemon]="objectPokemon.sprites.front_default"></app-visualizer>
+
   <ng-template #noPokemon>
     No hay pokemon
   </ng-template>
+  <ng-template #noPokemonImg>
+    No hay pokemon image
+  </ng-template>
+
+
   <!-- <app-ejemplo-child [namePokemon]="objectPokemon?.name"></app-ejemplo-child> -->
   <app-ejemplo-child2 *ngIf="objectPokemon" [moves]="objectPokemon.moves"></app-ejemplo-child2>
 <div>
