@@ -8,12 +8,22 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: '',
+    component: HomeComponent,
+  },
+  {
     path: 'ejemplo',
     loadChildren: () =>
       import('./ejemplo-modulo/ejemplo-modulo.module').then(
         (mod) => mod.EjemploModuloModule
       ),
   },
+  {
+    path: 'pokemon',
+    loadChildren: () => import('./pokemon-view/pokemon-view.module').then(
+      (mod)=> mod.PokemonViewModule
+    )
+  }
 ];
 
 @NgModule({

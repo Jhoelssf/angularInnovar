@@ -1,0 +1,7 @@
+<h2>Pokemon general info:</h2>
+<h3>Stats</h3>
+<div class="statsWrapper">
+    <div *ngFor="let stat of pokemonStats">
+        <p>{{stat.stat.name}}: {{stat.base_stat}}</p>
+    </div>
+</div>

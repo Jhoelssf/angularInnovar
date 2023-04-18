@@ -1,0 +1,16 @@
+<h1>OBTENER INFO DE POKEMON</h1>
+
+<!--
+<app-pokemon-basic-info [pokemonName]="objectPokemon?.name"></app-pokemon-basic-info>
+-->
+
+<app-pokemon-basic-info *ngIf="objectPokemon, else NonPokemonBasicInfo" [pokemonName]="objectPokemon.name" [pokemonImage]="objectPokemon.sprites.front_default"></app-pokemon-basic-info>
+<ng-template #NonPokemonBasicInfo>
+    Sin información básica del pokemon
+</ng-template>
+
+
+<app-pokemon-general-info *ngIf="objectPokemon, else NonPokemonGeneralInfo" [pokemonStats]="objectPokemon.stats"></app-pokemon-general-info>
+<ng-template #NonPokemonGeneralInfo>
+    Sin información general del pokemon
+</ng-template>
