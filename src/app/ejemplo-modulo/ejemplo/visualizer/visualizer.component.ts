@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RootObject } from '../model';
 
 @Component({
   selector: 'app-visualizer',
@@ -9,6 +10,7 @@ export class VisualizerComponent implements OnInit {
 
   @Input() imgPokemon: string = "";
   @Input() idPokemon: number = 1;
+  @Input() objectPokemon: RootObject | undefined;
 
   @Output() changeNextPokemon: EventEmitter<number | string> = new EventEmitter<number | string>(); 
   @Output() changePrevPokemon: EventEmitter<number | string> = new EventEmitter<number | string>(); 

@@ -1,0 +1,50 @@
+.visualizer-container{
+  background-color: crimson;
+  max-width: 230px;
+  min-width: 220px;
+  padding: 10px;
+  border-radius: 10px 0px 10px 10px;
+}
+
+.visualizer-media{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.image-wrapper{
+  background-color: #f1f1f1;
+  width: 60%;
+  height: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper img{
+  transform: scale(1.1);
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://i.pinimg.com/originals/47/b9/14/47b91495e80426f8b2d419a23c80da59.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.pokemon-info{
+  background-color:brown;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.visualizer-media button{
+  background-color: gold;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.visualizer-media button:active{
+  background-color: goldenrod;
+
+}

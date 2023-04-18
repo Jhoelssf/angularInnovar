@@ -1,0 +1,26 @@
+.header{
+  background-color: crimson;
+  color: beige;
+  padding: 0px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header h1{
+  margin-top: 10px;
+}
+
+.header h2{
+  margin: 10px;
+  color:burlywood;
+}
+
+.pokedex{
+  padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+}

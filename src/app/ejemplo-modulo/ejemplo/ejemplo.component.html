@@ -1,15 +1,16 @@
-<h1>Clase de angular</h1>
-<h2>FormArray</h2>
-<h3>Reinhard Conde</h3>
-<p>header ejemplo works!</p>
-
-  <app-ejemplo-child *ngIf="objectPokemon; else noPokemon"
+<div class="header">
+  <h1>Clase de angular</h1>
+  <h2>FormArray</h2>
+</div>
+<div class="pokedex">
+  <app-ejemplo-child class="searchBox" *ngIf="objectPokemon; else noPokemon"
   (onChangePokemon)="onChangePokemon($event)"
   [namePokemon]="objectPokemon.name"></app-ejemplo-child>
   
-  <app-visualizer *ngIf="objectPokemon; else noPokemonImg"
+  <app-visualizer class="visualizerBox" *ngIf="objectPokemon; else noPokemonImg"
   [imgPokemon]="objectPokemon.sprites.front_default"
   [idPokemon]="objectPokemon.id"
+  [objectPokemon]="objectPokemon"
   (changeNextPokemon)="getNextPokemon($event)"
   (changePrevPokemon)="getPrevPokemon($event)"
   ></app-visualizer>
@@ -21,7 +22,8 @@
     No hay pokemon image
   </ng-template>
   <!-- <app-ejemplo-child [namePokemon]="objectPokemon?.name"></app-ejemplo-child> -->
-  <app-ejemplo-child2 *ngIf="objectPokemon" [abilities]="objectPokemon.abilities"></app-ejemplo-child2>
+</div>
+
 <div>
   Footer
 </div>

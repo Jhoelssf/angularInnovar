@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
-import { Ability } from '../model';
+import { Ability, Type } from '../model';
 
 @Component({
   selector: 'app-ejemplo-child2',
@@ -9,8 +9,13 @@ import { Ability } from '../model';
 })
 export class EjemploChild2Component implements OnInit, OnDestroy {
   @Input() abilities: Ability[] = [];
+  @Input() typePokemon: Type[] = [];
+  @Input() namePokemon: string = "";
   formGroupMoves: FormGroup = new FormGroup({
     arrayMoves: new FormArray([]),
+  });
+  formGroupTypes: FormGroup = new FormGroup({
+    arrayTypes: new FormArray([]),
   });
   constructor() {}
   ngOnDestroy(): void {

@@ -1,9 +1,17 @@
-<p>visualizer works!</p>
-
 <div class="visualizer-container">
-  <button (click)="prevButton()">Prev</button>
-  <div class="image-wrapper">
-    <img src={{imgPokemon}} alt="">
+  <div class="visualizer-media">
+    <button (click)="prevButton()"><</button>
+    <div class="image-wrapper">
+      <img src={{imgPokemon}} alt="">
+    </div>
+    <button (click)="nextButton()">></button>
   </div>
-  <button (click)="nextButton()">Next</button>
+
+  <div class="pokemon-info">
+    <app-ejemplo-child2 *ngIf="objectPokemon"
+    [namePokemon]="objectPokemon.name" 
+    [abilities]="objectPokemon.abilities"
+    [typePokemon]="objectPokemon.types"
+    ></app-ejemplo-child2>
+  </div>
 </div>

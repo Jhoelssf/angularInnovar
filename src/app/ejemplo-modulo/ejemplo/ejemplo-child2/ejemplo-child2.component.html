@@ -1,7 +1,14 @@
-<p>ejemplo-child2 works!</p>
-<h1>Abilities</h1>
-<div [formGroup]="formGroupMoves">
-  <div *ngFor="let ability of abilities">
-    <p>{{ability.ability.name}}</p>
+<div class="wrapper-child2">
+  <h2>{{namePokemon}}</h2>
+  <div class="types" [formGroup]="formGroupTypes">
+    <div *ngFor="let type of typePokemon">
+      <p>{{type.type.name}}</p>
+    </div>
+  </div>
+  <p class="title">Abilities</p>
+  <div class="abilities" [formGroup]="formGroupMoves">
+    <div *ngFor="let ability of abilities">
+      <p>{{ability.ability.name}}</p>
+    </div>
   </div>
 </div>

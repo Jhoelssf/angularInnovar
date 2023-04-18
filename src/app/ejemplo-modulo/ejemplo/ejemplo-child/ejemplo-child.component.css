@@ -1,0 +1,28 @@
+.wrapper-child1{
+  background-color: crimson;
+  width: 220px;
+  padding: 10px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.wrapper-child1 form{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.wrapper-child1 form input{
+  width: 70%;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.wrapper-child1 form button{
+  width: 25%;
+  border-radius: 5px;
+  background-color: gold;
+}
+
+.wrapper-child1 form button:active{
+  background-color: goldenrod;
+}

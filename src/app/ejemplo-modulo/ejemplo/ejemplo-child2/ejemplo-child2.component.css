@@ -1,0 +1,40 @@
+.wrapper-child2 h2{
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: greenyellow;
+  text-decoration-thickness: 4px;
+  color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.wrapper-child2 .title{
+  color: #fafafa;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 4px;
+}
+
+.types{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.types div{
+  background-color:cadetblue;
+  padding: 2px 5px;
+  border-radius: 8px;
+  color: #222;
+}
+
+.abilities{
+  border: 1px solid white;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px auto;
+}
+
+.abilities p::before{
+  content: "- ";
+}
