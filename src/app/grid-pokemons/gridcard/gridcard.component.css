@@ -1,0 +1,41 @@
+
+.gridcard{
+  padding: 5px;
+  margin: 10px;
+  width: 120px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gridcard .header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.poison{
+  background-color: green;
+}
+
+.gridcard h2{
+  display: inline;
+  font-size: 16px;
+}
+
+.gridcard img{
+  background-color: #f1f1f1;
+}
+
+.gridcard ul{
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.gridcard li p{
+  padding: 2px 5px;
+  border-radius: 10px;
+  color: white;
+}

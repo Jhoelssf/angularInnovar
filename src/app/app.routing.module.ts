@@ -5,12 +5,19 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'ejemplo',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'catalogo',
+    loadChildren: () => 
+      import('./grid-pokemons/grid-pokemons.module').then(
+        (m) => m.GridPokemonsModule
+      )
   },
   {
     path: 'ejemplo',

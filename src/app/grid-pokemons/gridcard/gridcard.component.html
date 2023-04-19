@@ -1,0 +1,15 @@
+<div class="gridcard">
+  <div class="header">
+    <h2>{{pokemon.name}}</h2>
+    <p class="id">{{pokemon.id}}</p>
+  </div>
+  <img src="{{pokemon.sprites.front_default}}" alt="">
+  <div class="types">
+    <p>Types:</p>
+    <ul>
+      <li *ngFor="let type of pokemon.types">
+        <p [ngStyle]="{'background-color': 'var(--' + type.type.name + ')'}">{{type.type.name}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
