@@ -1,0 +1,9 @@
+<h1>Rick & Morty - Personajes favoritos</h1>
+<ng-container *ngIf="characters; else noCharacters">
+  <app-character-list
+    [characters]="characters"
+    [favorites]="characters"
+    (removeFavorite)="removeFavorite($event)"
+  ></app-character-list>
+</ng-container>
+<ng-template #noCharacters>No tienes personajes favoritos!</ng-template>

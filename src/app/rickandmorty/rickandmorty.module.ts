@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon'
 import { CharacterDialogComponent } from './characters/character-dialog/character-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 
@@ -16,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [
     CharactersComponent,
     CharacterListComponent,
-    CharacterDialogComponent
+    CharacterDialogComponent,
+    FavoritesComponent,
   ],
   imports: [
     MatButtonModule,
