@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GridviewComponent } from './gridview/gridview.component';
+import { InfoCardComponent } from './info-card/info-card.component';
 
 const routes: Routes = [
   {
     path: '',
     component: GridviewComponent
-  }
+  },
 ];
 
 @NgModule({

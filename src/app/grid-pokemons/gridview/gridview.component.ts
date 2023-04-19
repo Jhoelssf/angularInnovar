@@ -26,7 +26,6 @@ export class GridviewComponent implements OnInit {
     this.pokemonService.getPokemonList().subscribe(
       (res) => {
         this.pokemonsList = res;
-        console.log(this.pokemonsList)
         this.pokemonsList.map((pokeSimple: PokemonList)=>{
           this.pokemonService.getPokemon(pokeSimple.name).subscribe(
             (res)=>{

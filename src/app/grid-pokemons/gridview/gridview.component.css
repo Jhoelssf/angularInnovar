@@ -1,4 +1,5 @@
 .gridview{
   display: flex;
+  gap: 3rem;
   flex-flow: row wrap;
 }

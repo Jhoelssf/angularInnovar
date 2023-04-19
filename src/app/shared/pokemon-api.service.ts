@@ -26,7 +26,6 @@ export class PokemonAPIService {
   }
 
   getPokemon(id: string | number):Observable<PokemonObject>{
-    console.log('Buscando en: ',this.pokeAPIurl+'/pokemon/'+id)
     return this.http.get<PokemonObject>(this.pokeAPIurl+'/pokemon/'+id);
   }
 }
