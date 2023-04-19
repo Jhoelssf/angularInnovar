@@ -1,0 +1,16 @@
+.wrapper-home{
+  padding: 20px 40px;
+}
+
+.wrapper-home h1{
+  margin-bottom: 10px;
+}
+
+.wrapper-home h2{
+  margin-bottom: 40px;
+}
+
+.wrapper-home ul{
+  margin-left: 20px;
+  margin-top: 10px;
+}
