@@ -19,6 +19,13 @@ const routes: Routes = [
         (mod) => mod.EjemploModuloModule
       ),
   },
+  {
+    path: 'pokemonapp',
+    loadChildren: () =>
+    import('./pokemonapp/pokemonapp.module').then(
+      (mod) => mod.PokemonModule
+    ),
+  }
 ];
 
 @NgModule({
@@ -26,7 +33,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       // enableTracing: true, // <-- debugging purposes only
       useHash: false,
-      relativeLinkResolution: 'legacy',
+   
     }),
   ],
   exports: [RouterModule],

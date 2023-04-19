@@ -1,0 +1,24 @@
+.navItem {
+    text-decoration: none;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.items {
+    display: flex;
+    list-style: none;
+}
+
+.containerPokemon {
+    display: flex;
+    align-items: center;
+}
