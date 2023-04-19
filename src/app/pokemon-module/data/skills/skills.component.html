@@ -1,8 +1,8 @@
 <p>skills works!</p>
 
 <div class="container">
-  <div class="row">
-    <img [src]="pokemonData?.sprites?.front_default" alt="pokemon_img">
+  <div class="row justify-content-center">
+    <img class="h-50 w-50" [src]="pokemonData?.sprites?.front_default" alt="pokemon_img" width="200">
   </div>
   <div class="row">
     <ul *ngFor="let stat of pokemonData?.stats" >
