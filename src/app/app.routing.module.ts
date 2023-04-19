@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'ejemplo',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -24,8 +24,8 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'pokemon',
-    loadChildren: () => import('./pokemon-view/pokemon-view.module').then(
+    path: 'pokemonTry',
+    loadChildren: () => import('./pokemon-try-view/pokemon-try-view.module').then(
       (mod)=> mod.PokemonViewModule
     )
   }

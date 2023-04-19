@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-import { PokemonViewRoutingModule } from './pokemon-view-routing.module';
-import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
+import { PokemonTryViewRoutingModule } from './pokemon-try-view-routing.module';
+import { PokemonTryPageComponent } from './pokemon-try-page/pokemon-try-page.component';
+
 import { PokemonBasicInfoComponent } from './pokemon-basic-info/pokemon-basic-info.component';
 import { PokemonGeneralInfoComponent } from './pokemon-general-info/pokemon-general-info.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +15,7 @@ import { ViewPokemonNumberNComponent } from './view-pokemon-number-n/view-pokemo
 
 @NgModule({
   declarations: [
-    PokemonPageComponent,
+    PokemonTryPageComponent,
     PokemonBasicInfoComponent,
     PokemonGeneralInfoComponent,
     FormArrayTryComponent,
@@ -24,7 +25,7 @@ import { ViewPokemonNumberNComponent } from './view-pokemon-number-n/view-pokemo
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    PokemonViewRoutingModule
+    PokemonTryViewRoutingModule
   ]
 })
 export class PokemonViewModule { }

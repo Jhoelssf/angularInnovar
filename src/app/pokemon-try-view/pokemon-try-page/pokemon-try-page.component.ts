@@ -4,11 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-pokemon-page',
-  templateUrl: './pokemon-page.component.html',
-  styleUrls: ['./pokemon-page.component.css']
+  selector: 'app-pokemon-try-page',
+  templateUrl: './pokemon-try-page.component.html',
+  styleUrls: ['./pokemon-try-page.component.css']
 })
-export class PokemonPageComponent implements OnInit {
+export class PokemonTryPageComponent implements OnInit {
   objectPokemon! : RootObject | undefined;
   baseURL : string = 'https://pokeapi.co/api/v2/pokemon/';
   getNewPokemonFormGroup : FormGroup = new FormGroup({

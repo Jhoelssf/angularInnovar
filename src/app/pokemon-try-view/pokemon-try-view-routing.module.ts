@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
+import { PokemonTryPageComponent } from './pokemon-try-page/pokemon-try-page.component'
 import { FormArrayTryComponent } from './form-array-try/form-array-try.component';
 const routes: Routes = [
-  {path: '', component: PokemonPageComponent},
+  {path: '', component: PokemonTryPageComponent},
   {path:'formArray', component: FormArrayTryComponent}
 ];
 
@@ -11,4 +11,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PokemonViewRoutingModule { }
+export class PokemonTryViewRoutingModule { }
