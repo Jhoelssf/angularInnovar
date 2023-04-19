@@ -10,6 +10,8 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class CharactersComponent implements OnInit, OnDestroy {
   characters: Character[] = [];
+  favorites: Character[] = [];
+
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
   constructor(private rickandmortyService: RickandmortyService) { }
@@ -20,6 +22,11 @@ export class CharactersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribe$.next(true);
     this.unsubscribe$.complete();
+  }
+
+  addFavorite(character: Character): void{
+    this.favorites = [...this.favorites, character]
+    this.rickandmortyService.setFavorites(this.favorites)
   }
 
   getCharacters(): void{

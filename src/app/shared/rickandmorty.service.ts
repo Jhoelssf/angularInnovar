@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Character, RootCharacterObject } from '../rickandmorty/charactermodels';
 
@@ -10,9 +10,18 @@ import { Character, RootCharacterObject } from '../rickandmorty/charactermodels'
 export class RickandmortyService {
   private rickandmortyUrl = 'https://rickandmortyapi.com/api';
 
+  private favorites: Subject<Character[]> = new Subject<Character[]>();
+
   constructor(
     private http: HttpClient
   ) { }
+
+  getFavorites() {
+    return this.favorites.asObservable();
+  }
+  setFavorites(characters: Character[]) {
+    this.favorites.next(characters);
+  }
 
   getCharacters(page: number): Observable<RootCharacterObject> {
     const url = `${this.rickandmortyUrl}/character/?page=${page}`;

@@ -3,6 +3,7 @@
 <ng-container *ngIf="characters; else noCharacters">
   <app-character-list
     [characters]="characters"
+    (addFavorite)="addFavorite($event)"
   ></app-character-list>
 </ng-container>
 <ng-template #noCharacters>No hay personajes...</ng-template>
