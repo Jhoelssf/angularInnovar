@@ -19,6 +19,12 @@ const routes: Routes = [
         (mod) => mod.EjemploModuloModule
       ),
   },
+  {
+    path: 'rickandmorty',
+    loadChildren: () =>
+      import('./rickandmorty/rickandmorty.module')
+      .then((mod) => mod.RickandmortyModule),
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,36 @@
+.grid-container{
+  box-sizing: border-box;
+  width: 100%;
+}
+.mat-grid-tile{
+  border: 2px solid #EEE;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.cell-img{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.cell-content{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin-top: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+  opacity: .9;
+  transition: all;
+  transition-duration: .3s;
+}
+.cell-active{
+  margin-top: 0;
+}
+.cell-title{
+  color: #FFFFFF;
+  font-weight: 600;
+  background-color: #000000;
+}
