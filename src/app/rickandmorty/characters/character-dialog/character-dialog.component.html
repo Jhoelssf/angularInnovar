@@ -1,0 +1,17 @@
+<mat-card class="dialog-card">
+  <mat-card-header>
+    <h2>{{data.character.name}}</h2>
+  </mat-card-header>
+  <img mat-card-image src={{data.character.image}} alt="">
+  <mat-card-content>
+    <h3>Detalles</h3>
+    <p>Estado: <span>{{data.character.status}}</span></p>
+    <p>Especie: <span>{{data.character.species}}</span></p>
+    <p>Origen: <span>{{data.character.origin.name}}</span></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-fab color="accent" aria-label="favorite button">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
