@@ -7,29 +7,14 @@ import { RootObject } from '../model';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent implements OnInit {
-  // @Input() pokemonsList:Array<RootObject> = []
-  @Input() pokemonsList:any = []
+  @Input() pokemonsList:any = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.pokemonsList = [
-      {
-        name: 'Ditto',
-        id: 34,
-        types: ['tierra', 'aire']
-      },
-      {
-        name: 'Celebi',
-        id: 34,
-        types: ['agua']
-      },
-      {
-        name: 'Pikachu',
-        id: 34,
-        types: ['tierra', 'electrico']
-      },
-    ]
+
   }
+
+
 
 }

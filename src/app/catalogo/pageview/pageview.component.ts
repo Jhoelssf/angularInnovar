@@ -1,6 +1,7 @@
+import { filter } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { RootObject } from '../model';
+import { Component, OnInit} from '@angular/core';
+import { RootObject, Type } from '../model';
 
 @Component({
   selector: 'app-pageview',
@@ -9,19 +10,24 @@ import { RootObject } from '../model';
 })
 export class PageviewComponent implements OnInit {
   public listaPokemones: any = [];
+  public listaTypes: Array<Type> = [];
   public objectPokemon: any;
-  baseUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
-  constructor(private http:HttpClient) { }
+  baseUrl: string = 'https://pokeapi.co/api/v2/';
+  constructor(private http:HttpClient) {
+  }
 
   ngOnInit(): void {
     this.getAll();
+    this.http.get<any>(`${this.baseUrl}type`).subscribe((res)=>{
+      this.listaTypes = res.results;
+    });
   }
 
   getAll(){
-    this.http.get<any>(`${this.baseUrl}?limit=40`).subscribe({
+    this.http.get<any>(`${this.baseUrl}pokemon?limit=40`).subscribe({
       next: (response) => {
         this.listaPokemones = response.results;
-        console.log(this.listaPokemones);
+        // console.log(this.listaPokemones);
       },
       error: (err) => {
         this.listaPokemones = [];
@@ -29,25 +35,22 @@ export class PageviewComponent implements OnInit {
     });
   }
   
-
+  
   getByTypes(nameType: string){
-    this.getAll();
-    console.log("En pageview: ",nameType);
-    let listaFiltrada:any = [];
-    console.log(this.listaPokemones);
-    for(let pokemon of this.listaPokemones){
-      console.log('name: ',pokemon.name)
-      console.log('name: ',pokemon.url)
-
-      this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/1`).subscribe((res) => {
-        console.log(res);
-        this.objectPokemon = res;
-    });
-      console.log(this.objectPokemon);
-      if(nameType in this.objectPokemon.types){
-        listaFiltrada.push(this.objectPokemon);
-      }
+    if(nameType === "") console.log('Nada')
+    else{
+      this.http.get<any>(`${this.baseUrl}type/${nameType}`).subscribe({
+        next: (response) => {
+          this.listaPokemones = response.pokemon;
+          // console.log(this.listaPokemones);
+        },
+        error: (err) => {
+          console.error('Error obteniendo los tipos')
+          this.listaPokemones = [];
+        },
+      });
     }
-    this.listaPokemones = listaFiltrada;
+    // console.log(this.listaPokemones)
+
   }
 }

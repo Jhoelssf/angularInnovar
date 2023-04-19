@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter } from 'rxjs';
 
@@ -9,6 +9,7 @@ import { filter } from 'rxjs';
 })
 export class BarfilterComponent implements OnInit {
   @Output() filterByTypes: EventEmitter<string> = new EventEmitter<string>();
+  @Input() dataTypes:any;
 
   public formFilter!: FormGroup;
 

@@ -1,8 +1,7 @@
 <div  class="catalogo-container">
   <div class="catalogo-card" *ngFor="let pokemon of pokemonsList" >
     <!-- <img src={{pokemon.}} alt=""> -->
-    <p>{{pokemon.name}}</p>
-    <p>{{pokemon.id}}</p>
-    <p>{{pokemon.types}}</p>
+    <p *ngIf="pokemon.name">{{pokemon.name}}</p> 
+    <p *ngIf="pokemon.name==undefined">{{pokemon.pokemon.name}}</p> 
   </div>
 </div>

@@ -1,8 +1,12 @@
 <p>barfilter works!</p>
 <form [formGroup]="formFilter" (submit)="filtrar()">
   <div>
-    <label for="typeName">Tipo</label>
-    <input  id="typeName" type="text" formControlName="typeInput">
+    <!-- <label for="typeName">Tipo</label>
+    <input  id="typeName" type="text" formControlName="typeInput"> -->
+    <select formControlName="typeInput" name="typeName" id="typeName">
+      <option selected value="">SELEC</option>
+      <option *ngFor="let item of dataTypes">{{item.name}}</option>
+    </select>
   </div>
   <div>
     <button type="submit">Filtrar</button>
