@@ -14,6 +14,13 @@ const routes: Routes = [
         (mod) => mod.EjemploModuloModule
       ),
   },
+  {
+    path: 'pokemon',
+    loadChildren: () =>
+      import('./pokemon-modulo/pokemon-modulo.module').then(
+        (mod) => mod.PokemonModuloModule
+      ),
+  },
 ];
 
 @NgModule({

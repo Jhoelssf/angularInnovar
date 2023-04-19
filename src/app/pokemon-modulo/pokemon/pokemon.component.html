@@ -1,0 +1,26 @@
+<h1>POKEMONS</h1>
+<!-- <app-pokemon-habilities></app-pokemon-habilities>
+<app-pokemon-location></app-pokemon-location> -->
+<div>
+  <table>
+    <tr>
+      <td>
+        Nombre
+      </td>
+      <td>
+        Acciones
+      </td>
+    </tr>
+
+    <tr *ngFor="let pokemon of objectPokemon?.results">
+      <td>
+        {{pokemon.name}}
+      </td>
+      <td>
+        <button class="btn btn-primary my-2" > Ver </button>
+      </td>
+
+
+    </tr>
+  </table>
+</div>
