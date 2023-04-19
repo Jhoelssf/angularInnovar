@@ -10,17 +10,26 @@ import { Character, RootCharacterObject } from '../rickandmorty/charactermodels'
 export class RickandmortyService {
   private rickandmortyUrl = 'https://rickandmortyapi.com/api';
 
-  private favorites: Subject<Character[]> = new Subject<Character[]>();
+  private favorites: Character[] = [];
+  private favoritesSubject: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getFavorites() {
-    return this.favorites.asObservable();
+  addToFavorites(character: Character) {
+    this.favorites.push(character);
+    this.favoritesSubject.next(true);
   }
-  setFavorites(characters: Character[]) {
-    this.favorites.next(characters);
+  removeFromFavorites(id: number | string) {
+    this.favorites = this.favorites.filter(fav => fav.id !== id && fav.name !== id);
+    this.favoritesSubject.next(true);
+  }
+  getFavorites() {
+    return this.favorites;
+  }
+  getFavoritesSubject() {
+    return this.favoritesSubject;
   }
 
   getCharacters(page: number): Observable<RootCharacterObject> {
