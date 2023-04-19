@@ -1,0 +1,15 @@
+<p>skills works!</p>
+
+<div class="container">
+  <div class="row">
+    <img [src]="pokemonData?.sprites?.front_default" alt="pokemon_img">
+  </div>
+  <div class="row">
+    <ul *ngFor="let stat of pokemonData?.stats" >
+      <li>
+        {{stat.stat.name}}: {{stat.base_stat}}
+      </li>
+    </ul>
+  </div>
+</div>
+

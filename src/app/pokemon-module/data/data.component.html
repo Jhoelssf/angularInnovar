@@ -1,0 +1,12 @@
+<p>Data component works!</p>
+
+<title-component
+  *ngIf="objectPokemon"
+  (onChangePokemon)="onChangePokemon($event)"
+  [pokemonName]="objectPokemon.name"
+></title-component>
+
+<skills-component
+  *ngIf="objectPokemon"
+  [pokemonData]="objectPokemon"
+></skills-component>
