@@ -10,9 +10,11 @@ import { CharacterDialogComponent } from '../character-dialog/character-dialog.c
 })
 export class CharacterListComponent implements OnInit {
   @Input() characters!: Character[];
+  @Input() favorites!: Character[];
   @Output() addFavorite: EventEmitter<Character> = new EventEmitter<Character>();
-  hoveredId: number | null = null; 
-
+  @Output() removeFavorite: EventEmitter<string | number> = new EventEmitter<string | number>();
+  hoveredId: number | null = null;  
+  
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -25,16 +27,23 @@ export class CharacterListComponent implements OnInit {
   addCharacter(character: Character) {
     this.addFavorite.emit(character)
   }
+  removeCharacter(id: string | number) {
+    this.removeFavorite.emit(id)
+  }
 
   openDialog(character: Character): void {
     const dialogRef = this.dialog.open(CharacterDialogComponent, {
-      data: {character: character},
+      data: {character: character, favorites: this.favorites},
     });
     dialogRef.afterClosed().subscribe((result)=>{
       console.log('The dialog was closed');
       if(result){
-        const character: Character = this.characters.filter(x => `${x.id}` === `${result}`)[0];
-        this.addCharacter(character);
+        const character: Character = this.characters.filter(char => `${char.id}` === `${result}`)[0];
+        if(this.favorites.find(fav => `${fav.id}` === `${result}`)){
+          this.removeCharacter(parseInt(result));
+        }else{
+          this.addCharacter(character);
+        }
       }
     })
   }

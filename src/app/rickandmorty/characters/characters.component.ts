@@ -10,7 +10,7 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class CharactersComponent implements OnInit, OnDestroy {
   characters: Character[] = [];
-  favorites: Character[] = [];
+  favorites: Character[] = this.rickandmortyService.getFavorites();
 
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
@@ -18,6 +18,12 @@ export class CharactersComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCharacters();
+    this.rickandmortyService
+      .getFavoritesSubject()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(()=>{
+        this.favorites = this.rickandmortyService.getFavorites(); 
+      });
   }
   ngOnDestroy(): void {
     this.unsubscribe$.next(true);
@@ -25,8 +31,11 @@ export class CharactersComponent implements OnInit, OnDestroy {
   }
 
   addFavorite(character: Character): void{
-    this.favorites = [...this.favorites, character]
-    this.rickandmortyService.setFavorites(this.favorites)
+    this.rickandmortyService.addToFavorites(character);
+  }
+  
+  removeFavorite(id: string | number): void{
+    this.rickandmortyService.removeFromFavorites(id);
   }
 
   getCharacters(): void{

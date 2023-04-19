@@ -10,8 +10,15 @@
     <p>Origen: <span>{{data.character.origin.name}}</span></p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-fab mat-dialog-close='{{data.character.id}}' color="accent" aria-label="favorite button">
-      <mat-icon>favorite</mat-icon>
-    </button>
+    <ng-container *ngIf="favorite; else noFavorite">
+      <button color="warn" mat-fab mat-dialog-close='{{data.character.id}}'  aria-label="favorite button">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #noFavorite>
+      <button color="accent" mat-fab mat-dialog-close='{{data.character.id}}' aria-label="favorite button">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </ng-template>
   </mat-card-actions>
 </mat-card>
