@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'ejemplo',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -17,6 +17,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./ejemplo-modulo/ejemplo-modulo.module').then(
         (mod) => mod.EjemploModuloModule
+      ),
+  },
+  {
+    path: 'poke-project',
+    loadChildren: () =>
+      import('./poke-project/poke-project.module').then(
+        (mod) => mod.PokeProjectModule
       ),
   },
 ];

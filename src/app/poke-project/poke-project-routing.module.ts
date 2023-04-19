@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokeViewComponent } from './poke-view/poke-view.component';
+import { PokemonHomeComponent } from './pokemon-home/pokemon-home.component';
+import { PokemonFavViewComponent } from './pokemon-fav-view/pokemon-fav-view.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'home',
-    pathMatch:'full'
-  },
-  {
-    path:'home',
-    component: PokeViewComponent
+    component: PokeViewComponent,
+    children: [
+      {
+        path: 'home',
+        component: PokemonHomeComponent,
+      },
+      {
+        path: 'favorites',
+        component: PokemonFavViewComponent
+      },
+      {
+        path: '',
+        component: PokemonHomeComponent
+      }
+    ],
   }
 ];
 

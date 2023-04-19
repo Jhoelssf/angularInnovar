@@ -1,0 +1,10 @@
+.pokemon-display{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 90px;
+}
+
+.mat-card-header{
+    text-align: center;
+    font-size: 2;
+}
