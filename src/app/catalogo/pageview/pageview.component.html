@@ -1,2 +1,3 @@
 <p>pageview works!</p>
-<app-catalogo></app-catalogo>
+<app-barfilter (filterByTypes)="getByTypes($event)"></app-barfilter>
+<app-catalogo [pokemonsList]="listaPokemones" ></app-catalogo>

@@ -6,6 +6,7 @@ import { BarfilterComponent } from './barfilter/barfilter.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { PageviewComponent } from './pageview/pageview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CatalogoRoutingModule
   ]

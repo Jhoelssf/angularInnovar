@@ -1,1 +1,10 @@
 <p>barfilter works!</p>
+<form [formGroup]="formFilter" (submit)="filtrar()">
+  <div>
+    <label for="typeName">Tipo</label>
+    <input  id="typeName" type="text" formControlName="typeInput">
+  </div>
+  <div>
+    <button type="submit">Filtrar</button>
+  </div>
+</form>
