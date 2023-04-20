@@ -14,8 +14,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatChipsModule} from '@angular/material/chips';
 import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
+import { DialogPokemonCardComponent } from './dialog-pokemon-card/dialog-pokemon-card.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.compo
     PokemonHomeComponent,
     PokemonFavViewComponent,
     PokemonShortCardComponent,
-    PokemonDisplayComponent
+    PokemonDisplayComponent,
+    DialogPokemonCardComponent,
+  ],
+  entryComponents: [
+    DialogPokemonCardComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +41,12 @@ import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.compo
     MatToolbarModule,
     MatCardModule,
     MatDialogModule,
+    MatIconModule,
+    MatListModule,
+    MatChipsModule,
+    MatDividerModule,
     MatPaginatorModule,
+    MatButtonModule,
     HttpClientModule,
   ]
 })

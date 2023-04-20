@@ -1,10 +1,9 @@
-import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {RootObjectPokeList, Result} from '../../shared/pokeListTemplate'
+import { RootObjectPokeList, Result} from '../../shared/pokeListTemplate'
 import { RootObject } from 'src/app/ejemplo-modulo/ejemplo/model';
 import { tap } from 'rxjs'
 import { PokeDialogInfoService } from 'src/app/shared/poke-dialog-info.service';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pokemon-home',
@@ -20,20 +19,12 @@ export class PokemonHomeComponent implements OnInit {
   pokeDialogInfo!: RootObject;
 
   constructor(
-    private http: HttpClient, 
-    private pokeDialogService : PokeDialogInfoService,
-    private cdr: ChangeDetectorRef,
-    private dialog: MatDialog,
+    private http: HttpClient,
     ) {
    }
 
   ngOnInit(): void {
     this.recoverListPokemon()
-    this.pokeDialogService.getInfoPokemon().subscribe(response =>{
-      this.pokeDialogInfo = response;
-      console.log('Data changed:', this.pokeDialogInfo);
-      this.dialog.
-    })
   }
 
   ngOnDestroy() {
