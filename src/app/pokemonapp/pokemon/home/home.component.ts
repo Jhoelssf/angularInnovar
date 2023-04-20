@@ -5,11 +5,7 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dial
 import { Ability } from './model';
 
 interface PokemonData {
-  namePokemon: string;
-  abilitiesPokemon: Array<Ability>;
-  heightPokemon: number;
-  weightPokemon: number;
-  images: Sprites
+  pokemonData: RootObject
 }
 
 
@@ -20,23 +16,26 @@ interface PokemonData {
 })
 
 export class HomeComponent implements OnInit {
+
   pokemon!: number;
   arrayPokemon: Array<RootObject> = [];
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
   constructor(private http: HttpClient, private dialog: MatDialog) {
 
   }
-  openDialog(idPokemon: number): void {
-    this.pokemon = this.arrayPokemon.findIndex((element) => element.id == idPokemon)
+  openDialog(Pokemon: RootObject): void {
+    console.log(Pokemon)
+    // this.pokemon = this.arrayPokemon.findIndex((element) => element.id == idPokemon)
     this.dialog.open(DialogPokemon, {
       width: '40rem',
       height: '35rem',
       data: {
-        namePokemon: this.arrayPokemon[this.pokemon].name,
-        abilitiesPokemon: this.arrayPokemon[this.pokemon].abilities,
-        heightPokemon: this.arrayPokemon[this.pokemon].height,
-        images: this.arrayPokemon[this.pokemon].sprites,
-        weightPokemon: this.arrayPokemon[this.pokemon].weight
+        pokemonData : Pokemon 
+        // namePokemon: this.arrayPokemon[this.pokemon].name,
+        // abilitiesPokemon: this.arrayPokemon[this.pokemon].abilities,
+        // heightPokemon: this.arrayPokemon[this.pokemon].height,
+        // images: this.arrayPokemon[this.pokemon].sprites,
+        // weightPokemon: this.arrayPokemon[this.pokemon].weight
       }
     });
   }

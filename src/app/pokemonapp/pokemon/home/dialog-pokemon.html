@@ -1,18 +1,18 @@
-<h1 mat-dialog-title>{{data.namePokemon}}</h1>
+<h1 mat-dialog-title>{{data.pokemonData.name}}</h1>
 <div>
     <div>
         <h3> Default: </h3>
-        <img src={{data.images.front_default}} />
-        <img src={{data.images.back_default}} />
-        <img src={{data.images.front_shiny}} />
-        <img src={{data.images.back_shiny}} />
+        <img src={{data.pokemonData.sprites.front_default}} />
+        <img src={{data.pokemonData.sprites.back_default}} />
+        <img src={{data.pokemonData.sprites.front_shiny}} />
+        <img src={{data.pokemonData.sprites.back_shiny}} />
     </div>
     <div>
         <h3> Female: </h3>
-        <img src={{data.images.front_female}} />
-        <img src={{data.images.back_female}} />
-        <img src={{data.images.front_shiny_female}} />
-        <img src={{data.images.back_shiny_female}} />
+        <img src={{data.pokemonData.sprites.front_female}} />
+        <img src={{data.pokemonData.sprites.back_female}} />
+        <img src={{data.pokemonData.sprites.front_shiny_female}} />
+        <img src={{data.pokemonData.sprites.back_shiny_female}} />
 
 
     </div>
@@ -20,16 +20,16 @@
 </div>
 <div mat-dialog-content class="contentDialog">
     <div>
-        <h3> Height: <span>{{data.heightPokemon}}</span> </h3>
+        <h3> Height: <span>{{data.pokemonData.height}}</span> </h3>
     </div>
     <div>
-        <h3> Weight: <span>{{data.weightPokemon}}</span> </h3>
+        <h3> Weight: <span>{{data.pokemonData.weight}}</span> </h3>
     </div>
 
     <div>
         <h3> Abilities: </h3>
         <ul>
-            <ng-container *ngFor="let ability of data.abilitiesPokemon">
+            <ng-container *ngFor="let ability of data.pokemonData.abilities">
                 <li> {{ability.ability.name}} </li>
             </ng-container>
         </ul>
