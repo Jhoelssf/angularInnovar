@@ -1,8 +1,7 @@
 <p>favorites-pokemon works!</p>
-<p>
-  hola
-  {{listaFavoritos}}
-</p>
-<p *ngIf="true"></p>
-<button>Mostrar Favoritos en consola</button>
-<button (click)="mostrarLista()">A</button>
+<h2>My pokemons favorites</h2>
+<ul>
+  <li *ngFor="let item of listaFavoritos" >
+    <p>{{item.name}}</p>
+  </li>
+</ul>

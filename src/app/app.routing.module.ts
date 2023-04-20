@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InfoCardComponent } from './grid-pokemons/info-card/info-card.component';
 import { FavoritesPokemonComponent } from './favorites/favorites-pokemon/favorites-pokemon.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -16,7 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'favoritos',
-    component: FavoritesPokemonComponent
+    loadChildren: () => 
+      import('./favorites/favorites.module').then(
+        (m) => m.FavoritesModule
+      )
   },
   {
     path: 'catalogo',
@@ -41,7 +45,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      // enableTracing: true, // <-- debugging purposes only
       useHash: false,
       relativeLinkResolution: 'legacy',
     }),
