@@ -12,6 +12,10 @@ import { PokemonShortCardComponent } from './pokemon-short-card/pokemon-short-ca
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,16 @@ import {MatCardModule} from '@angular/material/card';
     PokeHeaderComponent,
     PokemonHomeComponent,
     PokemonFavViewComponent,
-    PokemonShortCardComponent
+    PokemonShortCardComponent,
+    PokemonDisplayComponent
   ],
   imports: [
     CommonModule,
     PokeProjectRoutingModule,
     MatToolbarModule,
     MatCardModule,
+    MatDialogModule,
+    MatPaginatorModule,
     HttpClientModule,
   ]
 })

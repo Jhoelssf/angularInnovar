@@ -1,0 +1,13 @@
+<div class="pokemon-display">
+    <ng-container *ngFor="let objectPokemon of arrListPokemon">
+        <ng-container *ngIf="objectPokemon">
+            <app-pokemon-short-card [objectPokemon]="objectPokemon"></app-pokemon-short-card>
+        </ng-container>
+    </ng-container>
+
+    <mat-paginator class="pokemon-paginator"[length]="1110"
+              [pageSize]="50"
+              [pageSizeOptions]="[10, 25, 50, 100, 200]"
+              aria-label="Selectpage">
+    </mat-paginator>
+</div>
