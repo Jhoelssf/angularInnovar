@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InfoCardComponent } from './grid-pokemons/info-card/info-card.component';
+import { FavoritesPokemonComponent } from './favorites/favorites-pokemon/favorites-pokemon.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'favoritos',
+    component: FavoritesPokemonComponent
   },
   {
     path: 'catalogo',

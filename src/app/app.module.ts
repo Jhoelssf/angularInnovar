@@ -8,14 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { CommonModule } from '@angular/common';
-import { DialogDataExampleDialog } from './grid-pokemons/info-card/info-card.component';
-import { GridcardComponent } from './grid-pokemons/gridcard/gridcard.component';
 import { DialogCardComponent } from './grid-pokemons/dialog-card/dialog-card.component';
+import { FavoritesPokemonComponent } from './favorites/favorites-pokemon/favorites-pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
@@ -23,12 +22,13 @@ import { DialogCardComponent } from './grid-pokemons/dialog-card/dialog-card.com
     AppRoutingModule, 
     BrowserAnimationsModule, 
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
   ],
   entryComponents: [
     DialogCardComponent
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

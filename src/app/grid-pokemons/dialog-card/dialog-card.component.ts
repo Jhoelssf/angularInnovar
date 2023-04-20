@@ -1,19 +1,17 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PokemonObject } from 'src/app/models/pokemonObj';
-
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
+import { FavoritesServiceService } from 'src/app/shared/favorites-service.service';
 
 @Component({
   selector: 'app-dialog-card',
   templateUrl: './dialog-card.component.html',
-  styleUrls: ['./dialog-card.component.css']
+  styleUrls: ['./dialog-card.component.css'],
 })
 export class DialogCardComponent implements OnInit {
 
   constructor(
+    public favService: FavoritesServiceService,
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: PokemonObject
   ) { }
@@ -22,7 +20,9 @@ export class DialogCardComponent implements OnInit {
   }
 
   addToFav():void{
-    console.log('Agregado a favoritos!')
+    console.log('Dialog agregando boton')
+    this.favService.agregarCarta(this.data);
+    // this.favServ.agregarCartaFavorita(this.data);
   }
 
   onClickClose():void{

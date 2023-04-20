@@ -20,7 +20,7 @@ import { DialogCardComponent } from './dialog-card/dialog-card.component';
   imports: [
     CommonModule,
     GridPokemonsRoutingModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class GridPokemonsModule { }
