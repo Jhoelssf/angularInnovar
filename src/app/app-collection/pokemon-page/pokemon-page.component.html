@@ -1,1 +1,13 @@
-<p>pokemon-page works!</p>
+<header>
+</header>
+<body>
+  <div class="my-pokemon-content" >
+    <div class="pokemon-cart" *ngFor="let pokemon of objectPokemonList!" (click)="openDialog()">
+      <figure >
+        <img  [src]="pokemon.sprites.front_default" alt="bike" />
+      </figure>
+      <p>{{ pokemon.name }}</p>
+    </div>
+  </div>
+</body>
+<footer></footer>
