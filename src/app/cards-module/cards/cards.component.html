@@ -1,5 +1,45 @@
 
 <h1>Cards Component</h1>
+<mat-paginator [length]= num_pokemon
+              [pageSize]="20"
+              [pageSizeOptions]="[ 20, 40, 80]"
+              aria-label="Select page">
+</mat-paginator>
+
+
+<div class="container_cards">
+  <div *ngFor =" let pokemon  of array_pokemon ">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{pokemon.name}}</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+
+    
+
+    
+    
+
+  </div>
+</div>
+
+
+
 <!-- <app-card *ngIf="objectPokemon; else noPokemon"
   (onChangePokemon)="onChangePokemon($event)"
   [namePokemon]="objectPokemon.name"></app-card>

@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { RootObject } from '../../ejemplo-modulo/ejemplo/model';
+
 import { ReactiveService } from '../../shared/reactive.service';
+import { RootObject } from 'src/app/cards-module/cards/model_pokemon';
 
 @Component({
   selector: 'app-reactive',
