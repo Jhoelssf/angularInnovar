@@ -14,15 +14,21 @@ const routes: Routes = [
         (mod) => mod.EjemploModuloModule
       ),
   },
+  {
+    path: 'pokeAlexandert',
+    loadChildren: () => 
+    import('./poke-alexandert-module/poke-alexandert-module.module').then(
+      (mod) => mod.PokeAlexandertModuleModule
+    )
+  }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      // enableTracing: true, // <-- debugging purposes only
-      useHash: false,
-      relativeLinkResolution: 'legacy',
-    }),
+    // enableTracing: true, // <-- debugging purposes only
+    useHash: false
+}),
   ],
   exports: [RouterModule],
 })
