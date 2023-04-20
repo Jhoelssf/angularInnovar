@@ -1,5 +1,21 @@
-<p>
-    <mat-toolbar>
-      <span>POKE HEADER</span>
-    </mat-toolbar>
-</p>
+<mat-toolbar>
+  <span>POKE-APP</span>
+  <span class="spacer"></span>
+
+  <button 
+    routerLink="/poke-project/home"
+    mat-button
+    class="poke-header-button"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+  <button
+    routerLink="/poke-project/favorites"
+    mat-button
+    class="poke-header-button"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-toolbar>

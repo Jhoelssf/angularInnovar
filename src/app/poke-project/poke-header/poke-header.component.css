@@ -1,0 +1,9 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.poke-header-button{
+    margin: 2px 15px;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+}

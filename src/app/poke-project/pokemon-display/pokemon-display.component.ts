@@ -16,11 +16,14 @@ export class PokemonDisplayComponent implements OnInit {
   }
 
   paginatorAction(e: PageEvent){
-    console.log(e)
-    console.log('Inicio: ', e.pageIndex*e.pageSize)
-    console.log('Tamaño: ',e.pageSize)
+    let cantPokemonsToGet = e.pageSize;
+    let initialPokemon = e.pageIndex*e.pageSize;
+    if(initialPokemon+ 1 + cantPokemonsToGet > e.length){
+      cantPokemonsToGet = e.length - initialPokemon;
+    }
+    console.log(initialPokemon, '- + -',cantPokemonsToGet, '--', e.length);
     this.listPokeService.generatePokemonList( 
-      (e.pageIndex*e.pageSize).toString(),
-      e.pageSize.toString())
+      (initialPokemon).toString(),
+      cantPokemonsToGet.toString())
   }
 }
