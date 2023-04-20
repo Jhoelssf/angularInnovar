@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Character } from '../charactermodels';
-import { Subject, takeUntil } from 'rxjs';
+import { Character, RootCharacterObject } from '../charactermodels';
+import { Observable, Subject, catchError, of, takeUntil, throwError } from 'rxjs';
 import { RickandmortyApiService } from 'src/app/shared/rickandmorty.api.service';
 import { FavoriteService } from 'src/app/shared/favorite.service';
 import { PageEvent } from '@angular/material/paginator';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-characters',
@@ -20,9 +21,18 @@ export class CharactersComponent implements OnInit, OnDestroy {
 
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
+  formGroup: FormGroup = this.fb.group({
+    searchText: this.fb.control([''])
+  });
+
+  get searchText(): FormControl {
+    return this.formGroup.get('searchText') as FormControl;
+  }
+
   constructor(
     private favoriteService: FavoriteService,
-    private rickandmortyApi: RickandmortyApiService
+    private rickandmortyApi: RickandmortyApiService,
+    private fb: FormBuilder
     ) { }
 
   ngOnInit(): void {
@@ -42,19 +52,25 @@ export class CharactersComponent implements OnInit, OnDestroy {
   addFavorite(character: Character): void{
     this.favoriteService.addToFavorites(character);
   }
-  
+
   removeFavorite(id: string | number): void{
     this.favoriteService.removeFromFavorites(id);
   }
 
   getCharacters(): void{
-    this.rickandmortyApi.getCharacters(this.pageIndex+1)
-    .pipe(takeUntil(this.unsubscribe$))
+    this.rickandmortyApi.getCharacters(this.pageIndex+1, this.searchText.value)
+    .pipe(
+      takeUntil(this.unsubscribe$))
     .subscribe((res) =>{
-      this.characters = res.results;
-      this.count = res.info.count;
-      this.pageSize = Math.round(res.info.count/res.info.pages);
-      this.disabled = false;
+      if(res){
+        this.characters = res.results;
+        this.count = res.info.count;
+        this.pageSize = Math.round(res.info.count/res.info.pages);
+        this.disabled = false;
+      } else{
+        this.characters = [];
+        this.count = 0;
+      }
     })
   }
 

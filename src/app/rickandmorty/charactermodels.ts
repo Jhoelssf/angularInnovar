@@ -5,9 +5,9 @@ export interface RootCharacterObject {
 
 export interface Info {
  count: number;
- next:  string;
+ next:  string | null;
  pages: number;
- prev:  null;
+ prev:  string | null;
 }
 
 export interface Character {

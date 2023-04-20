@@ -12,9 +12,25 @@
         [pageIndex]="pageIndex"
         [disabled]="disabled"
         aria-label="Select page">
-  </mat-paginator>
+      </mat-paginator>
     </div>
   </div>
+
+  <form [formGroup]="formGroup">
+    <mat-form-field 
+      appearance="outline"
+    >
+      <mat-label>Buscar personaje</mat-label>
+      <input 
+        type="text"
+        matInput 
+        placeholder="Nombre de personaje" 
+        formControlName="searchText"
+        (input)="getCharacters()"
+      >
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </form>
   <app-character-list
     [characters]="characters"
     [favorites]="favorites"

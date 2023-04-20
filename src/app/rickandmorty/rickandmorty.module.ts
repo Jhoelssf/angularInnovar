@@ -12,6 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { CardComponent } from './characters/character-list/card/card.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -24,6 +27,8 @@ import { CardComponent } from './characters/character-list/card/card.component';
     CardComponent,
   ],
   imports: [
+    MatInputModule,
+    MatFormFieldModule,
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
@@ -32,6 +37,10 @@ import { CardComponent } from './characters/character-list/card/card.component';
     MatCardModule,
     CommonModule,
     RickandmortyRoutingModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
   ]
 })
 export class RickandmortyModule {}
