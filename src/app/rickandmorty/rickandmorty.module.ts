@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon'
 import { CharacterDialogComponent } from './characters/character-dialog/character-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FavoritesComponent } from './favorites/favorites.component';
 
 
@@ -21,6 +22,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     FavoritesComponent,
   ],
   imports: [
+    MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
