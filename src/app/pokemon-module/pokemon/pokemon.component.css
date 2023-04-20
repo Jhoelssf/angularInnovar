@@ -1,0 +1,19 @@
+.logo{
+    display: flex;
+    align-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+}
+.logo img{
+    margin: 3cm;
+}
+.nota{
+    background-color: #34567525;
+    color: rgb(92, 92, 87);
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-decoration: none;
+    text-align: justify;
+    margin: 5px;
+    font-size: larger;
+}

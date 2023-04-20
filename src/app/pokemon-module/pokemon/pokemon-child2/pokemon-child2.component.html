@@ -1,1 +1,19 @@
 <p>pokemon-child2 works!</p>
+<h1>Moves</h1>
+<div [formGroup]="formGroupMoves" >
+    <div *ngIf="sprites">
+      <h5> {{sprites.back_default}}</h5>
+      <h5>{{sprites.front_default}}</h5>
+    </div>
+      <!-- <img *ngIf=sprites src={{sprites.back_default}} alt= "pokemon_back">
+      <img *ngIf=sprites src={{sprites.front_default}} alt="pokemon_front"> -->
+      
+      
+    <!-- <div *ngFor="let sprite of sprites"></div>
+
+        <ng-container *ngFor="let vgd of move.version_group_details">
+        <h5>{{vgd.level_learned_at}}</h5>
+        <h5>{{vgd.move_learn_method.name}}</h5>
+      </ng-container> 
+    </div> -->
+</div>

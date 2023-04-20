@@ -5,6 +5,7 @@ import { PokemonChildComponent } from './pokemon/pokemon-child/pokemon-child.com
 import { PokemonChild2Component } from './pokemon/pokemon-child2/pokemon-child2.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PokemonModuleRoutingModule } from './pokemon-module-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,6 +19,7 @@ import { PokemonModuleRoutingModule } from './pokemon-module-routing.module';
     CommonModule,
     ReactiveFormsModule,
     PokemonModuleRoutingModule,
-  ]
+    HttpClientModule,
+  ],
 })
 export class PokemonModuleModule { }
