@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Character } from '../charactermodels';
-import { RickandmortyService } from '../../shared/rickandmorty.service';
 import { Subject, takeUntil } from 'rxjs';
+import { RickandmortyApiService } from 'src/app/shared/rickandmorty.api.service';
+import { FavoriteService } from 'src/app/shared/favorite.service';
 
 @Component({
   selector: 'app-characters',
@@ -10,19 +11,22 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class CharactersComponent implements OnInit, OnDestroy {
   characters: Character[] = [];
-  favorites: Character[] = this.rickandmortyService.getFavorites();
+  favorites: Character[] = [];
 
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private rickandmortyService: RickandmortyService) { }
+  constructor(
+    private favoriteService: FavoriteService,
+    private rickandmortyApi: RickandmortyApiService
+    ) { }
 
   ngOnInit(): void {
     this.getCharacters();
-    this.rickandmortyService
-      .getFavoritesSubject()
+    this.favoriteService
+      .getFavorites()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(()=>{
-        this.favorites = this.rickandmortyService.getFavorites(); 
+      .subscribe((characters)=>{
+        this.favorites = characters; 
       });
   }
   ngOnDestroy(): void {
@@ -31,15 +35,15 @@ export class CharactersComponent implements OnInit, OnDestroy {
   }
 
   addFavorite(character: Character): void{
-    this.rickandmortyService.addToFavorites(character);
+    this.favoriteService.addToFavorites(character);
   }
   
   removeFavorite(id: string | number): void{
-    this.rickandmortyService.removeFromFavorites(id);
+    this.favoriteService.removeFromFavorites(id);
   }
 
   getCharacters(): void{
-    this.rickandmortyService.getCharacters(1)
+    this.rickandmortyApi.getCharacters(1)
     .pipe(takeUntil(this.unsubscribe$))
     .subscribe((res) =>{
       this.characters = res.results;

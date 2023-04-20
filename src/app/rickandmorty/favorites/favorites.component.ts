@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { RickandmortyService } from 'src/app/shared/rickandmorty.service';
 import { Character } from '../charactermodels';
+import { FavoriteService } from 'src/app/shared/favorite.service';
 
 @Component({
   selector: 'app-favorites',
@@ -9,17 +9,17 @@ import { Character } from '../charactermodels';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit, OnDestroy {
-  characters: Character[] = this.rickandmortyService.getFavorites(); 
+  characters: Character[] = []; 
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private rickandmortyService: RickandmortyService) { }
+  constructor(private favoriteService: FavoriteService) { }
 
   ngOnInit(): void {
-    this.rickandmortyService
-      .getFavoritesSubject()
+    this.favoriteService
+      .getFavorites()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(()=>{
-        this.characters = this.rickandmortyService.getFavorites(); 
+      .subscribe((characters)=>{
+        this.characters = characters; 
       });
   }
   ngOnDestroy(): void {
@@ -29,7 +29,7 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   }
 
   removeFavorite(id: string | number) {
-    this.rickandmortyService.removeFromFavorites(id);
+    this.favoriteService.removeFromFavorites(id);
   }
 
 }
