@@ -9,11 +9,12 @@ import { NavigateBarComponent } from './navigate-bar/navigate-bar.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavigateBarComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatToolbarModule, MatButtonModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatToolbarModule, MatButtonModule,MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
 })

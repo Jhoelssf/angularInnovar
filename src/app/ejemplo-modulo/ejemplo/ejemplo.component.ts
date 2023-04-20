@@ -9,16 +9,20 @@ import { RootObject } from './model';
   styleUrls: ['./ejemplo.component.css'],
 })
 export class EjemploComponent implements OnInit {
+
+
   objectPokemon!: RootObject | undefined;
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
   hidden!: boolean;
+
+  
   constructor(
     private http: HttpClient,
     private reactiveService: ReactiveService
   ) {}
 
   ngOnInit(): void {
-    this.http.get<RootObject>(`${this.baseUrl}ditto`).subscribe((response) => {
+    this.http.get<RootObject>(`${this.baseUrl}`).subscribe((response) => {
       this.objectPokemon = response;
       // this.reactiveService.setInfoPokemon(this.objectPokemon);
       console.log(this.objectPokemon);

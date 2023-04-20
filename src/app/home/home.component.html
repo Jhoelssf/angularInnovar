@@ -1,1 +1,7 @@
-<h1>Hola mundo</h1>
+<div class="contenedor">
+    <mat-card class="pokemon-card" *ngFor="let pokemon of pokemons; let i = index">
+        <mat-card-title>{{pokemon.name}}</mat-card-title>
+        <img mat-card-image src="https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/{{i+1}}.svg">
+    </mat-card>
+</div>  
+  
