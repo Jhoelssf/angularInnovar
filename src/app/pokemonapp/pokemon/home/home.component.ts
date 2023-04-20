@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     // this.pokemon = this.arrayPokemon.findIndex((element) => element.id == idPokemon)
     this.dialog.open(DialogPokemon, {
       width: '40rem',
-      height: '35rem',
+      height: '33rem',
       data: {
         pokemonData : Pokemon 
         // namePokemon: this.arrayPokemon[this.pokemon].name,

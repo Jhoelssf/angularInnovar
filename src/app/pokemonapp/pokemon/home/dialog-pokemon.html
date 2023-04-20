@@ -1,14 +1,14 @@
 <h1 mat-dialog-title>{{data.pokemonData.name}}</h1>
-<div>
-    <div>
-        <h3> Default: </h3>
+<div >
+    <div class="contentDialog">
+        <h3 class="title"> Default: </h3>
         <img src={{data.pokemonData.sprites.front_default}} />
         <img src={{data.pokemonData.sprites.back_default}} />
         <img src={{data.pokemonData.sprites.front_shiny}} />
         <img src={{data.pokemonData.sprites.back_shiny}} />
     </div>
-    <div>
-        <h3> Female: </h3>
+    <div class="contentDialog">
+        <h3 class="title"> Female: </h3>
         <img src={{data.pokemonData.sprites.front_female}} />
         <img src={{data.pokemonData.sprites.back_female}} />
         <img src={{data.pokemonData.sprites.front_shiny_female}} />
@@ -20,14 +20,14 @@
 </div>
 <div mat-dialog-content class="contentDialog">
     <div>
-        <h3> Height: <span>{{data.pokemonData.height}}</span> </h3>
+        <span class="title"> Height:  </span><span>{{data.pokemonData.height}}</span>
     </div>
     <div>
-        <h3> Weight: <span>{{data.pokemonData.weight}}</span> </h3>
+        <span class="title"> Weight:  </span> <span>{{data.pokemonData.weight}}</span>
     </div>
 
     <div>
-        <h3> Abilities: </h3>
+        <h3 class="title"> Abilities: </h3>
         <ul>
             <ng-container *ngFor="let ability of data.pokemonData.abilities">
                 <li> {{ability.ability.name}} </li>
@@ -35,7 +35,7 @@
         </ul>
     </div>
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions class="favorite">
     <button mat-fab matTooltip="Warn" color="warn" aria-label="Example fab with a heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
