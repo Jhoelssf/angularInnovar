@@ -1,40 +1,45 @@
 
 <h1>Cards Component</h1>
 <mat-paginator [length]= num_pokemon
-              [pageSize]="20"
+              [pageSize]="16"
               (page)="onChangePage($event)"
-              [pageSizeOptions]="[ 20, 40, 80]"
-              aria-label="Select page">
+              [pageSizeOptions]="[ 16, 32, 64]"
+              [pageIndex]="pageindex"
+              aria-label="Select page"
+              [showFirstLastButtons]="showFirstLastButtons">
 </mat-paginator>
 
 
 <div class="container_cards">
   <div *ngFor =" let pokemon  of array_pokemon ">
 
-      <mat-card class="example-card">
+      <mat-card class="example-card" >
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{pokemon.name}}</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>Nº:{{ pokemon.id}} {{pokemon.name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src={{pokemon.sprites.front_default}} alt= "image of ${pokemon.name}" >
         <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
+
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+
+
+          <div class="button-container">
+            <button mat-raised-button color="primary"
+            (click) = "onOpenDialog(pokemon.id)">
+            SEE MORE
+            </button>
+
+            <button mat-fab color="link" aria-label="Example icon button with a heart icon"
+            (click)="onAddFavorites(pokemon.name)">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+
+
         </mat-card-actions>
       </mat-card>
-
-
-
-
-
 
   </div>
 </div>

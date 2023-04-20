@@ -3,20 +3,27 @@
   margin-bottom: 50px;
   margin-left: 10px;
   margin-right: 10px;
+  width: 250px;
+  height: 440px;
 
 
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
   background-size: cover;
 }
 .container_cards{
   margin-left: 50px;
   margin-right: 50px;
+
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
-
+}
+.button-container {
+  display: flex;
+  justify-content: space-around;
 }
