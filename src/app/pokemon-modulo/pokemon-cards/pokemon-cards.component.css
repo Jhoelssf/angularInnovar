@@ -1,0 +1,25 @@
+.card {
+    max-width: 250px;
+    margin: 5px ;
+    margin-bottom: 50px;
+    width: 250px;
+    height: 310px;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.pngmart.com/files/2/Pokeball-PNG-File.png');
+    background-size: cover;
+  }
+  .Title{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: x-large;
+      font-style:inherit;
+      margin: 10px;
+  }
+  .Flex-container-cards{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }

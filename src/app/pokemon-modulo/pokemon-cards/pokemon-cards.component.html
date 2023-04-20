@@ -1,0 +1,16 @@
+<h1></h1>
+<h1 class="Title"> <b>Pokemon Cards !!</b></h1>
+<div class="Flex-container-cards">
+    <div *ngFor =" let pokemon  of array_pokemon ">
+        <mat-card class="card">
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title> Nº:{{ pokemon.id}} {{pokemon.name}}</mat-card-title>
+            <mat-card-subtitle>  &nbsp; </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src={{pokemon.sprites.front_default}} alt='Img-pokemon'>
+            
+        </mat-card>
+    </div>
+    
+</div>

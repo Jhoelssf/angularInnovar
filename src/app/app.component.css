@@ -1,0 +1,26 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  #footer {
+    background-color: #f3e5f5;
+    padding: 20px;
+    bottom: 0;
+  
+  }
+.logo{
+    display: flex;
+    margin: 5px;
+}
+.button{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 58px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+}
