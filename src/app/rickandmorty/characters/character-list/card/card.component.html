@@ -1,0 +1,15 @@
+<div 
+  class="container" *ngIf="character; else noCharacter"
+  
+  (mouseover)="toggleHover(true)"
+  (mouseleave)="toggleHover(false)"
+>
+  <img src={{character.image}} class="cell-img" alt="character image">
+  <div class="cell-content" [ngClass]="{'cell-active':hovered}">
+    <h3 class="cell-title">{{character.name}}</h3>
+  </div>
+  <div class="favorite" *ngIf="favorite">
+    <mat-icon class="favorite-icon">favorite</mat-icon>
+  </div>
+</div>
+<ng-template #noCharacter>Personaje</ng-template>

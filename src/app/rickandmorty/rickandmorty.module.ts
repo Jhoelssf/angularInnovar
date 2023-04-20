@@ -11,6 +11,7 @@ import { CharacterDialogComponent } from './characters/character-dialog/characte
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { CardComponent } from './characters/character-list/card/card.component';
 
 
 
@@ -20,6 +21,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     CharacterListComponent,
     CharacterDialogComponent,
     FavoritesComponent,
+    CardComponent,
   ],
   imports: [
     MatPaginatorModule,
