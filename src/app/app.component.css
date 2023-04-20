@@ -1,0 +1,15 @@
+.main, .footer, .header{
+  background-color: #000000;
+  color: #DDDDDD;
+  padding: 0 5rem;
+}
+.header, .footer{
+  padding: 2rem 5rem;
+}
+.mat-toolbar{
+  border-radius: 5px;
+}
+.footer{
+  text-align: center;
+  color: #BBBBBB;
+}
