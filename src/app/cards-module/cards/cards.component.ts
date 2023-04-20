@@ -1,15 +1,13 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { RootObject } from './model_pokemon';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { ReactiveService } from 'src/app/shared/reactive.service';
-import { NgFor } from '@angular/common';
+import { RootObject } from './model_pokemon';
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.css']
+  styleUrls: ['./cards.component.css'],
 })
-
 export class CardsComponent implements OnInit {
   objectPokemon!: RootObject;
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
@@ -19,23 +17,20 @@ export class CardsComponent implements OnInit {
     private http: HttpClient,
     private reactiveService: ReactiveService
   ) {}
-  nombre: string = "";
-  img_src: string = "";
-  num_pokemon:number = 1008;
-  array_pokemon:RootObject[] = [];
-
+  nombre: string = '';
+  img_src: string = '';
+  num_pokemon: number = 1008;
+  array_pokemon: RootObject[] = [];
 
   ngOnInit(): void {
-    for(let i=1; i<20;i++){
-      this.http.get<RootObject>(`${this.baseUrl}1008`).subscribe((respuesta) => {
-        this.array_pokemon.push(respuesta)
-      })
+    for (let i = 1; i < 20; i++) {
+      this.http
+        .get<RootObject>(`${this.baseUrl}${i}`)
+        .subscribe((respuesta) => {
+          this.array_pokemon.push(respuesta);
+        });
     }
-    
   }
-
-
-
 
   // onChangePokemon(idPokemon: number | string) {
   //   this.http.get<RootObject>(`${this.baseUrl}${idPokemon}`).subscribe({
@@ -49,5 +44,4 @@ export class CardsComponent implements OnInit {
   //     },
   //   });
   // }
-
 }

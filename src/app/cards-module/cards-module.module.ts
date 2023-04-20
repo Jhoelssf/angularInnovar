@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { CardsModuleRoutingModule } from './cards-module-routing.module';
 import { CardsComponent } from './cards/cards.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -23,10 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatPaginatorModule
-
-
-
-  ]
+    MatPaginatorModule,
+  ],
 })
-export class CardsModuleModule { }
+export class CardsModuleModule {}
