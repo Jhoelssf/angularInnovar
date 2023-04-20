@@ -7,7 +7,9 @@
         </ng-container>
 
     </div>
-    <mat-paginator class="pokemon-paginator"[length]="1008"
+
+    
+    <mat-paginator *ngIf="this.Paginated" class="pokemon-paginator"[length]="1008"
         [pageSize]="50"
         [pageSizeOptions]="[10, 25, 50, 100, 200]"
         (page)="paginatorAction($event)"

@@ -10,6 +10,7 @@ import { PokemonListManagementService } from 'src/app/shared/pokemon-list-manage
 })
 export class PokemonDisplayComponent implements OnInit {
   @Input() arrListPokemon! : RootObject[];
+  @Input() Paginated! : boolean;
   constructor(private listPokeService : PokemonListManagementService) { }
 
   ngOnInit(): void {

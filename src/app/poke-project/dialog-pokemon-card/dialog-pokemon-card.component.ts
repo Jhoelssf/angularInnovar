@@ -23,7 +23,19 @@ export class DialogPokemonCardComponent implements OnInit {
   onClose(){
   }
 
-  addFavorite(){
+  makeFavoriteAction(){
+    if(this.pokeFavoritesService.comprobeIfItsFavorite(this.pokeDialogInfo)){
+      this.deleFavorite()
+    }else{
+      this.addFavorite()
+    }
+    
+  }
+  private addFavorite(){
     this.pokeFavoritesService.addPokemonToFav(this.pokeDialogInfo);
+  }
+
+  private deleFavorite(){
+    this.pokeFavoritesService.deletePokemonToFav(this.pokeDialogInfo);
   }
 }
