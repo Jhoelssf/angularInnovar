@@ -9,6 +9,12 @@
               [showFirstLastButtons]="showFirstLastButtons">
 </mat-paginator>
 
+<!-- <div style="border: solid 1px black; padding:15px;">
+  <h3>Parent Component</h3>
+  <app-dialoge-card
+    [name_actual_pokemon]="name_actual_pokemon"
+    [lastName]="lastName"></app-dialoge-card>
+</div> -->
 
 <div class="container_cards">
   <div *ngFor =" let pokemon  of array_pokemon ">
@@ -27,7 +33,7 @@
 
           <div class="button-container">
             <button mat-raised-button color="primary"
-            (click) = "onOpenDialog(pokemon.id)">
+            (click) = "onOpenDialog(pokemon)">
             SEE MORE
             </button>
 

@@ -11,6 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     HttpClientModule,
     MatPaginatorModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

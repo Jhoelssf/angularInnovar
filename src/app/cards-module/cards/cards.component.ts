@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ReactiveService } from 'src/app/shared/reactive.service';
 import { RootObject } from './model_pokemon';
 import { PageEvent } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogeCardComponent } from './dialoge-card/dialoge-card.component';
 
 @Component({
   selector: 'app-cards',
@@ -27,14 +29,22 @@ export class CardsComponent implements OnInit {
   first_page: number = 1;
   last_page: number = 16;
   showFirstLastButtons = true;
+
+  lastName: string = "";
+
+  name_actual_pokemon!: string | number;
+
   constructor(
     private http: HttpClient,
-    private reactiveService: ReactiveService
+    private reactiveService: ReactiveService,
+    private matDialog:MatDialog
   ) {}
 
 
   ngOnInit(): void {
     this.onUpdatePokemons();
+    this.name_actual_pokemon = "pikachu"
+
   }
 
   onUpdatePokemons(first: number = 1,last: number = 16): void {
@@ -57,14 +67,25 @@ export class CardsComponent implements OnInit {
     }
     console.log(this.array_pokemon)
   }
-  onOpenDialog(pokemon: string | number){
-    this.http
-        .get<RootObject>(`${this.baseUrl}${pokemon}`)
-        .subscribe((respuesta) => {
-          console.log(respuesta)
-        });
+  onOpenDialog(Pokemon: RootObject){
+    // this.http
+    //     .get<RootObject>(`${this.baseUrl}${pokemon}`)
+    //     .subscribe((respuesta) => {
+    //       console.log(respuesta)
 
-    console.log("pokemon dialog")
+    //     });
+
+
+    this.matDialog.open(DialogeCardComponent,{
+      width:'350px',
+      height:'400px',
+      data:{
+        pokemonData:  Pokemon,
+      },
+    })
+
+
+
   }
   onAddFavorites(pokemon: string ){
     this.favorites.push(pokemon);
