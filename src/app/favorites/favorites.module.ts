@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FavoritesRoutingModule } from './favorites-routing.module';
 import { FavoritesPokemonComponent } from './favorites-pokemon/favorites-pokemon.component';
 
+import { MaterialModule } from '../material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { FavoritesPokemonComponent } from './favorites-pokemon/favorites-pokemon
   ],
   imports: [
     CommonModule,
-    FavoritesRoutingModule
+    FavoritesRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class FavoritesModule { }

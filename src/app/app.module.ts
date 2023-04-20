@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { CommonModule } from '@angular/common';
 import { DialogCardComponent } from './grid-pokemons/dialog-card/dialog-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DialogCardComponent } from './grid-pokemons/dialog-card/dialog-card.com
     BrowserAnimationsModule, 
     HttpClientModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     DialogCardComponent

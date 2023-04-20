@@ -5,7 +5,7 @@ import { FavoritesPokemonComponent } from './favorites-pokemon/favorites-pokemon
 const routes: Routes = [
   {
     path: '',
-    component: FavoritesPokemonComponent
+    component: FavoritesPokemonComponent, 
   }
 ];
 

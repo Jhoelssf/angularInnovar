@@ -12,7 +12,12 @@ export class FavoritesServiceService {
   constructor() { }
   
   addFavoritePokemon(poke: PokemonObject){
-    this.pokemonLista.push(poke)
+    const index = this.pokemonLista.findIndex((ele:PokemonObject) => ele.id === poke.id); // Verificamos si el elemento ya existe en el array
+    if (index === -1) {
+      this.pokemonLista.push(poke)
+    } else {
+      console.log('El elemento ya existe en el array'); // Si existe, mostramos un mensaje de error
+    }
     this.pokemonFavorito$.next(this.pokemonLista);
   }
 

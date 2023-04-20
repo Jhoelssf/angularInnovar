@@ -16,7 +16,7 @@ export class GridviewComponent implements OnInit, AfterViewInit {
   public pokemonObjectList: PokemonObject[] = [];
 
   length = 1000;
-  pageSize = 14;
+  pageSize = 16;
   pageSizeOptions = [5, 10, 20, 100];
   pageIndex = 1;
   
