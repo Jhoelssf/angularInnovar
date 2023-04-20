@@ -14,6 +14,7 @@ export interface DialogData {
 })
 export class CharacterDialogComponent implements OnInit {
   favorite: boolean = false;
+  character: Character | undefined;
   constructor(
     public dialogRef: MatDialogRef<CharacterDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -21,7 +22,7 @@ export class CharacterDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.favorite = this.data.favorites.filter(x=>x.id === this.data.character.id).length > 0;
-    
+    this.character = this.data.character;
     console.log(this.data.favorites.filter(x=>x.id === this.data.character.id).length, this.favorite)
   }
 
