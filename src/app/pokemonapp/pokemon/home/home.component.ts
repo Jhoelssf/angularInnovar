@@ -5,6 +5,7 @@ import {
   MatDialog,
   MatDialogRef,
 } from '@angular/material/dialog';
+import { PokeApiService } from '../../../shared/poke-api.service';
 import { RootObject } from './model';
 
 interface PokemonData {
@@ -20,9 +21,14 @@ export class HomeComponent implements OnInit {
   pokemon!: number;
   arrayPokemon: Array<RootObject> = [];
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
-  constructor(private http: HttpClient, private dialog: MatDialog) {}
+  constructor(
+    private http: HttpClient,
+    private dialog: MatDialog,
+    private pokeApi: PokeApiService
+  ) {}
   openDialog(Pokemon: RootObject): void {
     console.log(Pokemon);
+    // this.pokeApi.currentPokemon$.next(idPokemon)
     // this.pokemon = this.arrayPokemon.findIndex((element) => element.id == idPokemon)
     this.dialog.open(DialogPokemon, {
       width: '40rem',
@@ -39,12 +45,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.pokeApi.pokemon$.subscribe((obj) => {
+      this.arrayPokemon.push(obj);
+    });
     for (let i = 1; i < 20; i++) {
-      this.http
-        .get<RootObject>(`https://pokeapi.co/api/v2/pokemon/${i}`)
-        .subscribe((res) => {
-          this.arrayPokemon.push(res);
-        });
+      this.pokeApi.getPokemon(i);
     }
     console.log(this.arrayPokemon);
   }
@@ -55,9 +60,17 @@ export class HomeComponent implements OnInit {
   templateUrl: 'dialog-pokemon.html',
   styleUrls: ['./home.component.css'],
 })
-export class DialogPokemon {
+export class DialogPokemon implements OnInit {
+  infoPokemon!: RootObject;
   constructor(
     public dialogRef: MatDialogRef<DialogPokemon>,
+    private pokeApiService: PokeApiService,
     @Inject(MAT_DIALOG_DATA) public data: PokemonData
-  ) {}
+  ) {
+    this.infoPokemon = data.pokemonData;
+  }
+  ngOnInit(): void {
+    // subscribe
+    // this.pokeApiService.getPokemon(data.name)
+  }
 }
