@@ -15,15 +15,6 @@ export class RickandmortyApiService {
 
   getCharacters(page: number, search: string = ''): Observable<RootCharacterObject> {
     const url = `${this.rickandmortyUrl}/character/?page=${page}&name=${search}`;
-    console.log(url)
-    return this.http.get<RootCharacterObject>(url)
-    .pipe(
-      tap(x => console.log('Fetched characters')),
-      catchError(this.handleError<RootCharacterObject>('getCharacters', undefined))
-    );
-  }
-  searchCharacters(search: string): Observable<RootCharacterObject> {
-    const url = `${this.rickandmortyUrl}/character/?name=${search}`;
     return this.http.get<RootCharacterObject>(url)
     .pipe(
       tap(x => console.log('Fetched characters')),
