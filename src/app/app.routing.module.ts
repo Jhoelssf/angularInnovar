@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { InfoCardComponent } from './grid-pokemons/info-card/info-card.component';
-import { FavoritesPokemonComponent } from './favorites/favorites-pokemon/favorites-pokemon.component';
-import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -35,10 +32,6 @@ const routes: Routes = [
       import('./ejemplo-modulo/ejemplo-modulo.module').then(
         (mod) => mod.EjemploModuloModule
       ),
-  },
-  {
-    path: 'dialogo',
-    component: InfoCardComponent
   }
 ];
 

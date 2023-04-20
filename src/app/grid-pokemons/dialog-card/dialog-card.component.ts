@@ -21,9 +21,9 @@ export class DialogCardComponent implements OnInit {
 
   addToFav():void{
     console.log('Dialog agregando boton')
-    this.favService.agregarCarta(this.data);
+    // this.favService.agregarCarta(this.data);
+    this.favService.addFavoritePokemon(this.data);
     this.dialog.closeAll();
-    // this.favServ.agregarCartaFavorita(this.data);
   }
 
   onClickClose():void{

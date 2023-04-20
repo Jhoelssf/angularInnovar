@@ -56,3 +56,44 @@
   align-items: center;
   justify-content: center;
 }
+
+.pokebola {
+  width: 400px;
+  position: absolute;
+  left: calc(50% - 200px);
+  top: 0;
+  height: 100%;
+  z-index: 9;
+  background-color: aliceblue;
+}
+
+.pokebola-top, .pokebola-bottom{
+  display: none;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-bottom: 300px solid red;
+  border-right: 200px solid transparent;
+  border-left: 200px solid transparent;
+  border-radius: 50%;
+  z-index: 10;
+  left: calc(50% - 200px);
+  transition: 1s;
+}
+
+.pokebola-top{
+  top: -120px;
+  background-color: red;
+}
+
+.pokebola-bottom{
+  bottom: -120px;
+  background-color: gray;
+}
+
+.pokebola:hover .pokebola-top{
+  top: calc(50% - 200px);
+}
+.pokebola:hover .pokebola-bottom{
+  bottom: calc(50% - 200px);
+}

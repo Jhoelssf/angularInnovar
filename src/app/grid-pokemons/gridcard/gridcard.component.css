@@ -1,12 +1,23 @@
-
 .grid-card {
   width: 150px;
   background-color: white;
+  box-shadow: 2px 2px 5px black;
   color: black;
+  margin: 1px;
+}
+
+mat-card{
+  padding: 10px;
+  overflow: hidden;
 }
 
 .grid-card mat-card-header{
   width: 100%;
+}
+
+.grid-card img {
+  background-color: #f1f1f1;
+  width: 180px;
 }
 
 .grid-card mat-card-title{
@@ -14,6 +25,7 @@
   justify-content: space-between;
   text-transform: capitalize;
   width: 120px;
+  margin-bottom: 0px;
 }
 
 .grid-card mat-card-subtitle{
@@ -25,6 +37,10 @@
   display: flex;
   padding: 0;
   justify-content: space-around;
+}
+
+.grid-card mat-card-actions{
+  padding-top: 0px;
 }
 
 .grid-card li p{

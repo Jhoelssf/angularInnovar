@@ -17,9 +17,9 @@ export class PokemonAPIService {
   ) {
   }
 
-  getPokemonList(limit:number=20):Observable<PokemonList[]> {
+  getPokemonList(limit:number=20, offset=0):Observable<PokemonList[]> {
     console.log(this.pokeAPIurl+'/pokemon?'+limit)
-    return this.http.get<PokemonList[]>(this.pokeAPIurl+'/pokemon?limit='+limit).pipe(
+    return this.http.get<PokemonList[]>(this.pokeAPIurl+'/pokemon?limit='+limit+'&offset='+offset).pipe(
       map((x:any)=>x.results)
     );
   }

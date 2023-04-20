@@ -1,9 +1,9 @@
 .gridview{
   display: flex;
-  gap: 3rem;
+  gap: 1.3rem;
   flex-flow: row wrap;
   justify-content: space-around;
-
-  height: 500px;
+  height: 80%;
   overflow: auto;
+  padding: 10px;
 }

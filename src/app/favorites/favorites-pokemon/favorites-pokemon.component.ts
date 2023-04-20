@@ -1,3 +1,4 @@
+import { takeUntil, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { PokemonObject } from 'src/app/models/pokemonObj';
 import { FavoritesServiceService } from 'src/app/shared/favorites-service.service';
@@ -9,18 +10,28 @@ import { FavoritesServiceService } from 'src/app/shared/favorites-service.servic
 })
 export class FavoritesPokemonComponent implements OnInit {
   public listaFavoritos: PokemonObject[] = [];
+  unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     public favService: FavoritesServiceService
   ) { }
 
   ngOnInit(): void {
-    this.favService.seAgregoCarta.subscribe(
-      (res) => {
-        console.log('Recibida la carta!!!', res)
+    console.log('Construyendo: ')
+    this.favService.getFavoritePokemon()
+    .pipe(takeUntil(this.unsubscribe$))
+    .subscribe(
+      res => {
+        console.log('Agregando:',res)
+        this.listaFavoritos = res;
       }
-      )
-      this.listaFavoritos = this.favService.pokemonLista
+    )
+  }
+
+  ngOnDestroy(): void {
+    console.log('Destruyendo favoritos')
+    this.unsubscribe$.next(true);
+    this.unsubscribe$.complete();
   }
 
   mostrarLista():void{

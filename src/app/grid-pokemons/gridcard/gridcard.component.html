@@ -7,7 +7,6 @@
   </mat-card-header>
   <img mat-card-image src="{{pokemon.sprites.front_default}}" alt="Pokemon foto">
   <mat-card-content>
-    <mat-card-subtitle>Types</mat-card-subtitle>
     <mat-chip-list aria-label="type group">
       <ng-container *ngFor="let type of pokemon.types">
         <mat-chip style="color:white;" [ngStyle]="{'background-color': 'var(--' + type.type.name + ')'}">
@@ -15,7 +14,6 @@
         </mat-chip>
       </ng-container>
     </mat-chip-list>
-    
   </mat-card-content>
   <mat-card-actions>
     <button disabled mat-button></button>

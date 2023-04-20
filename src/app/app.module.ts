@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { CommonModule } from '@angular/common';
 import { DialogCardComponent } from './grid-pokemons/dialog-card/dialog-card.component';
-import { FavoritesPokemonComponent } from './favorites/favorites-pokemon/favorites-pokemon.component';
 
 @NgModule({
   declarations: [

@@ -43,7 +43,22 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+body{
+  height: 100vh;
+  position: relative;
+}
 
-.poison-color{
-  background-color: green;
+footer{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: crimson;
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
 }

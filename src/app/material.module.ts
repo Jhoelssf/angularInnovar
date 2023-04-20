@@ -5,11 +5,13 @@ import { MatCardModule } from '@angular/material/card'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
-  imports: [
+  imports: [  
     CommonModule,
   ],
   exports:[
@@ -18,7 +20,9 @@ import {MatListModule} from '@angular/material/list';
     MatDialogModule,
     MatDividerModule,
     MatChipsModule,
-    MatListModule
+    MatListModule,
+    MatPaginatorModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule { }

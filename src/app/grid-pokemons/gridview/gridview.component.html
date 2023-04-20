@@ -1,6 +1,12 @@
-<p>gridview works!</p>
 <div class="gridview">
-  <p *ngFor="let item of pokemonObjectList">
+  <p *ngFor="let item of pokemonObjectList ">
     <app-gridcard [pokemon]="item" ></app-gridcard>
   </p>
 </div>
+<mat-paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  aria-label="select page"
+>
+</mat-paginator>
