@@ -18,14 +18,14 @@
         <mat-divider></mat-divider>
         <div>
           <p>Base experience:</p>
-          <span>{{data.base_experience}}</span>
+          <span [ngStyle]="{'background-color': 'var(--' + data.types[0].type.name + ')'}" >{{data.base_experience}}</span>
         </div>
       </div>
       <div>
         <mat-divider></mat-divider>
         <div>
           <p>Height:</p>
-          <span>{{data.height}}</span>
+          <span [ngStyle]="{'background-color': 'var(--' + data.types[0].type.name + ')'}">{{data.height}}</span>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="abilities">
       <h2>Abilities</h2>
       <mat-list role="list">
-        <mat-list-item role="listitem" *ngFor="let abilitie of data.abilities">{{abilitie.ability.name}}</mat-list-item>
+        <mat-list-item role="listitem" *ngFor="let abilitie of data.abilities">- {{abilitie.ability.name}}</mat-list-item>
       </mat-list>
     </div>
 
