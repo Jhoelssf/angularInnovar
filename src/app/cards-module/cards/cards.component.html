@@ -2,6 +2,7 @@
 <h1>Cards Component</h1>
 <mat-paginator [length]= num_pokemon
               [pageSize]="20"
+              (page)="onChangePage($event)"
               [pageSizeOptions]="[ 20, 40, 80]"
               aria-label="Select page">
 </mat-paginator>
@@ -30,10 +31,10 @@
         </mat-card-actions>
       </mat-card>
 
-    
 
-    
-    
+
+
+
 
   </div>
 </div>

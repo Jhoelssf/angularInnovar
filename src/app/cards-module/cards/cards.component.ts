@@ -32,6 +32,10 @@ export class CardsComponent implements OnInit {
     }
   }
 
+  onChangePage(e: any) {
+    console.log('asd', e);
+  }
+
   // onChangePokemon(idPokemon: number | string) {
   //   this.http.get<RootObject>(`${this.baseUrl}${idPokemon}`).subscribe({
   //     next: (response) => {
