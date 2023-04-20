@@ -1,18 +1,25 @@
-<nav class="navBar">
-    <div class="title">
-        <h4> POKEAPI </h4>
-    </div>
-    <ul class="items">
-        <li>
-            <a class="navItem" routerLink="home"> Home </a>
-        </li>
-        <li>
-            <a class="navItem" routerLink="favorites"> Favorites </a>
-        </li>
-    </ul>
-</nav>
+<div class="background">
+    <nav class="navBar">
+        <div class="title">
+            <h4> POKEAPI </h4>
+        </div>
+        <div>
+            <ul class="items">
+                <li>
+                    <a class="navItem" routerLink="home"> Home </a>
+                </li>
+                <li>
+                    <a class="navItem" routerLink="favorites"> Favorites </a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+    
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
+
 
 
 

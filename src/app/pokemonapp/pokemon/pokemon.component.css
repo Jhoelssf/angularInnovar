@@ -1,16 +1,7 @@
 .navItem {
     text-decoration: none;
     padding: 0rem 2rem 0rem 2rem;
-}
-
-.navBar {
-    display: flex;
-    align-items: center;
-}
-
-.title {
-    display: flex;
-    align-items: center;
+    color: white;
 }
 
 .items {
@@ -18,7 +9,33 @@
     list-style: none;
 }
 
+.items li {
+    padding: 0.5rem;
+}
+
+.items li:hover{
+    background-color: rgb(4, 4, 63);
+}
+
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0rem 2rem 0rem 2rem;
+    color: white;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
 .containerPokemon {
     display: flex;
     align-items: center;
+}
+
+.background {
+    background-color: rgb(45, 45, 90);
 }

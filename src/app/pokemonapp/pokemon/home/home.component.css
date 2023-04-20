@@ -1,0 +1,21 @@
+.grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.card {
+    margin: 1rem 2rem 1rem 2rem;
+    max-width: 300px;
+    
+    background: rgb(121, 130, 177);
+    border-color: black;
+    border-style:solid;
+  }
+
+  .contentDialog {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  
