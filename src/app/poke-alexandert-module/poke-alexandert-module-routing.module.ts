@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PokeAlexandertComponent } from "./poke-alexandert/poke-alexandert.component";
-import PokeListComponent from "./poke-alexandert/poke-list/poke-list.component";
+import { PokeListComponent } from "./poke-alexandert/poke-list/poke-list.component";
 import { FavoritesComponent } from "./poke-alexandert/favorites/favorites.component";
 
 const routes: Routes = [

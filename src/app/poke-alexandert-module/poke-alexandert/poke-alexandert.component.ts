@@ -14,9 +14,5 @@ export class PokeAlexandertComponent implements OnInit{
 
   }
   ngOnInit(): void {
-      this.http.get<RootObject>(`${this.baseUrl}pikachu`).subscribe((response) => {
-        this.objectPokemon = response;
-        console.log(this.objectPokemon);
-    });
   }
 }
