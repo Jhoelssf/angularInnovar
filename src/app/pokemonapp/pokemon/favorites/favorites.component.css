@@ -1,0 +1,40 @@
+.grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.card {
+    margin: 1rem 2rem 1rem 2rem;
+    max-width: 300px;
+    background: #03506F;
+    color: #FFE3D8;
+    border-radius: 1rem;
+}
+
+.habsList {
+    list-style: none;
+    display: flex;
+}
+
+.habsList li {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.types {
+    color: #BBBBBB;
+}
+
+
+.titlePage {
+    color: white;
+    font-size: 1.2rem;
+}
+
+img {
+    display: block;
+    width: 60%;
+    max-height: 50%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,33 +1,41 @@
 .grid {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+
 }
 
 .card {
   margin: 1rem 2rem 1rem 2rem;
   max-width: 300px;
-
-  background: rgb(121, 130, 177);
-  border-color: black;
-  border-style: solid;
+  background: #03506F;
+  color: #FFE3D8;
+  border-radius: 1rem;
 }
 
-.contentDialog {
+.types{
+  color: #BBBBBB;
+}
+
+.habsList {
+  list-style: none;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 0.1rem;
-  border-style: solid;
-  border-color: rgb(121, 130, 177);
-  margin: 0rem 0.3rem 0rem 0.3rem;
 }
 
-.title {
-  font-weight: bold;
-  font-size: larger;
+.habsList li {
+  margin: 0rem 0.5rem 0rem  0.5rem;
 }
 
-.favorite {
-  display: flex;
-  justify-content: flex-end;
+.titlePage {
+  color: white;
+  font-size: 1.2rem;
+}
+
+
+img {
+  display: block;
+  width: 60%;
+  max-height: 50%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }

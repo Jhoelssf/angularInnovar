@@ -1,1 +1,37 @@
-<p>favorites works!</p>
+<div>
+    <h3 class="titlePage"> Fovorites Pokemons </h3>
+    <ng-template #noFavorites>
+        You have not added a pokemon to favorites.
+      </ng-template>
+    <div *ngIf="favoritePokemons.length > 0; else noFavorites">     
+        <div class="grid">
+            <div *ngFor="let pokemon of favoritePokemons">
+                <mat-card class="card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{pokemon.name}}</mat-card-title>
+                        <mat-card-subtitle>
+                            <ul class="habsList">
+                                <ng-container *ngFor="let type of pokemon.types">
+                                    <li class="types">
+                                       {{ type.type.name}}
+                                    </li>
+                                </ng-container>
+                            </ul>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src={{pokemon.sprites.front_default}}>
+                    <mat-card-content>
+                        
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-fab color="warn" (click)="deleteFromFavorites(pokemon)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+        
+    </div>
+</div>

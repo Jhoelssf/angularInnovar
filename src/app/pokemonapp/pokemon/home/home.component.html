@@ -1,26 +1,31 @@
 <div>
     <div *ngIf="arrayPokemon;">
-        <h3> Pokemon List </h3>
+        <h3 class="titlePage"> Pokemon List </h3>
         <div class="grid">
             <div *ngFor="let pokemon of arrayPokemon">
                 <mat-card class="card">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>
                         <mat-card-title>{{pokemon.name}}</mat-card-title>
-                        <mat-card-subtitle>algo</mat-card-subtitle>
+                        <mat-card-subtitle>
+                            <ul class="habsList">
+                                <ng-container *ngFor="let type of pokemon.types">
+                                    <li class="types">
+                                       {{ type.type.name}}
+                                    </li>
+                                </ng-container>
+                            </ul>
+                        </mat-card-subtitle>
                     </mat-card-header>
+                    
                     <img mat-card-image src={{pokemon.sprites.front_default}}>
+                   
                     <mat-card-content>
-                        <p>
-                            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from
-                            Japan.
-                            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-                            originally
-                            bred for hunting.
-                        </p>
+
                     </mat-card-content>
                     <mat-card-actions>
-                        <button mat-raised-button (click)="openDialog(pokemon)">See more information</button>
+                        <button mat-raised-button color="accent" (click)="openDialog(pokemon)">See more information</button>
+                      
                     </mat-card-actions>
                 </mat-card>
             </div>

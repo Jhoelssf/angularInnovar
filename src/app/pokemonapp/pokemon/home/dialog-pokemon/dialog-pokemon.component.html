@@ -7,8 +7,8 @@
         <img src={{infoPokemon.sprites.front_shiny}} />
         <img src={{infoPokemon.sprites.back_shiny}} />
     </div>
-    <div>
-        <h3> Female: </h3>
+    <div class="contentDialog">
+        <h3 class="title"> Female: </h3>
         <img src={{infoPokemon.sprites.front_female}} />
         <img src={{infoPokemon.sprites.back_female}} />
         <img src={{infoPokemon.sprites.front_shiny_female}} />
@@ -36,7 +36,8 @@
     </div>
 </div>
 <div mat-dialog-actions class="favorite">
-    <button mat-fab matTooltip="Warn" color="warn" aria-label="Example fab with a heart icon">
+    <button (click)="addToFavorites(infoPokemon)" mat-fab matTooltip="Warn" color="warn" aria-label="Example fab with a heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
 </div>
+

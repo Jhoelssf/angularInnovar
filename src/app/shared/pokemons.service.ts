@@ -6,13 +6,19 @@ import { RootObject } from '../ejemplo-modulo/ejemplo/model';
   providedIn: 'root',
 })
 export class PokemonsService {
-  private favoritePokemons: RootObject[] = [];
-  private favoritePokemons$: BehaviorSubject<RootObject[]> =
+  favoritePokemons: RootObject[] = [];
+  favoritePokemons$: BehaviorSubject<RootObject[]> =
     new BehaviorSubject<RootObject[]>(this.favoritePokemons);
-  constructor() {}
+
+  constructor() { }
 
   addFavoritePokemon(pokemon: RootObject) {
     this.favoritePokemons.push(pokemon);
+    this.favoritePokemons$.next(this.favoritePokemons);
+  }
+
+  deleteFavoritePokemon(pokemon: RootObject) {
+    this.favoritePokemons =  this.favoritePokemons.filter(item => item !== pokemon);
     this.favoritePokemons$.next(this.favoritePokemons);
   }
 
