@@ -1,66 +1,23 @@
-<h1 mat-dialog-title>{{ pokeDialogInfo.name.toUpperCase() }}</h1>
-<div
-  class="dialog-content"
-  mat-dialog-content
-  style="height: 80%; overflow-x: hidden"
->
-  <div class="images">
-    <img src="{{ pokeDialogInfo.sprites.front_default }}" alt="" />
-    <img src="{{ pokeDialogInfo.sprites.back_default }}" alt="" />
-  </div>
-  <mat-divider></mat-divider>
-  <h2>Types</h2>
-  <mat-chip-list aria-label="type group">
-    <ng-container *ngFor="let type of pokeDialogInfo.types">
-      <mat-chip
-        style="color: white"
-        [ngStyle]="{ 'background-color': 'var(--' + type.type.name + ')' }"
-      >
-        {{ type.type.name }}
-      </mat-chip>
-    </ng-container>
-  </mat-chip-list>
-  <div class="info-extra">
-    <div>
-      <mat-divider></mat-divider>
-      <div>
-        <p>Base experience:</p>
-        <span
-          [ngStyle]="{
-            'background-color':
-              'var(--' + pokeDialogInfo.types[0].type.name + ')'
-          }"
-          >{{ pokeDialogInfo.base_experience }}</span
-        >
-      </div>
-    </div>
-    <div>
-      <mat-divider></mat-divider>
-      <div>
-        <p>Height:</p>
-        <span
-          [ngStyle]="{
-            'background-color':
-              'var(--' + pokeDialogInfo.types[0].type.name + ')'
-          }"
-          >{{ pokeDialogInfo.height }}</span
-        >
-      </div>
-    </div>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="abilities">
-    <h2>Abilities</h2>
-    <mat-list role="list">
-      <mat-list-item
-        role="listitem"
-        *ngFor="let abilitie of pokeDialogInfo.abilities"
-        >- {{ abilitie.ability.name }}</mat-list-item
-      >
-    </mat-list>
-  </div>
+<div class="poke-dialog-header">
+  <h1 class="poke-dialog-titulo">{{ pokeDialogInfo.name.toUpperCase() }}</h1>
+  <!-- <ng-container *ngFor="let typeDir of arrPokemonTypeDir"> -->
+    <!-- <img src="../../shared/pokemonTypeSprite/bug.png" alt="" /> -->
+  <!-- </ng-container> -->
 </div>
-<div class="mat-dialog-actions">
+<div>
+  <div class="container-split">
+    <div class="contenedor-hijo ">
+      <img class = "images" src="{{ pokeDialogInfo.sprites.front_default }}" alt="" />
+      <img class = "images" src="{{ pokeDialogInfo.sprites.back_default }}" alt="" />
+    </div>
+    <div class="contenedor-hijo">
+      <div class= "general-info">
+        <h2>N° Pokedex: {{pokeDialogInfo.id}}</h2>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  
   <!-- <div class="mat-button" (click)="onClickClose()">Close</div> -->
   <div class="mat-button" (click)="onClose()">Back</div>
   <button mat-raised-button color="primary" (click)="makeFavoriteAction()">

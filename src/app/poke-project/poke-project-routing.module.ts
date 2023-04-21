@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PokeViewComponent } from './poke-view/poke-view.component';
 import { PokemonHomeComponent } from './pokemon-home/pokemon-home.component';
 import { PokemonFavViewComponent } from './pokemon-fav-view/pokemon-fav-view.component';
+import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,11 @@ const routes: Routes = [
       },
       {
         path: 'favorites',
-        component: PokemonFavViewComponent
+        component: PokemonFavViewComponent,
+      },
+      {
+        path: 'search',
+        component: PokemonSearchComponent,
       },
       {
         path: '',

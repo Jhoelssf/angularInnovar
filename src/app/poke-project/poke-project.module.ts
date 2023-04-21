@@ -21,6 +21,9 @@ import {MatChipsModule} from '@angular/material/chips';
 import { PokemonDisplayComponent } from './pokemon-display/pokemon-display.component';
 import { DialogPokemonCardComponent } from './dialog-pokemon-card/dialog-pokemon-card.component';
 import {MatListModule} from '@angular/material/list';
+import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
+import { PokemonFormSearchComponent } from './pokemon-form-search/pokemon-form-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import {MatListModule} from '@angular/material/list';
     PokemonShortCardComponent,
     PokemonDisplayComponent,
     DialogPokemonCardComponent,
+    PokemonSearchComponent,
+    PokemonFormSearchComponent,
   ],
   entryComponents: [
     DialogPokemonCardComponent,
@@ -38,6 +43,7 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     CommonModule,
     PokeProjectRoutingModule,
+
     MatToolbarModule,
     MatCardModule,
     MatDialogModule,
@@ -47,7 +53,9 @@ import {MatListModule} from '@angular/material/list';
     MatDividerModule,
     MatPaginatorModule,
     MatButtonModule,
+
     HttpClientModule,
+    ReactiveFormsModule,
   ]
 })
 export class PokeProjectModule { }

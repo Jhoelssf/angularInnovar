@@ -11,18 +11,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./poke-view.component.css']
 })
 export class PokeViewComponent implements OnInit, OnDestroy {
-  suscription!: Subscription;
+  subscription!: Subscription;
 
   constructor(
     private dialogPokeServ: PokeDialogInfoService,
     public dialogPoke: MatDialog
     ) {
-    this.suscription = dialogPokeServ.getInfoPokemon().subscribe((response) =>{
+    this.subscription = dialogPokeServ.getInfoPokemon().subscribe((response) =>{
       console.log('Valor del view actualizado');
       this.dialogPoke.open(
         DialogPokemonCardComponent, {
           data: response, 
-          panelClass: 'custom-dialog-container'
+          height: '500px',
+          width: '800px',
         });
       }
     )
@@ -33,10 +34,7 @@ export class PokeViewComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.suscription){
-      this.suscription.unsubscribe();
-    }
+    this.subscription.unsubscribe();
     console.log('Destruido')
   }
-
 }

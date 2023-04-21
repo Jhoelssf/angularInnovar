@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { RootObject } from 'src/app/ejemplo-modulo/ejemplo/model';
 import { PokemonListManagementService } from 'src/app/shared/pokemon-list-management.service';
 
@@ -8,8 +9,9 @@ import { PokemonListManagementService } from 'src/app/shared/pokemon-list-manage
   styleUrls: ['./pokemon-home.component.css']
 })
 
-export class PokemonHomeComponent implements OnInit {
+export class PokemonHomeComponent implements OnInit, OnDestroy{
   pokemonList : RootObject[] = [];
+  subscription! : Subscription;
   constructor(
     private listPokeService : PokemonListManagementService,
     ) {
@@ -19,8 +21,13 @@ export class PokemonHomeComponent implements OnInit {
     this.listPokeService.generatePokemonList();
 
     this.listPokeService.getPokemonList$
-    this.listPokeService.pokemonList$.subscribe(response =>{
+    
+    this.subscription = this.listPokeService.pokemonList$.subscribe(response =>{
       this.pokemonList = response
     })
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }
