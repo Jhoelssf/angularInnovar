@@ -1,7 +1,10 @@
 .img{
-    max-width: 400px;
+    max-height: 400px;
+    min-height: 300px;
 }
-
+.img:hover{
+    cursor: pointer;
+}
 .img-container{
     margin-left: 50px;
     margin-right: 50px;
@@ -10,6 +13,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .header-image {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png');
 
@@ -41,3 +45,14 @@
 .body{
     background-color: #696969;
 }
+
+.button:hover   {
+    cursor: pointer;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+

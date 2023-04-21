@@ -11,9 +11,10 @@
   </mat-paginator>
 
   <div class="container_cards">
+
     <div *ngFor =" let pokemon  of array_pokemon ">
 
-        <mat-card class="example-card" >
+        <mat-card class="example-card" (click) = "onOpenDialog(pokemon)">
           <mat-card-header>
             <div mat-card-avatar class="header-image"></div>
             <mat-card-title style="text-transform:uppercase;">Nº:{{ pokemon.id}} {{pokemon.name}}</mat-card-title>
@@ -25,17 +26,12 @@
           <mat-card-actions>
 
 
-            <div class="button-container">
-              <button mat-raised-button 
-              (click) = "onOpenDialog(pokemon)">
-              SEE MORE
-              </button>
-
-              <button mat-fab color="link" aria-label="Example icon button with a heart icon"
+            <!-- <div class="button-container">
+              <button class="button" mat-fab aria-label="Example icon button with a heart icon"
               (click)="onAddFavorites(pokemon.name)">
                 <mat-icon>favorite</mat-icon>
               </button>
-            </div>
+            </div> -->
 
 
           </mat-card-actions>

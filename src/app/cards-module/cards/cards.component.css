@@ -4,10 +4,13 @@
   margin-left: 10px;
   margin-right: 10px;
   width: 250px;
-  height: 440px;
+  height: 350px;
   background-color: #696969;
   color: white;
-
+}
+.example-card:hover{
+  cursor: pointer;
+  background-color: #4b4b4b;
 
 }
 
@@ -15,8 +18,9 @@
 .container_cards{
   margin-left: 50px;
   margin-right: 50px;
-  background-color: #808080;
-
+  margin-top: 30px;
+  background: rgb(128,128,128);
+  background: radial-gradient(circle, rgba(128,128,128,1) 0%, rgba(169,169,169,1) 59%);
 
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +42,7 @@
 .paginator{
   background-color: #A9A9A9;
 }
-button{
+.button{
   background-color: #FF1616;
   color: white;
 }
