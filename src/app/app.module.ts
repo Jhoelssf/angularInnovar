@@ -10,11 +10,15 @@ import { MaterialModule } from './material.module';
 import { CommonModule } from '@angular/common';
 import { DialogCardComponent } from './grid-pokemons/dialog-card/dialog-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NavBarComponent,
+    SearchInputComponent,
   ],
   imports: [
     CommonModule,

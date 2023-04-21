@@ -17,6 +17,9 @@ import { DialogCardComponent } from './dialog-card/dialog-card.component';
     CommonModule,
     GridPokemonsRoutingModule,
     MaterialModule,
+  ],
+  exports: [
+    DialogCardComponent
   ]
 })
 export class GridPokemonsModule { }

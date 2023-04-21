@@ -10,15 +10,14 @@ import { PokemonObject } from '../models/pokemonObj';
 })
 
 export class PokemonAPIService {
-
   pokeAPIurl: string = "https://pokeapi.co/api/v2";
+  
   constructor(
     private http:HttpClient
   ) {
   }
 
   getPokemonList(limit:number=20, offset=0):Observable<PokemonList[]> {
-    console.log(this.pokeAPIurl+'/pokemon?'+limit)
     return this.http.get<PokemonList[]>(this.pokeAPIurl+'/pokemon?limit='+limit+'&offset='+offset).pipe(
       map((x:any)=>x.results)
     );

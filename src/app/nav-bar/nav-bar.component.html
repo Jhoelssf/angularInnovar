@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="logo">Pokedex Project</div>
+  <app-search-input *ngIf="showBuscador" ></app-search-input>
+  <nav>
+    <ul>
+      <li>
+        <a routerLinkActive="active" routerLink="/home" >Home</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" routerLink="/catalogo" (click)="loadSeachInput('catalogo')" >Catalogo</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" routerLink="/favoritos" (click)="loadSeachInput('favoritos')">Favoritos</a>
+      </li>
+    </ul>
+  </nav>
+</div>
