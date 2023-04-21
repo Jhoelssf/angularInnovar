@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <ng-container >
+        <p>id</p>       <strong>{{characterInfo?.id}}</strong>
+        <p>name</p>       <strong>{{characterInfo?.name}}</strong>
+        <p>location</p>       <strong>{{characterInfo?.location?.name}}</strong>
+
+    </ng-container>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onClickNo()">No</button>
+</div>  

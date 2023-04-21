@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ReactiveService } from '../shared/reactive.service';
-import { IPokemon, IPokemonInfo } from './model';
+import { ICharacterInfo, ICharacters } from './model';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogCardComponent } from '../dialog-card/dialog-card.component';
 
 @Component({
   selector: 'app-home',
@@ -9,72 +11,35 @@ import { IPokemon, IPokemonInfo } from './model';
   styleUrls: ['./home.component.css']
 })
 
-
 export class HomeComponent implements OnInit {
 
-  public pokemons: IPokemon[] = [];
-  public pokemonInfo?: IPokemonInfo;
-  i:number = 1;
+  
+  public characters: ICharacterInfo[] = [];
+  public characterInfo: ICharacterInfo|undefined ;
 
-  constructor(private _pokemonsService: ReactiveService) {}
-
+  constructor(private _reactiveService: ReactiveService,
+    public dialog:MatDialog) {}
+  
   ngOnInit(): void {
-    this.getAllPokemons();
+      this.getAllCharacters();
+    }
+
+  openDialog(id:number):void {  
+    console.log("Este es el id", id);
+    const dialogRef = this.dialog.open(DialogCardComponent,{data:{id:id}});
+    dialogRef.afterClosed().subscribe(res => {
+      console.log("fin");
+    });
   }
 
   //-------------------
-  
-  async getAllPokemons(){
-    let pokemonData;
-    const response =await this._pokemonsService.getPokemons();
+    async getAllCharacters(){
+
+    const response =await this._reactiveService.getCharacters();
     
     response.json().then( resp =>
     {
-      
-      this.pokemons = resp.results;
-
-
-    }).catch((error)=> console.log('hubo un error',error));
-  }
-  async getPok(url:string){
-    const idPokemon = Number(url.split('/')[8]);
-  }
-  async showInfo(url:string){
-    const idPokemon = Number(url.split('/')[6]);
-
-    const response = await this._pokemonsService.getPokemon(idPokemon);
-
-    response.json().then( resp => {
-      this.pokemonInfo = resp;
-    }).catch((error)=> alert('hubo un error'));
-  }
-
-}
-
-
-
-/*
-export class HomeComponent implements OnInit {
-
-  pokemons!: RootObject | undefined;
-
-
-  baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
-  hidden!: boolean;
-
-  constructor(
-    private http: HttpClient,
-  ) {}
-  
-
-  ngOnInit(): void {
-    //this.getAllPokemons();
-  }
-  getAllPokemons(){
-    this.http.get<RootObject>(`${this.baseUrl}`).subscribe((response) => {
-      this.pokemons = response;
-    });
+      this.characters = resp.results;
+     }).catch((error)=> console.log('hubo un error',error));
   }
 }
-
-*/
