@@ -24,6 +24,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./rickandmorty/rickandmorty.module')
       .then((mod) => mod.RickandmortyModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => 
+      import('./auth/auth.module')
+      .then((mod) => mod.AuthModule)
   }
 ];
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of, tap } from 'rxjs';
-import { RootCharacterObject } from '../rickandmorty/charactermodels';
+import { Observable, catchError, of, tap, map } from 'rxjs';
+import { Character, RootCharacterObject } from '../rickandmorty/charactermodels';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,17 @@ export class RickandmortyApiService {
     .pipe(
       tap(x => console.log('Fetched characters')),
       catchError(this.handleError<RootCharacterObject>('getCharacters', undefined))
+    );
+  }
+  
+  getRandomCharacterImg(): Observable<string> {
+    const id = Math.floor(Math.random() * 826)+1
+    const url = `${this.rickandmortyUrl}/character/${id}`;
+    return this.http.get<Character>(url)
+    .pipe(
+      map((character: Character) => character.image),
+      tap(x => console.log('image fetched')),
+      catchError(this.handleError<string>('getRandomCharacterImg', undefined))
     );
   }
 
