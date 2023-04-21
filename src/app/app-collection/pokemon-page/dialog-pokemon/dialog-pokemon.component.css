@@ -3,6 +3,12 @@
   border-color: black;
 }
 
+.title{
+  text-decoration-color: firebrick;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
 .example-card {
   max-width: 400px;
   margin-bottom: 8px;
@@ -10,5 +16,10 @@
 
 .mat-card-actions img{
   size: 4px;
+}
+
+.add-favorite{
+  width: 8px;
+  height: 8px;
 }
 
