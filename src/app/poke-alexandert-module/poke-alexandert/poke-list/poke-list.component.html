@@ -1,9 +1,23 @@
 <div>
-    <div>
-        <h1>
-            <div class = 'flex'>                
-            </div>
-            List Of all pokemons
-        </h1>
+  <div class="Title">
+    <h1>Lista de Pokemons</h1>
+    <div class="home">
+      <div class="flex" *ngFor="let pokemon of pokeArray">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{pokemon.name}}</mat-card-title>
+          </mat-card-header>
+          <img
+            mat-card-image
+            src="{{pokemon.sprites.front_default}}"
+            alt=""
+            srcset=""
+          />
+          <mat-card-actions>
+            <button class="information">Information</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
+  </div>
 </div>

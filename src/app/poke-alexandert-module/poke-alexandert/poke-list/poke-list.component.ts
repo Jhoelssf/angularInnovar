@@ -24,8 +24,9 @@ export class PokeListComponent implements OnInit {
     this.pokemonApiService.pokemon$.subscribe((obj) => {
       this.pokeArray.push(obj);
     });
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 11; i++) {
       this.pokemonApiService.getPokemon(i);      
     }
+    console.log(this.pokeArray);
   }
 }

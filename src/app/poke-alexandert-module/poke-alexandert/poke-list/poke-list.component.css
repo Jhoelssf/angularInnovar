@@ -1,0 +1,13 @@
+.card {
+    width: 300px;
+    max-width: 1800px;
+    background-color: gray;
+    border-radius: 2em;
+    margin: 8px;
+}
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
