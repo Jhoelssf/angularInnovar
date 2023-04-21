@@ -1,6 +1,7 @@
-<form novalidate [formGroup]="pokemonGroupControl">
-    <label>
-      <span>Pokemon name: </span>
+<div class="formWrapper">
+  <form class='pokeForm' [formGroup]="pokemonGroupControl">
+      <!-- <span>Pokemon name: </span> -->
       <input type="text" placeholder="" formControlName="name" />
-    </label>
+      <mat-icon>search</mat-icon>
   </form>
+</div>

@@ -1,12 +1,26 @@
-<mat-card (click)="onShortCardClick()" class="poke-short-card" style="text-align: center;">
-    
-    <mat-card-header class="short-card-header">
-        <mat-card-title class="short-card-title">{{objectPokemon.name.toUpperCase()}}</mat-card-title>
-      </mat-card-header>
+<mat-card
+  (click)="onShortCardClick()"
+  class="poke-short-card"
+  style="text-align: center"
+>
+  <mat-card-header class="short-card-header">
+    <mat-card-title class="short-card-title">{{
+      objectPokemon.name.toUpperCase()
+    }}</mat-card-title>
+  </mat-card-header>
 
-    <mat-card-content class="short-card-content">
-        <img class="sprite-pokemon-short-card" src={{objectPokemon.sprites.front_default}}>
-    </mat-card-content>
+  <mat-card-content class="short-card-content">
+    <img
+      class="sprite-pokemon-short-card"
+      src="{{ objectPokemon.sprites.front_default }}"
+    />
+  </mat-card-content>
 
-    <mat-card-footer class="short-card-footer">FOOTER</mat-card-footer>
+  <mat-card-footer class="short-card-footer">
+    <img
+      *ngFor="let type of objectPokemon.types"
+      [src]="typesUrls[type.type.name]"
+      class="type-class-image"
+    />
+  </mat-card-footer>
 </mat-card>

@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RootObject } from 'src/app/ejemplo-modulo/ejemplo/model';
 import { PokeDialogInfoService } from 'src/app/shared/poke-dialog-info.service';
 import { DialogPokemonCardComponent } from '../dialog-pokemon-card/dialog-pokemon-card.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -22,7 +21,7 @@ export class PokeViewComponent implements OnInit, OnDestroy {
       this.dialogPoke.open(
         DialogPokemonCardComponent, {
           data: response, 
-          height: '500px',
+          height: '400px',
           width: '800px',
         });
       }

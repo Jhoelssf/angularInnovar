@@ -1,26 +1,54 @@
 <div class="poke-dialog-header">
-  <h1 class="poke-dialog-titulo">{{ pokeDialogInfo.name.toUpperCase() }}</h1>
-  <!-- <ng-container *ngFor="let typeDir of arrPokemonTypeDir"> -->
-    <!-- <img src="../../shared/pokemonTypeSprite/bug.png" alt="" /> -->
-  <!-- </ng-container> -->
+  <h1 class="poke-dialog-titulo">
+    <b>{{ pokeDialogInfo.name.toUpperCase() }}</b>
+  </h1>
+
 </div>
 <div>
   <div class="container-split">
-    <div class="contenedor-hijo ">
-      <img class = "images" src="{{ pokeDialogInfo.sprites.front_default }}" alt="" />
-      <img class = "images" src="{{ pokeDialogInfo.sprites.back_default }}" alt="" />
-    </div>
     <div class="contenedor-hijo">
-      <div class= "general-info">
-        <h2>N° Pokedex: {{pokeDialogInfo.id}}</h2>
-        <p></p>
+      <img
+        class="images"
+        src="{{ pokeDialogInfo.sprites.front_default }}"
+        alt=""
+      />
+      <img
+        class="images"
+        src="{{ pokeDialogInfo.sprites.back_default }}"
+        alt=""
+      />
+    </div>
+    <div class="contenedor-hijo contenedor-general-info">
+      <div class="general-info">
+        <h3 class="PokedexNumber">
+          <b>Pokedex N°{{ pokeDialogInfo.id }}</b>
+        </h3>
+        <div class="container-stats">
+          <div class="stat" *ngFor="let stat of pokeDialogInfo.stats">
+            {{ stat.stat.name }} - {{ stat.base_stat }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
+
   <!-- <div class="mat-button" (click)="onClickClose()">Close</div> -->
-  <div class="mat-button" (click)="onClose()">Back</div>
-  <button mat-raised-button color="primary" (click)="makeFavoriteAction()">
-    Add to Fav
-  </button>
+  <div class="container-footer">
+    <div class="type-images">
+      <img
+        *ngFor="let type of pokeDialogInfo.types"
+        [src]="typesUrls[type.type.name]"
+        class="pokemon-type-class"
+      />
+    </div>
+    <button mat-raised-button class="button-fav" (click)="makeFavoriteAction()"> 
+      <div *ngIf="itsAFavPokemon; else elseBlock">
+        Quitar de favoritos
+      </div>
+      <ng-template #elseBlock>
+        Añadir a favoritos
+      </ng-template>
+    </button>
+  </div>
+  
 </div>

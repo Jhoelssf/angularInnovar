@@ -1,43 +1,52 @@
-.pokemon-display{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-    margin: 5px 90px;
-    border-radius: 15px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    border: 1px solid #000000;
-
-    max-height: 1500px;
+h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 15px;
 }
 
-.pokemon-paginator{
-    display: flex;
-    width: 100%;
-    margin: 0px;
-    background-color: #8B1515;
+hr {
+  margin: 5px;
+}
+.pokemon-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5px 90px;
+  border-radius: 15px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid #000000;
+
+  max-height: 1500px;
+}
+
+.pokemon-paginator {
+  display: flex;
+  width: 100%;
+  margin: 0px;
+  background-color: #8b1515;
 }
 
 ::-webkit-scrollbar {
-    width: 1vw; /* Ancho del scrollbar en porcentaje del ancho de la ventana */
-  }
-  
-  /* Para navegadores que no son webkit */
-  * {
-    scrollbar-width: thin; /* Ancho del scrollbar en porcentaje del ancho de la ventana */
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: #c2c2c2; /* Color de fondo del thumb */
-    border-radius: 10px; /* Radio de la esquina del thumb */
-  }
-  
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: #a1a1a1; /* Color de fondo del thumb en hover */
-  }
-  
-  *::-webkit-scrollbar-track {
-    background-color: #f2f2f2; /* Color de fondo del track */
-  }
+  width: 1vw; /* Ancho del scrollbar en porcentaje del ancho de la ventana */
+}
+
+/* Para navegadores que no son webkit */
+* {
+  scrollbar-width: thin; /* Ancho del scrollbar en porcentaje del ancho de la ventana */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2; /* Color de fondo del thumb */
+  border-radius: 10px; /* Radio de la esquina del thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a1a1; /* Color de fondo del thumb en hover */
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #f2f2f2; /* Color de fondo del track */
+}
