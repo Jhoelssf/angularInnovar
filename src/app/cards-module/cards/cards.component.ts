@@ -31,9 +31,12 @@ export class CardsComponent implements OnInit {
   showFirstLastButtons = true;
 
   lastName: string = "";
-
+  
+  //variable para enviar al dialog
   name_actual_pokemon!: string | number;
 
+  //imagen de pokemon por defecto
+  url_img_null = "https://www.pngitem.com/pimgs/m/30-302283_pikachu-pokmon-go-silhouette-drawing-whos-that-pokemon.png"
   constructor(
     private http: HttpClient,
     private reactiveService: ReactiveService,
@@ -48,7 +51,7 @@ export class CardsComponent implements OnInit {
   }
 
   onUpdatePokemons(first: number = 1,last: number = 16): void {
-    console.log("update esta funcionandos")
+
     this.array_pokemon = []
 
 
@@ -59,6 +62,7 @@ export class CardsComponent implements OnInit {
       this.http
         .get<RootObject>(`${this.baseUrl}${i}`)
         .subscribe((respuesta) => {
+          this.onSetImage(respuesta);
           this.array_pokemon.push(respuesta);
         });
       if(i > 10000){
@@ -68,30 +72,18 @@ export class CardsComponent implements OnInit {
     console.log(this.array_pokemon)
   }
   onOpenDialog(Pokemon: RootObject){
-    // this.http
-    //     .get<RootObject>(`${this.baseUrl}${pokemon}`)
-    //     .subscribe((respuesta) => {
-    //       console.log(respuesta)
-
-    //     });
-
 
     this.matDialog.open(DialogeCardComponent,{
-      width:'350px',
-      height:'400px',
+      width:'1000px',
+      height:'600px',
       data:{
         pokemonData:  Pokemon,
       },
     })
-
-
-
   }
   onAddFavorites(pokemon: string ){
     this.favorites.push(pokemon);
     console.log(this.favorites)
-
-
   }
 
   onChangePage(e: PageEvent) {
@@ -110,16 +102,12 @@ export class CardsComponent implements OnInit {
 
   }
 
-  // onChangePokemon(idPokemon: number | string) {
-  //   this.http.get<RootObject>(`${this.baseUrl}${idPokemon}`).subscribe({
-  //     next: (response) => {
-  //       this.objectPokemon = response;
-  //       this.reactiveService.setInfoPokemon(this.objectPokemon);
-  //       console.log(this.objectPokemon.id);
-  //     },
-  //     error: (err) => {
-  //       this.objectPokemon = undefined;
-  //     },
-  //   });
-  // }
+  //funcion para colocar imagen
+  onSetImage(Pokemon: RootObject){
+    if(Pokemon.sprites.front_default == null){
+      Pokemon.sprites.front_default = this.url_img_null
+    }
+  }
+
+
 }

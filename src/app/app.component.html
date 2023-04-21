@@ -1,22 +1,25 @@
+<div class="body">
+
 <p>
-  <mat-toolbar color="primary">
+  <mat-toolbar class="nav-bar">
     <mat-toolbar-row>
-      <span>App pokemon</span>
+      <span>
+        <img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="Logo Pokemon">
+      </span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
+      
     </mat-toolbar-row>
 
     <mat-toolbar-row>
-      <span>Second Line</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" routerLink="/cards" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
+      <div class="example-button-row">
+        <button mat-raised-button routerLink="/home" >Home</button>
+        <button mat-raised-button routerLink="/cards">Pokedex</button>
+        <button  mat-button class="example-icon" routerLink="/cards" aria-label="Example icon-button with share icon">
+          <mat-icon >favorite</mat-icon> 
+        </button>
+      </div>
+      
     </mat-toolbar-row>
   </mat-toolbar>
 </p>
@@ -24,7 +27,11 @@
 
 <router-outlet></router-outlet>
 
-<footer id="footer">Sticky Footer</footer>
+<footer id="footer" >
+  <p>Autor: Aler Sebastian Olivares Camero.    Abril - 2023</p> 
+</footer>
+
+</div>
 
 
 

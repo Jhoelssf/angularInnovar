@@ -3,8 +3,29 @@
 }
 
 #footer {
-  background-color: #f3e5f5;
+  /* background-color: black; */
   padding: 20px;
-  bottom: 0;
+  bottom: 0px;
+  color: white;
+  font-size: medium;
 
+}
+.img-logo{
+  height: 120px;
+  margin-top: 70px;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.nav-bar{
+  background-color: #B22222;
+}
+button{
+  background-color: #FFA500;
+  color: white;
+}
+.body{
+  background-color: black;
+  color: wheat;
 }

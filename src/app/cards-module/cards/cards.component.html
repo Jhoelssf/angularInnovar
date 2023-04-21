@@ -1,54 +1,62 @@
 
-<h1>Cards Component</h1>
-<mat-paginator [length]= num_pokemon
-              [pageSize]="16"
-              (page)="onChangePage($event)"
-              [pageSizeOptions]="[ 16, 32, 64]"
-              [pageIndex]="pageindex"
-              aria-label="Select page"
-              [showFirstLastButtons]="showFirstLastButtons">
-</mat-paginator>
+<div class="body">
+  <mat-paginator [length]= num_pokemon
+                [pageSize]="16"
+                (page)="onChangePage($event)"
+                [pageSizeOptions]="[ 16, 32, 64]"
+                [pageIndex]="pageindex"
+                aria-label="Select page"
+                [showFirstLastButtons]="showFirstLastButtons"
+                class="paginator">
+  </mat-paginator>
 
-<!-- <div style="border: solid 1px black; padding:15px;">
-  <h3>Parent Component</h3>
-  <app-dialoge-card
-    [name_actual_pokemon]="name_actual_pokemon"
-    [lastName]="lastName"></app-dialoge-card>
-</div> -->
+  <div class="container_cards">
+    <div *ngFor =" let pokemon  of array_pokemon ">
 
-<div class="container_cards">
-  <div *ngFor =" let pokemon  of array_pokemon ">
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title style="text-transform:uppercase;">Nº:{{ pokemon.id}} {{pokemon.name}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src={{pokemon.sprites.front_default}} alt= "image of ${pokemon.name}" >
+          <mat-card-content>
 
-      <mat-card class="example-card" >
-        <mat-card-header>
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <mat-card-title>Nº:{{ pokemon.id}} {{pokemon.name}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src={{pokemon.sprites.front_default}} alt= "image of ${pokemon.name}" >
-        <mat-card-content>
-
-        </mat-card-content>
-        <mat-card-actions>
+          </mat-card-content>
+          <mat-card-actions>
 
 
-          <div class="button-container">
-            <button mat-raised-button color="primary"
-            (click) = "onOpenDialog(pokemon)">
-            SEE MORE
-            </button>
+            <div class="button-container">
+              <button mat-raised-button 
+              (click) = "onOpenDialog(pokemon)">
+              SEE MORE
+              </button>
 
-            <button mat-fab color="link" aria-label="Example icon button with a heart icon"
-            (click)="onAddFavorites(pokemon.name)">
-              <mat-icon>favorite</mat-icon>
-            </button>
-          </div>
+              <button mat-fab color="link" aria-label="Example icon button with a heart icon"
+              (click)="onAddFavorites(pokemon.name)">
+                <mat-icon>favorite</mat-icon>
+              </button>
+            </div>
 
 
-        </mat-card-actions>
-      </mat-card>
+          </mat-card-actions>
+        </mat-card>
 
+    </div>
   </div>
+
+  <mat-paginator [length]= num_pokemon
+                [pageSize]="16"
+                (page)="onChangePage($event)"
+                [pageSizeOptions]="[ 16, 32, 64]"
+                [pageIndex]="pageindex"
+                aria-label="Select page"
+                [showFirstLastButtons]="showFirstLastButtons"
+                class="paginator">
+  </mat-paginator>
+
 </div>
+
+
 
 
 

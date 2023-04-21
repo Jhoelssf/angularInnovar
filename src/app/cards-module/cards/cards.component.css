@@ -5,17 +5,17 @@
   margin-right: 10px;
   width: 250px;
   height: 440px;
+  background-color: #696969;
+  color: white;
 
 
 }
 
-.example-header-image {
-  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
-  background-size: cover;
-}
+
 .container_cards{
   margin-left: 50px;
   margin-right: 50px;
+  background-color: #808080;
 
 
   display: flex;
@@ -26,4 +26,19 @@
 .button-container {
   display: flex;
   justify-content: space-around;
+}
+.header-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png');
+
+  background-size: cover;
+}
+.body{
+  background-color: #A9A9A9;
+}
+.paginator{
+  background-color: #A9A9A9;
+}
+button{
+  background-color: #FF1616;
+  color: white;
 }

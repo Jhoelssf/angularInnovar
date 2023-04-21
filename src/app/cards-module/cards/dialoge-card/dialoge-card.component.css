@@ -1,0 +1,43 @@
+.img{
+    max-width: 400px;
+}
+
+.img-container{
+    margin-left: 50px;
+    margin-right: 50px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.header-image {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png');
+
+    background-size: cover;
+}
+.sub-card {
+    width: 150px;
+    height: 150px;
+    background-color: #696969;
+    color: white;
+}
+.sub-card-group {
+    display: flex;
+    justify-content: space-between;
+}
+.title-sub-card{
+    display: flex;
+    justify-content: flex-start;
+}
+.img-sub-card{
+    display: flex;
+    justify-content: flex-end;
+}
+.card{
+    background-color: #808080;
+    color: whitesmoke;
+}
+
+.body{
+    background-color: #696969;
+}

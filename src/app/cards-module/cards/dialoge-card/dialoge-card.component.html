@@ -1,13 +1,67 @@
+<div >
 
-<h2>{{infoPokemon.name}}</h2>
+<mat-card class="card" >
+  <mat-card-header >
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title style="text-transform:uppercase;">Nº:{{ infoPokemon.id}} {{infoPokemon.name}}</mat-card-title>
+  </mat-card-header>
+  
+  <mat-card-content >
+    <div class="img-container">
+      <img mat-card-image (click)="onImagePokemonDefault(infoPokemon)" 
+      class = "img" src= {{url_img_default}} 
+      alt= "image of ${infoPokemon.name}" >
 
-<div style="border: solid 1px black;">
-  <p>child Component</p>
-  <br>
-  First Name: {{ name_actual_pokemon }}
-  <br>
-  Last Name: {{ lastName }}
-  <br>
+      <img mat-card-image (click)="onImagePokemonShiny(infoPokemon)" 
+      class = "img"  src={{url_img_shiny}} 
+      alt= "image of ${infoPokemon.name}" >
+    </div>
+    <div class="img-container">
+      <h2>Normal Version</h2>
+      <h2>Shiny Version</h2>
+
+    </div>
+    <!--Cards caracteristicas -->
+    <div>
+      <mat-card class="sub-card">
+        <mat-card-header >
+          
+          <mat-card-title >
+            Tipo
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor =" let Type of array_types "
+          style="text-transform:uppercase;">
+            {{Type.type.name}}
+          </div>
+        </mat-card-content>
+      </mat-card>
+      
+      
+    </div>
+    
+
+
+
+    
+  </mat-card-content>
+  <mat-card-actions>
+
+
+    <div class="button-container">
+
+      <button mat-fab color="link" aria-label="Example icon button with a heart icon"
+      (click)="onAddFavorites(infoPokemon.name)">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+
+
+  </mat-card-actions>
+</mat-card>
+
+
 
 
 </div>
