@@ -5,28 +5,28 @@
     <div mat-card-avatar class="header-image"></div>
     <mat-card-title style="text-transform:uppercase;">Nº:{{ infoPokemon.id}} {{infoPokemon.name}}</mat-card-title>
   </mat-card-header>
-  
+
   <mat-card-content >
     <div class="img-container">
       <div>
         <p class="title">Normal Version</p>
-        <img mat-card-image (click)="onImagePokemonDefault(infoPokemon)" 
-        class = "img" src= {{url_img_default}} 
+        <img mat-card-image (click)="onImagePokemonDefault(infoPokemon)"
+        class = "img" src= {{url_img_default}}
         alt= "image of ${infoPokemon.name}" >
       </div>
       <div>
-        <p class="title">Shini Version</p>
-        <img mat-card-image (click)="onImagePokemonShiny(infoPokemon)" 
-        class = "img"  src={{url_img_shiny}} 
+        <p class="title">Shiny Version</p>
+        <img mat-card-image (click)="onImagePokemonShiny(infoPokemon)"
+        class = "img"  src={{url_img_shiny}}
         alt= "image of ${infoPokemon.name}" >
       </div>
     </div>
-    
+
     <!--Cards caracteristicas -->
     <div>
       <mat-card class="sub-card">
         <mat-card-header >
-          
+
           <mat-card-title >
             Tipo
           </mat-card-title>
@@ -38,14 +38,14 @@
           </div>
         </mat-card-content>
       </mat-card>
-      
-      
+
+
     </div>
-    
 
 
 
-    
+
+
   </mat-card-content>
   <mat-card-actions>
 

@@ -1,6 +1,10 @@
 
 <div class="body">
-  <mat-paginator [length]= num_pokemon
+
+  <div class="header">
+    <h1>Pokédex</h1>
+
+    <mat-paginator [length]= num_pokemon
                 [pageSize]="16"
                 (page)="onChangePage($event)"
                 [pageSizeOptions]="[ 16, 32, 64]"
@@ -8,7 +12,9 @@
                 aria-label="Select page"
                 [showFirstLastButtons]="showFirstLastButtons"
                 class="paginator">
-  </mat-paginator>
+    </mat-paginator>
+  </div>
+
 
   <div class="container_cards">
 

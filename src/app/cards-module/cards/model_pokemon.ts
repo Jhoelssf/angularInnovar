@@ -178,3 +178,6 @@ export interface Type {
   slot: number;
   type: Species;
 }
+export interface PokemonData {
+  pokemonData: RootObject;
+}

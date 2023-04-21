@@ -1,0 +1,24 @@
+.img-logo{
+  max-height: 200px;
+
+}
+.menu-container{
+  /* background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 73%); */
+  color: white;
+  font:bold;
+
+}
+.img-paragraph{
+  display: flex;
+  justify-content: center;
+}
+h1{
+  font-family: 'PokemonSolid';
+}
+.body-text{
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}

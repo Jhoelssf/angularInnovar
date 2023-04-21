@@ -1,11 +1,9 @@
 import { Component, Input, OnInit,Inject } from '@angular/core';
 import { PokemonsService } from 'src/app/shared/pokemons.service';
-import { RootObject ,Type} from '../model_pokemon';
+import { PokemonData, RootObject ,Type} from '../model_pokemon';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-interface PokemonData {
-  pokemonData: RootObject;
-}
+
 
 
 @Component({
@@ -24,7 +22,7 @@ export class DialogeCardComponent implements OnInit {
   img_shiny_front:boolean = true;
   url_img_default:string = "";
   url_img_shiny:string = "";
-  
+
   url_img_null = "https://www.pngitem.com/pimgs/m/30-302283_pikachu-pokmon-go-silhouette-drawing-whos-that-pokemon.png"
 
   array_types!: Type[] ;
