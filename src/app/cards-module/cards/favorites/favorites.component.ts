@@ -1,18 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ReactiveService } from 'src/app/shared/reactive.service';
-import { RootObject } from './model_pokemon';
+
 import { PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogeCardComponent } from './dialoge-card/dialoge-card.component';
+
+import { HttpClient } from '@angular/common/http';
+import { RootObject } from '../model_pokemon';
+import { DialogeCardComponent } from '../dialoge-card/dialoge-card.component';
+import { PokemonsService } from 'src/app/shared/pokemons.service';
+
+
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.css'],
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.css']
 })
-export class CardsComponent implements OnInit {
+export class FavoritesComponent implements OnInit {
+
   // Variables
+  //lista de nombres de los pokemons
+  favoritePokemons! : string[];
+  len_favoritePokemons : number = 0;
+  //Aqui se guardan los objetos pokemon despues de traerlos
+  array_pokemon: RootObject[] = [];
+
   pageindex = 0
   objectPokemon!: RootObject;
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
@@ -23,8 +34,9 @@ export class CardsComponent implements OnInit {
   //1 - 1010
   //10001 - 10271
   num_pokemon: number = 1281;
-  //Aqui se guardan los objetos pokemon despues de traerlos
-  array_pokemon: RootObject[] = [];
+
+
+
   favorites: string[] = [];
 
   first_page: number = 1;
@@ -40,35 +52,37 @@ export class CardsComponent implements OnInit {
   url_img_null = "https://m.media-amazon.com/images/I/71WkWKFRSWL.png"
   constructor(
     private http: HttpClient,
-    private reactiveService: ReactiveService,
+    private pokeAction: PokemonsService,
     private matDialog:MatDialog
   ) {}
 
 
   ngOnInit(): void {
-    this.onUpdatePokemons();
     this.name_actual_pokemon = "pikachu"
+    this.favoritePokemons = this.pokeAction.favoritePokemons;
+    this.len_favoritePokemons = this.favoritePokemons.length;
+    this.onUpdatePokemons(1, this.len_favoritePokemons);
 
+  }
+  // funcion para eliminar de favoritos
+  deleteFromFavorites(name_pokemon: string){
+    this.pokeAction.favoritePokemons$.subscribe((obj) => {
+      this.favoritePokemons = obj
+    })
+    this.pokeAction.addFavoritePokemon(name_pokemon)
   }
 
   onUpdatePokemons(first: number = 1,last: number = 16): void {
 
     this.array_pokemon = []
 
-
     for (let i = first; i <= last; i++) {
-      if(i > 1010){
-        i = i + 8990
-      }
       this.http
-        .get<RootObject>(`${this.baseUrl}${i}`)
+        .get<RootObject>(`${this.baseUrl}${this.favoritePokemons[i - 1]}`)
         .subscribe((respuesta) => {
           this.onSetImage(respuesta);
           this.array_pokemon.push(respuesta);
         });
-      if(i > 10000){
-        i = i - 8990
-      }
     }
     console.log(this.array_pokemon)
   }
@@ -81,10 +95,6 @@ export class CardsComponent implements OnInit {
         pokemonData:  Pokemon,
       },
     })
-  }
-  onAddFavorites(pokemon: string ){
-    this.favorites.push(pokemon);
-    console.log(this.favorites)
   }
 
   onChangePage(e: PageEvent) {
@@ -109,6 +119,5 @@ export class CardsComponent implements OnInit {
       Pokemon.sprites.front_default = this.url_img_null
     }
   }
-
 
 }

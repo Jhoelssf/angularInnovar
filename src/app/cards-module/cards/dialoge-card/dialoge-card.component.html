@@ -1,66 +1,61 @@
 <div >
 
-<mat-card class="card" >
-  <mat-card-header >
-    <div mat-card-avatar class="header-image"></div>
-    <mat-card-title style="text-transform:uppercase;">Nº:{{ infoPokemon.id}} {{infoPokemon.name}}</mat-card-title>
-  </mat-card-header>
+  <mat-card class="card" >
+    <mat-card-header >
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title style="text-transform:uppercase;">Nº:{{ infoPokemon.id}} {{infoPokemon.name}}</mat-card-title>
+    </mat-card-header>
 
-  <mat-card-content >
-    <div class="img-container">
-      <div>
-        <p class="title">Normal Version</p>
-        <img mat-card-image (click)="onImagePokemonDefault(infoPokemon)"
-        class = "img" src= {{url_img_default}}
-        alt= "image of ${infoPokemon.name}" >
+    <mat-card-content >
+      <div class="img-container">
+        <div>
+          <p class="title">Normal Version</p>
+          <img mat-card-image (click)="onImagePokemonDefault(infoPokemon)"
+          class = "img" src= {{url_img_default}}
+          alt= "image of ${infoPokemon.name}" >
+        </div>
+        <div>
+          <p class="title">Shiny Version</p>
+          <img mat-card-image (click)="onImagePokemonShiny(infoPokemon)"
+          class = "img"  src={{url_img_shiny}}
+          alt= "image of ${infoPokemon.name}" >
+        </div>
       </div>
+
+      <!--Cards caracteristicas -->
       <div>
-        <p class="title">Shiny Version</p>
-        <img mat-card-image (click)="onImagePokemonShiny(infoPokemon)"
-        class = "img"  src={{url_img_shiny}}
-        alt= "image of ${infoPokemon.name}" >
+        <mat-card class="sub-card">
+          <mat-card-header >
+
+            <mat-card-title >
+              Tipo
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div *ngFor =" let Type of array_types "
+            style="text-transform:uppercase;">
+              {{Type.type.name}}
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+
       </div>
-    </div>
-
-    <!--Cards caracteristicas -->
-    <div>
-      <mat-card class="sub-card">
-        <mat-card-header >
-
-          <mat-card-title >
-            Tipo
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <div *ngFor =" let Type of array_types "
-          style="text-transform:uppercase;">
-            {{Type.type.name}}
-          </div>
-        </mat-card-content>
-      </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
 
 
-    </div>
+      <div class="button-container">
+
+        <button mat-fab color="link" aria-label="Example icon button with a heart icon"
+        (click)="onAddFavorites(infoPokemon.name)">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
 
 
-
-
-
-  </mat-card-content>
-  <mat-card-actions>
-
-
-    <div class="button-container">
-
-      <button mat-fab color="link" aria-label="Example icon button with a heart icon"
-      (click)="onAddFavorites(infoPokemon.name)">
-        <mat-icon>favorite</mat-icon>
-      </button>
-    </div>
-
-
-  </mat-card-actions>
-</mat-card>
+    </mat-card-actions>
+  </mat-card>
 
 
 

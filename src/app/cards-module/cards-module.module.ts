@@ -10,11 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DialogeCardComponent } from './cards/dialoge-card/dialoge-card.component';
+import { FavoritesComponent } from './cards/favorites/favorites.component';
+
 
 @NgModule({
   declarations: [
     CardsComponent,
     DialogeCardComponent,
+    FavoritesComponent,
     // CardComponent
   ],
   imports: [

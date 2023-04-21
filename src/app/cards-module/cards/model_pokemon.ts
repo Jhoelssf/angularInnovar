@@ -178,6 +178,7 @@ export interface Type {
   slot: number;
   type: Species;
 }
+//interface para dialoge card
 export interface PokemonData {
   pokemonData: RootObject;
 }

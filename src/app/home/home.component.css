@@ -1,12 +1,14 @@
 .img-logo{
   max-height: 200px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
 }
 .menu-container{
   /* background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 73%); */
   color: white;
-  font:bold;
+  font-size: large;
 
 }
 .img-paragraph{
@@ -19,6 +21,16 @@ h1{
 .body-text{
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+
+  margin-bottom: 30px;
+}
+.body{
+  background-color: #A9A9A9;
+  color: white;
+}
+.img-ilustration{
+  height: 900px;
+  display: flex;
+  justify-content: center;
+
 }

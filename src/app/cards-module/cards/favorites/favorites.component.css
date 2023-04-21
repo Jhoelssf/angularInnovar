@@ -1,0 +1,67 @@
+.example-card {
+  max-width: 250px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 250px;
+  height: 350px;
+  background-color: #696969;
+  color: white;
+}
+.example-card:hover{
+  cursor: pointer;
+  background-color: #4b4b4b;
+
+}
+
+
+.container_cards{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  background: rgb(128,128,128);
+  background: radial-gradient(circle, rgba(128,128,128,1) 0%, rgba(169,169,169,1) 59%);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+.header-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png');
+
+  background-size: cover;
+}
+.body{
+  background-color: #A9A9A9;
+  color: white;
+}
+.paginator{
+  background-color: #A9A9A9;
+  color: white;
+}
+.button{
+  background-color: #FF1616;
+  color: white;
+}
+/* mat-paginator{
+  color: white;
+} */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+h1{
+  font-family: 'PokemonSolid';
+  font-size: xx-large;
+  margin-left: 30px;
+  margin-top: 10px;
+  color: white;
+}
+
+

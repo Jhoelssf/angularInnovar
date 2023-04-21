@@ -4,8 +4,6 @@ import { PokemonData, RootObject ,Type} from '../model_pokemon';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
-
-
 @Component({
   selector: 'app-dialoge-card',
   templateUrl: './dialoge-card.component.html',
@@ -16,6 +14,7 @@ export class DialogeCardComponent implements OnInit {
   // @Input('name_actual_pokemon') name_pokemon: string;
 
   infoPokemon!: RootObject ;
+  favoritesPokemon! : string[];
 
   favorites: string[] = [];
   img_default_front:boolean = true;
@@ -31,7 +30,7 @@ export class DialogeCardComponent implements OnInit {
 
 
     public dialogRef: MatDialogRef<DialogeCardComponent>,
-    private service: PokemonsService,
+    private pokeAction: PokemonsService,
     @Inject(MAT_DIALOG_DATA) public data : PokemonData
 
   ) {
@@ -52,8 +51,13 @@ export class DialogeCardComponent implements OnInit {
   }
 
   onAddFavorites(pokemon: string ){
-    this.favorites.push(pokemon);
-    console.log(this.favorites)
+    // this.favorites.push(pokemon);
+    // console.log(this.favorites)
+    this.pokeAction.favoritePokemons$.subscribe((res) => {
+      this.favoritesPokemon = res
+      console.log(this.favoritesPokemon)
+    })
+    this.pokeAction.addFavoritePokemon(pokemon)
 
 
   }
