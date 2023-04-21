@@ -1,13 +1,15 @@
-<h1>{{infoPokemon.name.toUpperCase( )}}</h1>
+<div class="container">
+    <h1 class ="word">{{infoPokemon.name.toUpperCase( )}}</h1>
 <h3 class="Feature">Appearance</h3>
 <div class="Container-Imgs">
     <div class="container-img">
+        <img src={{infoPokemon.sprites.front_default}} alt="img-front" class="img">
         <p class ="word">Front </p>
-        <img src={{infoPokemon.sprites.front_default}} alt="img-front">
     </div>
     <div class="container-img">
+        
+        <img src={{infoPokemon.sprites.back_default}} alt="img-back" class="img">
         <p class ="word">Back</p>
-        <img src={{infoPokemon.sprites.back_default}} alt="img-back">
     </div>
 
 </div>
@@ -15,7 +17,7 @@
 <h3 class="Feature">Abilities</h3>
 <div class="Container-Items">
     <div *ngFor="let Ability of infoPokemon.abilities">
-        <li type="square">{{Ability.ability.name}}</li>
+        <li type="square" class ="word">{{Ability.ability.name}}</li>
     </div>
 </div>
 
@@ -23,7 +25,7 @@
 <h3 class="Feature">Type</h3>
 <div class="Container-Items">
     <div *ngFor="let Type of infoPokemon.types">
-        <li type="square">{{Type.type.name}}</li>
+        <li type="square" class ="word">{{Type.type.name}}</li>
     </div>
 </div>
 
@@ -32,16 +34,19 @@
     <h3 class="Feature">Held items</h3>
     <div class="Container-Items" >
         <div *ngFor="let held of infoPokemon.held_items">
-            <li type="square">{{held.item.name}}</li>
+            <li type="square" class ="word">{{held.item.name}}</li>
         </div>
     </div>
 </div>
 
-<h3></h3>
-<footer class="container-button">
-    <button mat-fab matTooltip="Warn" color="warn" aria-label="Example fab with a heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-</footer>
+<span class="bloque">  &nbsp; </span>
+
+<div class="container-button">
+    <button mat-fab matTooltip="Warn" aria-label="Example fab with a heart icon" class="favorite-button">
+        <mat-icon >star_border</mat-icon>
+    </button>
+</div>
+
+</div>
 
 

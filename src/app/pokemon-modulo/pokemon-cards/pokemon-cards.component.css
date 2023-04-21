@@ -3,9 +3,10 @@
     margin: 5px ;
     margin-bottom: 50px;
     width: 250px;
-    height: 310px;
+    height: 400px;
     align-items: center;
     justify-items: center;
+    background-color: #cecece;
   }
   
   .example-header-image {
@@ -22,4 +23,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+  }
+  .card:hover {
+    background-color: rgb(252, 230, 169);
+    cursor: pointer;
+  }
+  .favorite-button{
+    color: rgb(255, 203, 5);
+    background: rgb(197,32,24);
+    border-image-width: 10px;
+  }
+  .button{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .Word{
+    color: black;
   }

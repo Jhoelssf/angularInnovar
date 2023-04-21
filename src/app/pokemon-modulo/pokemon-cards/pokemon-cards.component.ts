@@ -78,8 +78,9 @@ export class PokemonCardsComponent implements OnInit {
   onOpenDialog(Pokemon: RootObject){
 
     this.matDialog.open(PokemonCardComponent,{
-      width:'350px',
-      height:'465px',
+      width:'500px',
+      height:'634px',
+    
       data:{
         pokemonData:  Pokemon,
       },

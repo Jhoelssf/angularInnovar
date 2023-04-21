@@ -22,5 +22,16 @@
     height: 58px;
     margin-left: 3px;
     margin-right: 3px;
+    color: rgb(140,46,46);
+    background-color:#e2e2e2;
 
+}
+.button:hover{
+  cursor: pointer;
+  background-color:#ffffff;
+}
+.bar{
+  
+  background: rgb(140,46,46);
+  background: linear-gradient(45deg, rgba(140,46,46,1) 25%, rgba(247,208,60,1) 75%);
 }

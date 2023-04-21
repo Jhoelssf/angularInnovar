@@ -5,11 +5,15 @@
         <mat-card class="card" (click) = "onOpenDialog(pokemon)">
             <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title> {{pokemon.name.toUpperCase( )}}</mat-card-title>
-            <mat-card-subtitle>  Click to see more ... </mat-card-subtitle>
+            <mat-card-title class="Word"> {{pokemon.name.toUpperCase( )}}</mat-card-title>
+            <mat-card-subtitle class="Word">  Click to see more ... </mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src={{pokemon.sprites.front_default}} alt='Img-pokemon'>
-            
+            <mat-card-actions class="button">
+                <button mat-fab matTooltip="Warn" aria-label="Example fab with a heart icon" class="favorite-button">
+                    <mat-icon >star_border</mat-icon>
+                </button>
+            </mat-card-actions>
             
         </mat-card>
     </div>
