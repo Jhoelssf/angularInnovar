@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PokemonPageComponent } from './app-collection/pokemon-page/pokemon-page.component';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PokemonPageComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,31 @@
+footer {
+  background-color: #63115c ;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+
+}
+
+.footer-content {
+  border-top: 2px solid var(--very-light-pink);
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding: 10px;
+
+}
+
+.footer-content div {
+  margin-inline: 30px 30px;
+  color: black;
+
+}
+
+.footer-content div span {
+  margin-bottom: 10px;
+}
+
+.footer-content div a {
+  text-decoration:dotted;
+  color: blue;
+}
+

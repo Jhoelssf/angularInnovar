@@ -2,7 +2,7 @@
 </header>
 <body>
   <div class="my-pokemon-content" >
-    <div class="pokemon-cart" *ngFor="let pokemon of objectPokemonList!" (click)="openDialog()">
+    <div class="pokemon-cart" *ngFor="let pokemon of listPokemon" (click)="openDialog(pokemon)">
       <figure >
         <img  [src]="pokemon.sprites.front_default" alt="bike" />
       </figure>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AppCollectionModule } from './app-collection/app-collection.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pokemon-modulo/pokemon-modulo.module').then(
         (mod) => mod.PokemonModuloModule
+      ),
+  },
+  {
+    path: 'collection-pokemon',
+    loadChildren: () =>
+      import('./app-collection/app-collection.module').then(
+        (mod) => mod.AppCollectionModule
       ),
   },
 ];
