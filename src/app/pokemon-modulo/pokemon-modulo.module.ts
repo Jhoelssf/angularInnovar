@@ -9,12 +9,16 @@ import { ReactiveExampleModule } from '../reactive-example/reactive-example.modu
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PokemonCardComponent } from './pokemon-cards/pokemon-card/pokemon-card.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     PokemonCardsComponent,
-    PokemonCardsComponent
+    PokemonCardsComponent,
+    PokemonCardComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +30,8 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     ReactiveExampleModule,
     MatCardModule,
+    MatPaginatorModule,
+    MatDialogModule
   ]
 })
 export class PokemonModuloModule { }

@@ -1,0 +1,30 @@
+.word{
+    font-style: italic;
+    text-align: center;
+    color: black;
+
+}
+.Container-Imgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.container-img{
+    background-color: rgb(197, 197, 197);
+    margin: 2px;
+}
+.Feature{
+    text-decoration: underline;
+}
+.Container-Items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.container-button{
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+}

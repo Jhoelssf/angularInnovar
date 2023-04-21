@@ -1,0 +1,47 @@
+<h1>{{infoPokemon.name.toUpperCase( )}}</h1>
+<h3 class="Feature">Appearance</h3>
+<div class="Container-Imgs">
+    <div class="container-img">
+        <p class ="word">Front </p>
+        <img src={{infoPokemon.sprites.front_default}} alt="img-front">
+    </div>
+    <div class="container-img">
+        <p class ="word">Back</p>
+        <img src={{infoPokemon.sprites.back_default}} alt="img-back">
+    </div>
+
+</div>
+<h3></h3>
+<h3 class="Feature">Abilities</h3>
+<div class="Container-Items">
+    <div *ngFor="let Ability of infoPokemon.abilities">
+        <li type="square">{{Ability.ability.name}}</li>
+    </div>
+</div>
+
+
+<h3 class="Feature">Type</h3>
+<div class="Container-Items">
+    <div *ngFor="let Type of infoPokemon.types">
+        <li type="square">{{Type.type.name}}</li>
+    </div>
+</div>
+
+
+<div *ngIf="infoPokemon.held_items.length !== 0">
+    <h3 class="Feature">Held items</h3>
+    <div class="Container-Items" >
+        <div *ngFor="let held of infoPokemon.held_items">
+            <li type="square">{{held.item.name}}</li>
+        </div>
+    </div>
+</div>
+
+<h3></h3>
+<footer class="container-button">
+    <button mat-fab matTooltip="Warn" color="warn" aria-label="Example fab with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+</footer>
+
+

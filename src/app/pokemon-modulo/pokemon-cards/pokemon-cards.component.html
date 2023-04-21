@@ -2,15 +2,27 @@
 <h1 class="Title"> <b>Pokemon Cards !!</b></h1>
 <div class="Flex-container-cards">
     <div *ngFor =" let pokemon  of array_pokemon ">
-        <mat-card class="card">
+        <mat-card class="card" (click) = "onOpenDialog(pokemon)">
             <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title> Nº:{{ pokemon.id}} {{pokemon.name}}</mat-card-title>
-            <mat-card-subtitle>  &nbsp; </mat-card-subtitle>
+            <mat-card-title> {{pokemon.name.toUpperCase( )}}</mat-card-title>
+            <mat-card-subtitle>  Click to see more ... </mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src={{pokemon.sprites.front_default}} alt='Img-pokemon'>
             
+            
         </mat-card>
     </div>
-    
 </div>
+<mat-paginator #paginator
+               class="demo-paginator"
+               (page)="ChangePage($event)"
+               [length]= num_pokemon
+               [pageSize]= 15
+               [disabled]="disabled"
+               [showFirstLastButtons]="showFirstLastButtons"
+               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+               [hidePageSize]="hidePageSize"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+</mat-paginator>
