@@ -7,12 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogPokemonComponent } from './pokemon-page/dialog-pokemon/dialog-pokemon.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
-import { FavouritePageComponent } from './pokemon-page/dialog-pokemon/favourite-page/favourite-page.component';
+import { FavouritePokemonComponent } from './pokemon-page/favourite-pokemon/favourite-pokemon.component';
+
 @NgModule({
   declarations: [
     PokemonPageComponent,
     DialogPokemonComponent,
-    FavouritePageComponent,
+    FavouritePokemonComponent,
   ],
   imports: [
     ReactiveFormsModule,

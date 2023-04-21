@@ -1,6 +1,7 @@
 import { Component , Inject} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog , MatDialogRef} from '@angular/material/dialog';
 import { IPokemonData } from 'src/app/shared/models/resGetPokemon.model';
+import { PokemonService } from 'src/app/shared/services/pokemon.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class DialogPokemonComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogPokemonComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IPokemonData,
+    private pokemonService: PokemonService
   ) {}
 
   ngOnInit () :void {
@@ -21,7 +23,7 @@ export class DialogPokemonComponent {
   }
 
   addFavoritePokemon(pokemon: IPokemonData) {
-
+    this.pokemonService.setNewFavorite(pokemon);
   }
 
 }
