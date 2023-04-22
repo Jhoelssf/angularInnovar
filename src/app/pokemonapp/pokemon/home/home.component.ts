@@ -13,25 +13,40 @@ import { PokemonsService } from 'src/app/shared/pokemons.service';
 })
 export class HomeComponent implements OnInit {
   pokemon!: number;
+  taPokemon!: Array<RootObject>;
   arrayPokemon: Array<RootObject> = [];
-  
+  favorites! : boolean;
+  filterPokemon:string = ""
+
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
   constructor(
     private dialog: MatDialog,
-    private pokeApi: PokeApiService
+    private pokeApi: PokeApiService,
+    private pokeAction: PokemonsService
   ) {}
 
   openDialog(Pokemon: RootObject): void {
     // this.pokeApi.currentPokemon$.next(idPokemon)
+    console.log(this.pokeAction.favoritePokemons)
+    console.log(Pokemon)
+    this.taPokemon =  this.pokeAction.favoritePokemons.filter(item => item.id == Pokemon.id)
+    if(this.taPokemon.length>0){
+      this.favorites = true
+    }
+    else{
+      this.favorites = false
+    }
+    
+    console.log('desdehoome',this.favorites)
     this.dialog.open(DialogPokemonComponent, {
       width: '40rem',
       height: '33rem',
       data: {
         pokemonData: Pokemon,
+        favorite: this.favorites
       },
     });
-    
   }
 
 
@@ -42,6 +57,7 @@ export class HomeComponent implements OnInit {
     });
     for (let i = 1; i < 20; i++) {
       this.pokeApi.getPokemon(i);
+      
     }
   }
 }

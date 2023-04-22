@@ -1,28 +1,45 @@
 .grid {
   display: grid;
+  
   grid-template-columns: 25% 25% 25% 25%;
+}
 
+@media screen and (width< 1000px) {
+  .grid {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (width < 500px){
+  .grid {
+    grid-template-columns: 100%;
+  }
 }
 
 .card {
   margin: 1rem 2rem 1rem 2rem;
   max-width: 300px;
-  background: #03506F;
   color: #FFE3D8;
   border-radius: 1rem;
+  text-align: center;
+  background-image: linear-gradient(155deg, #03506F 55%, #426a79 45%);
 }
 
-.types{
+.types {
   color: #BBBBBB;
 }
 
 .habsList {
   list-style: none;
-  display: flex;
+  display: grid;
+  /* justify-content: center; */
+  grid-template-columns: 1fr 1fr;
 }
 
+
 .habsList li {
-  margin: 0rem 0.5rem 0rem  0.5rem;
+  margin: 0rem 0.5rem 0rem 0.5rem
+  
 }
 
 .titlePage {
@@ -38,4 +55,14 @@ img {
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.headerCard {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  color: white;
+  font-size: large;
 }

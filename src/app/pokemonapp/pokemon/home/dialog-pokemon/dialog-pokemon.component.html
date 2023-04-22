@@ -36,7 +36,7 @@
     </div>
 </div>
 <div mat-dialog-actions class="favorite">
-    <button (click)="addToFavorites(infoPokemon)" mat-fab matTooltip="Warn" color="warn" aria-label="Example fab with a heart icon">
+    <button (click)="addToFavorites(infoPokemon)" [ngClass]="favorite?'select':'noSelect'" mat-fab>
         <mat-icon>favorite</mat-icon>
       </button>
 </div>

@@ -6,10 +6,11 @@
 .card {
     margin: 1rem 2rem 1rem 2rem;
     max-width: 300px;
-    background: #03506F;
     color: #FFE3D8;
     border-radius: 1rem;
-}
+    text-align: center;
+    background-image: linear-gradient(155deg, #03506F 55%, #426a79 45%);
+  }
 
 .habsList {
     list-style: none;
@@ -38,3 +39,4 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
