@@ -7,9 +7,6 @@
 .pokemon-cart {
   border: 1px blue solid;
   border-radius: 15px;
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: 16px;
   margin-bottom: 24px;
   margin-right: 24px;
   align-items: center;

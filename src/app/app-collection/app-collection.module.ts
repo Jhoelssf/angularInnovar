@@ -8,12 +8,14 @@ import { DialogPokemonComponent } from './pokemon-page/dialog-pokemon/dialog-pok
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { FavouritePokemonComponent } from './pokemon-page/favourite-pokemon/favourite-pokemon.component';
+import { SearchedPokemonComponent } from './pokemon-page/searched-pokemon/searched-pokemon.component';
 
 @NgModule({
   declarations: [
     PokemonPageComponent,
     DialogPokemonComponent,
     FavouritePokemonComponent,
+    SearchedPokemonComponent,
   ],
   imports: [
     ReactiveFormsModule,
