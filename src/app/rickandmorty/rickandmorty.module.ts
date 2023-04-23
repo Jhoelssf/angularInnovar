@@ -15,6 +15,8 @@ import { CardComponent } from './characters/character-list/card/card.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { LayoutModule } from '../layout/layout.module';
+import { ReactiveExampleModule } from '../reactive-example/reactive-example.module';
 
 
 
@@ -38,6 +40,8 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     RickandmortyRoutingModule,
     ReactiveFormsModule,
+    LayoutModule,
+    ReactiveExampleModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}

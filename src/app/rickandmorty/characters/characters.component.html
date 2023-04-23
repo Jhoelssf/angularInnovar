@@ -1,41 +1,52 @@
-<ng-container *ngIf="characters; else noCharacters">
-  <div class="page-header">
-    <h1>Personajes</h1>
-    <div class="paginacion">
-      <mat-paginator #paginator
-        class="paginator"
-        (page)="handlePageEvent($event)"
-        [length]="count"
-        [pageSize]="pageSize"
-        [showFirstLastButtons]="true"
-        [hidePageSize]="true"
-        [pageIndex]="pageIndex"
-        [disabled]="disabled"
-        aria-label="Select page">
-      </mat-paginator>
-    </div>
+<div class="characters">
+  <div class="header">
+    <app-header
+      [title]="'Personajes'"
+      [selected]="'Inicio'"
+    ></app-header>
   </div>
-
-  <form [formGroup]="formGroup">
-    <mat-form-field 
-      appearance="outline"
-    >
-      <mat-label>Buscar personaje</mat-label>
-      <input 
-        type="text"
-        matInput 
-        placeholder="Nombre de personaje" 
-        formControlName="searchText"
-        (input)="getCharacters()"
-      >
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
-  </form>
-  <app-character-list
-    [characters]="characters"
-    [favorites]="favorites"
-    (addFavorite)="addFavorite($event)"
-    (removeFavorite)="removeFavorite($event)"
-  ></app-character-list>
-</ng-container>
-<ng-template #noCharacters>No hay personajes...</ng-template>
+  <div class="main">
+    <ng-container *ngIf="characters; else noCharacters">
+      <div class="page-header">
+        <div class="paginacion">
+          <mat-paginator #paginator
+            class="paginator"
+            (page)="handlePageEvent($event)"
+            [length]="count"
+            [pageSize]="pageSize"
+            [showFirstLastButtons]="true"
+            [hidePageSize]="true"
+            [pageIndex]="pageIndex"
+            [disabled]="disabled"
+            aria-label="Select page">
+          </mat-paginator>
+        </div>
+        <form class="form" [formGroup]="formGroup">
+          <mat-form-field 
+            appearance="outline"
+          >
+            <mat-label>Buscar personaje</mat-label>
+            <input 
+              type="text"
+              matInput 
+              placeholder="Nombre de personaje" 
+              formControlName="searchText"
+              (input)="getCharacters()"
+            >
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </form>
+      </div>
+      <app-character-list
+        [characters]="characters"
+        [favorites]="favorites"
+        (addFavorite)="addFavorite($event)"
+        (removeFavorite)="removeFavorite($event)"
+      ></app-character-list>
+    </ng-container>
+    <ng-template #noCharacters>No hay personajes...</ng-template>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</div>

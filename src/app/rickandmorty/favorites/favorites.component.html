@@ -1,11 +1,22 @@
-<div class="page-header">
-  <h1>Personajes favoritos</h1>
+<div class="favorites">
+  <div class="header">
+    <app-header
+      [title]="'Favoritos'"
+      [selected]="'Favoritos'"
+    ></app-header>
+  </div>
+  <div class="main">
+    <ng-container *ngIf="characters; else noCharacters">
+      <app-character-list
+        [characters]="characters"
+        [favorites]="characters"
+        (removeFavorite)="removeFavorite($event)"
+      ></app-character-list>
+    </ng-container>
+    <ng-template #noCharacters>No tienes personajes favoritos!</ng-template>
+    <ng-template #noCharacters>No hay personajes...</ng-template>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
 </div>
-<ng-container *ngIf="characters; else noCharacters">
-  <app-character-list
-    [characters]="characters"
-    [favorites]="characters"
-    (removeFavorite)="removeFavorite($event)"
-  ></app-character-list>
-</ng-container>
-<ng-template #noCharacters>No tienes personajes favoritos!</ng-template>
