@@ -1,0 +1,20 @@
+<div class="header">
+  <mat-toolbar>
+    <span class="logo">Rick & Morty</span>
+    <span class="spacer"></span>
+    <div class="menu">
+      <ng-container *ngFor="let item of menuList">
+        <a 
+          routerLink={{item.link}}
+          [ngClass]="{'active': item.name===selected}"
+          mat-button 
+        >{{item.name}}</a>
+      </ng-container>
+    </div>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <h1 *ngIf="title">{{title}}</h1>
+</div>

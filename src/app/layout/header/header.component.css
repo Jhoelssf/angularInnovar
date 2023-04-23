@@ -1,0 +1,29 @@
+.spacer{
+  flex: 1 1 auto;
+}
+
+.mat-toolbar span{
+  border-radius: 5px;
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.active{
+  background-color: #555555;
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  h1{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+}
