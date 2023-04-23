@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AuthGuardService as AuthGuard } from './shared/auth-guard.service'
 
 const routes: Routes = [
   {
@@ -24,13 +25,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./rickandmorty/rickandmorty.module')
       .then((mod) => mod.RickandmortyModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
     loadChildren: () => 
       import('./auth/auth.module')
       .then((mod) => mod.AuthModule)
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

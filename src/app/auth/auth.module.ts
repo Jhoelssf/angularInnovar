@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 
 
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ]
 })
 export class AuthModule { }

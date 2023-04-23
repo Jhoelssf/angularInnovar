@@ -31,24 +31,9 @@
                 Ingresar usuario
               </mat-error>
             </mat-form-field>
-            <mat-form-field 
-              appearance="outline"
-              class="input-container"
-            >
-              <mat-label>Ingresa tu contraseña</mat-label>
-              <input 
-                type="password"
-                matInput 
-                placeholder="contraseña" 
-                formControlName="password"
-              >
-              
-              <mat-error *ngIf="password.hasError('required')">
-                Ingresar contraseña
-              </mat-error>
-            </mat-form-field>
+            
           </div>
-          <button mat-raised-button color="primary" class="button" type="submit" [disabled]="password.hasError('required')">LogIn</button>
+          <button mat-raised-button color="primary" class="button" type="submit" [disabled]="username.hasError('required')||username.hasError('minlength')||username.hasError('maxlength')">LogIn</button>
         </form>
       </mat-card-content>
       <div class="img-container">
