@@ -13,14 +13,16 @@
 }
 
 .wrapper-text{
+  margin: 20px;
   max-width: 80%;
   border-radius: 20px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   padding: 80px;
   backdrop-filter: blur(10px);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 2px 10px black;
 }
 
 .wrapper-home .saludos{
@@ -32,6 +34,7 @@
   letter-spacing: 2px;
   font-size: 44px;
   margin: 40px 0px;
+  line-height: 50px;
 }
 .wrapper-home h2{
   font-size: 22px;
@@ -50,7 +53,6 @@
   color: pink;
   
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-  height: 2em;
   border-radius: 10px;
   line-height: 2em;
   padding: 5px 15px;

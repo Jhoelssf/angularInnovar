@@ -1,10 +1,15 @@
 <div class="header">
   <div class="logo">Pokedex Project</div>
   <app-search-input *ngIf="showBuscador" ></app-search-input>
-  <nav>
+  <nav [ngClass]="{'nav-responsive':responsiveMenu}">
     <ul>
       <li>
-        <a routerLinkActive="active" routerLink="/home" >Home</a>
+        <button id="navResButton" (click)="openResponsiveMenu()" class="btn-responsive">
+          <i class="bi bi-list"></i>
+        </button>
+      </li>
+      <li>
+        <a (click)="responsiveMenu=false" routerLinkActive="active" routerLink="/home">Home</a>
       </li>
       <li>
         <a routerLinkActive="active" routerLink="/catalogo" (click)="loadSeachInput('catalogo')" >Catalogo</a>

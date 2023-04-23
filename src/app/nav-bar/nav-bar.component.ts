@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
   public showBuscador: boolean = false;
   public optionDataLoad: string = "catalogo";
+  public responsiveMenu: boolean = false;
   constructor(
     private router: Router
   ) {
@@ -23,6 +24,12 @@ export class NavBarComponent implements OnInit {
 
   loadSeachInput(option: string){
     this.optionDataLoad = option;
+    this.responsiveMenu=false
+  }
+
+  openResponsiveMenu(){
+    this.responsiveMenu = !this.responsiveMenu;
+    console.log(this.responsiveMenu)
   }
   
 }
