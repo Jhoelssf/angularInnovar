@@ -14,7 +14,7 @@ export class PipePokemonPipe implements PipeTransform {
       }
     }
     if(result.length==0){
-      return value
+      return []
     }
 
     return result

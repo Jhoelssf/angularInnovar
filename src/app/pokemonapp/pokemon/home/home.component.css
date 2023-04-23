@@ -16,6 +16,12 @@
   }
 }
 
+.paginator {
+  background-color: #03506F;
+  color: white;
+  font-size: medium
+}
+
 .card {
   margin: 1rem 2rem 1rem 2rem;
   max-width: 300px;
@@ -65,4 +71,10 @@ img {
 .search {
   color: white;
   font-size: large;
+}
+
+.searchInput {
+  width: 40%;
+  margin: 0rem 1rem 0rem 1rem;
+
 }

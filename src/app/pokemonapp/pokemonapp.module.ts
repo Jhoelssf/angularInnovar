@@ -14,9 +14,11 @@ import { PipePokemonPipe } from './pokemon/home/pipes/pipe-pokemon.pipe';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { PaginatePipe } from './pokemon/home/pipes/paginate.pipe';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
-  declarations: [PokemonComponent, HomeComponent, FavoritesComponent, DialogPokemonComponent, PipePokemonPipe],
-  imports: [MatIconModule, MatButtonModule, MatDialogModule, MatCardModule, CommonModule, PokemonRoutingModule, HttpClientModule, FormsModule, MatFormFieldModule, MatInputModule],
+  declarations: [PokemonComponent, HomeComponent, FavoritesComponent, DialogPokemonComponent, PipePokemonPipe, PaginatePipe],
+  imports: [MatIconModule, MatButtonModule, MatDialogModule, MatCardModule, CommonModule, PokemonRoutingModule, HttpClientModule, FormsModule, MatFormFieldModule, MatInputModule, MatPaginatorModule],
 })
 export class PokemonModule {}

@@ -22,8 +22,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0rem 2rem 0rem 2rem;
+    padding: 0rem 2rem 0rem 2rem;
     color: white;
+    position:sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #0A043C
 }
 
 .title {

@@ -1,18 +1,17 @@
 <div>
-    
-    <div *ngIf="arrayPokemon;">
+
+    <div *ngIf="arrayPokemon">
         <div>
-            <mat-form-field >
+            <mat-form-field class="searchInput">
                 <mat-label class="search"> click to search a pokemon...</mat-label>
                 <input class="search" matInput name="filterPokemon" placeholder="search.." [(ngModel)]="filterPokemon">
-              </mat-form-field>
-                
-
-            
+            </mat-form-field>
         </div>
+
         <h3 class="titlePage"> Pokemon List </h3>
+        <mat-paginator class="paginator" [length]="arrayPokemon.length" [pageSize]="page_size"  (page)="handlePage($event)"></mat-paginator>
         <div class="grid">
-            <div *ngFor="let pokemon of arrayPokemon | pipePokemon:filterPokemon">
+            <div *ngFor="let pokemon of arrayPokemon | paginate:page_size:page_number |pipePokemon:filterPokemon ">
                 <mat-card class="card">
                     <mat-card-header class="headerCard">
                         <mat-card-title>
@@ -22,14 +21,14 @@
 
                         <mat-card-subtitle>
                             <ul class="habsList">
-                                
-                                    <ng-container *ngFor="let type of pokemon.types">
-                                        <li class="types">
-                                            {{ type.type.name}}
-                                        </li>
-                                    </ng-container>
-                                
-                                
+
+                                <ng-container *ngFor="let type of pokemon.types">
+                                    <li class="types">
+                                        {{ type.type.name}}
+                                    </li>
+                                </ng-container>
+
+
                             </ul>
                         </mat-card-subtitle>
                     </mat-card-header>

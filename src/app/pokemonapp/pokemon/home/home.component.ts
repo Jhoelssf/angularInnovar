@@ -4,6 +4,7 @@ import { PokeApiService } from '../../../shared/poke-api.service';
 import { RootObject } from './model';
 import { DialogPokemonComponent } from './dialog-pokemon/dialog-pokemon.component';
 import { PokemonsService } from 'src/app/shared/pokemons.service';
+import { PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -12,6 +13,9 @@ import { PokemonsService } from 'src/app/shared/pokemons.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  page_size : number = 8;
+  page_number : number = 1; 
+
   pokemon!: number;
   taPokemon!: Array<RootObject>;
   arrayPokemon: Array<RootObject> = [];
@@ -26,8 +30,12 @@ export class HomeComponent implements OnInit {
     private pokeAction: PokemonsService
   ) {}
 
+  handlePage (e: PageEvent){
+    this.page_size = e.pageSize ;
+    this.page_number = e.pageIndex +1
+  }
+
   openDialog(Pokemon: RootObject): void {
-    // this.pokeApi.currentPokemon$.next(idPokemon)
     console.log(this.pokeAction.favoritePokemons)
     console.log(Pokemon)
     this.taPokemon =  this.pokeAction.favoritePokemons.filter(item => item.id == Pokemon.id)
@@ -38,7 +46,6 @@ export class HomeComponent implements OnInit {
       this.favorites = false
     }
     
-    console.log('desdehoome',this.favorites)
     this.dialog.open(DialogPokemonComponent, {
       width: '40rem',
       height: '33rem',
@@ -55,7 +62,7 @@ export class HomeComponent implements OnInit {
     this.pokeApi.pokemon$.subscribe((obj) => {
       this.arrayPokemon.push(obj);
     });
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < 50; i++) {
       this.pokeApi.getPokemon(i);
       
     }
