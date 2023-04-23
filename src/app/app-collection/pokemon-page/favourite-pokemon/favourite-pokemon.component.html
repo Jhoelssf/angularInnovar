@@ -4,7 +4,7 @@
     <div *ngFor="let pokemon of favoriteList">
       <div class="pokemon-cart" (click)="openDialogFavorite(pokemon)">
         <figure>
-          <img [src]="pokemon.sprites.front_default" alt="bike" />
+          <img [src]="pokemon.sprites.front_default" alt="pokemon" />
         </figure>
         <p>{{ pokemon.name }}</p>
       </div>

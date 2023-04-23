@@ -4,17 +4,19 @@
     display: flex;
     justify-content: space-between;
     padding: 0 24px;
-    border-bottom: 2px solid var(--very-light-pink);
+    border: 2px solid var(--very-light-pink);
+    background-color: #152437;
   }
   .logo {
-    width: 150px;
-    height: 65px;
+    width: 160px;
+    height: 80px;
+    margin-right: 36px;
   }
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10px;
     display: flex;
     align-items: center;
     height: 60px;
@@ -28,41 +30,27 @@
   .navbar-left ul li a,
   .navbar-right ul li a {
     text-decoration: none;
-    color: black;
-    border: 1px solid var(--white);
+    color: white;
+    border: 1px solid #2ff22d  ;
     padding: 8px;
     border-radius: 8px;
     font-weight: bold;
+    margin: 8px;
   }
   .navbar-left ul li a:hover,
   .navbar-right ul li a:hover {
     border: 1px solid var(--hospital-green);
     color: var(--hospital-green);
   }
-  .navbar-email {
-    color: var(--very-light-pink);
-    font-size: var(--sm);
-    margin-right: 12px;
-    cursor: pointer;
-  }
-  .navbar-shopping-cart {
+  .navbar-cart {
     position: relative;
   }
-  .navbar-shopping-cart img{
-    height: 35px;
-    width: 35px;
+  .navbar-cart img{
+    height: 60px;
+    width: 100px;
   }
-  .navbar-shopping-cart div {
-    width: 16px;
-    height: 16px;
-    background-color: var(--hospital-green);
-    border-radius: 50%;
-    font-size: var(--sm);
-    font-weight: bold;
-    position: absolute;
-    top: -4px;
-    right: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .sign{
+    color: beige;
+    font-size: bold;
   }

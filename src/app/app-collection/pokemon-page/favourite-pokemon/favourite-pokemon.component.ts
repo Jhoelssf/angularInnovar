@@ -27,4 +27,5 @@ export class FavouritePokemonComponent {
       data: pokemon,
     });
   }
+
 }

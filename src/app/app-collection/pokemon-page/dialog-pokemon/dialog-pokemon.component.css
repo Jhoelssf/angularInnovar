@@ -1,6 +1,9 @@
-.dialog-container{
-  background-color: bisque;
-  border-color: black;
+
+.example-card {
+  max-width: 300px;
+  max-height: 450px;
+  margin-bottom: 8px;
+  border: solid 2px rgb(176, 185, 230);
 }
 
 .title{
@@ -8,10 +11,6 @@
   font-weight: bold;
   display: flex;
   justify-content: center;
-}
-.example-card {
-  max-width: 400px;
-  margin-bottom: 8px;
 }
 
 .mat-card-actions img{
@@ -24,5 +23,16 @@
 }
 .btn-añadir-favorito{
   cursor: pointer;
+}
+.mat-card-content{
+  font-size: bold;
+}
+.weight{
+  border-radius:  4px;
+  padding: 2px;
+}
+.height{
+  border-radius:  4px;
+  padding: 2px;
 }
 

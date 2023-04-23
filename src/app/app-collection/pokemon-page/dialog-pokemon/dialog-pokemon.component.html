@@ -1,12 +1,11 @@
 
-<div mat-dialog-actions class="dialog-container"  >
+<div mat-dialog-actions >
   <mat-card class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>
         <h1 class="title">Ficha Tecnica: {{cardData.name}}</h1>
         <mat-card-actions>
-          <img class="btn-añadir-favorito" (click)="addFavoritePokemon(cardData)" src="https://cdn.icon-icons.com/icons2/851/PNG/512/poke_trainer_two_star_icon-icons.com_67511.png" alt="" width="35px">
+          <img class="btn-añadir-favorito" (click)="addFavoritePokemon(cardData)" src="https://cdn.icon-icons.com/icons2/1845/PNG/512/pinklike_116094.png" alt="" width="35px">
         </mat-card-actions>
       </mat-card-title>
     </mat-card-header>
@@ -14,17 +13,12 @@
       <img mat-card-image [src]="cardData.sprites.front_default" alt="Imagen pokemon" >
     </div>
     <mat-card-content>
-      <p>
-        Peso = {{cardData.height}}
+      <p class="height">
+        Height = {{cardData.height}}
       </p>
-      <p>Ancho = {{cardData.weight}}
+      <p class="weight" >Weight = {{cardData.weight}}
       </p>
-      <h4>Habilidades:</h4>
-      <div *ngFor="let ability of cardData.abilities">
-        <p>
-          {{ability.ability.name}}
-        </p>
-      </div>
+      <h4 *ngFor="let ability of cardData.abilities" class="habilities">Habilidad = {{ability.ability.name}}</h4>
 
     </mat-card-content>
 

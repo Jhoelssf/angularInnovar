@@ -1,12 +1,24 @@
-<header>
-</header>
+<header></header>
 <body>
-  <div class="my-pokemon-content" >
-    <div class="pokemon-cart" *ngFor="let pokemon of listPokemon" (click)="openDialog(pokemon)">
-      <figure >
-        <img  [src]="pokemon.sprites.front_default" />
-      </figure>
-      <p>{{ pokemon.name }}</p>
+  <h1 class="title">Pokemon Database</h1>
+  <div class="my-pokemon-content">
+    <div
+      class="pokemon-cart"
+      *ngFor="let pokemon of listPokemon"
+    >
+      <img [src]="pokemon.sprites.front_default" />
+      <div class="info-pokemon">
+        <img
+        class="icon-favorite"
+        src="https://cdn.icon-icons.com/icons2/1845/PNG/512/pinklike_116094.png"
+        alt=""
+      />
+        <p>{{ pokemon.name }}</p>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Info_Simple_bw.svg/512px-Info_Simple_bw.svg.png"
+          (click)="openDialog(pokemon)"
+        />
+      </div>
     </div>
   </div>
 </body>

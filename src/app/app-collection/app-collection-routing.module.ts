@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
 import { FavouritePokemonComponent } from './pokemon-page/favourite-pokemon/favourite-pokemon.component';
+import { SearchedPokemonComponent } from './pokemon-page/searched-pokemon/searched-pokemon.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'favorites',
     component: FavouritePokemonComponent,
+  },
+  {
+    path: 'search-pokemon',
+    component: SearchedPokemonComponent,
   }
 ];
 
