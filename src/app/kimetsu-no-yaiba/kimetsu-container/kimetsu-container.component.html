@@ -5,8 +5,9 @@
     <div *ngIf="objectCharacters; else Block" class="container">
         <app-card *ngFor='let character of objectCharacters' [character]="character"></app-card>
     </div>
-    <ng-template #Block>
-        <h1 style="font-weight: bold;font-style: oblique;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #ffffff;">Espere unos segundos por favor...</h1>
+    <ng-template #Block >
+        <h1 style="font-weight: bold;font-style: oblique;font-family: Cambria, Cochin, 
+        Georgia, Times, 'Times New Roman', serif;color: #ffffff;height: 1000px;">Espere unos segundos por favor...</h1>
     </ng-template>
 
 </div>

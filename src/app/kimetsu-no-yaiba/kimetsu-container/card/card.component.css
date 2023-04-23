@@ -60,20 +60,22 @@ img{
 
 }
 button{
-    color: #000000;
+    color: #ffffff;
     font-weight: bolder;
     border-radius: 0.5mm;
     border: none;
     width: 50%;
     height: 30px;
-    background-image: linear-gradient(to right,#ffe600 20% ,#041f96  );
+    background-image: linear-gradient(to right bottom ,#272424 ,#645e54 ,#1f1a1a );
     opacity: 1;
-    cursor: pointer
+    cursor: pointer;
+    border-radius: 0.3mm;
 
     
 }
 button:hover {
     opacity: 0.8; /* opacidad reducida al pasar el cursor por encima */
+    background-color: rgb(0, 153, 255);
 }
 h1{
     text-align: center; 
