@@ -7,17 +7,19 @@ import { Character } from '../rickandmorty/charactermodels';
 })
 export class AuthService {
   private username: string | undefined = undefined;
-  private favoritesSubject: BehaviorSubject<string | undefined> = new BehaviorSubject<string | undefined>(this.username);
+  private authSubject$: BehaviorSubject<string | undefined> = new BehaviorSubject<string | undefined>(this.username);
 
   constructor() { }
 
   getUsername(): Observable<string | undefined>{
-    return this.favoritesSubject.asObservable();
+    return this.authSubject$.asObservable();
   }
 
   login(username: string): void{
-    if(username.indexOf(' ') < 0)
+    if(username.indexOf(' ') < 0){
       this.username = username;
+      this.authSubject$.next(this.username);
+    }
   }
 
   isLoggedIn(): boolean{
