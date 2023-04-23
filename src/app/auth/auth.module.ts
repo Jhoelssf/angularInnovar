@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { LayoutModule } from '../layout/layout.module';
 
 
 
@@ -25,7 +26,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     MatButtonModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    LayoutModule
   ]
 })
 export class AuthModule { }
