@@ -7,38 +7,50 @@
 <ng-template #noImage>
   <mat-spinner diameter="40"></mat-spinner>
 </ng-template>
-<div class="login">
-  <div class="container">
-    <div class="background"></div>
-    <mat-card class="card">
-      <mat-card-content class="content">
-        <form class="form" (ngSubmit)="onSubmit($event)" [formGroup]="formGroup">
-          <mat-card-subtitle class="subtitle">Rick & Morty App</mat-card-subtitle>
-          <mat-card-title class="title">Bienvenido</mat-card-title>
-          <div class="inputs">
-            <mat-form-field 
-              appearance="outline"
-              class="input-container"
-            >
-              <mat-label>Ingresa tu nombre de usuario</mat-label>
-              <input 
-                type="text"
-                matInput 
-                placeholder="usuario" 
-                formControlName="username"
-              >
-              <mat-error *ngIf="!username.hasError('required')">
-                Ingresar usuario
-              </mat-error>
-            </mat-form-field>
-            
+
+<div class="container">
+  <div class="header">
+    <app-header
+    ></app-header>
+  </div>
+  <div class="main">
+    <div class="login">
+      <div class="login-container">
+        <div class="background"></div>
+        <mat-card class="card">
+          <mat-card-content class="content">
+            <form class="form" (ngSubmit)="onSubmit($event)" [formGroup]="formGroup">
+              <mat-card-subtitle class="subtitle">Rick & Morty App</mat-card-subtitle>
+              <mat-card-title class="title">Bienvenido</mat-card-title>
+              <div class="inputs">
+                <mat-form-field 
+                  appearance="outline"
+                  class="input-container"
+                >
+                  <mat-label>Ingresa tu nombre de usuario</mat-label>
+                  <input 
+                    type="text"
+                    matInput 
+                    placeholder="usuario" 
+                    formControlName="username"
+                  >
+                  <mat-error *ngIf="!username.hasError('required')">
+                    Ingresar usuario
+                  </mat-error>
+                </mat-form-field>
+                
+              </div>
+              <button mat-raised-button color="primary" class="button" type="submit" [disabled]="username.hasError('required')||username.hasError('minlength')||username.hasError('maxlength')">LogIn</button>
+            </form>
+          </mat-card-content>
+          <div class="img-container">
+            <img class="img" [src]="backgroundImg" *ngIf="backgroundImg; else noImage" alt="">
           </div>
-          <button mat-raised-button color="primary" class="button" type="submit" [disabled]="username.hasError('required')||username.hasError('minlength')||username.hasError('maxlength')">LogIn</button>
-        </form>
-      </mat-card-content>
-      <div class="img-container">
-        <img class="img" [src]="backgroundImg" *ngIf="backgroundImg; else noImage" alt="">
+          </mat-card>
       </div>
-      </mat-card>
+    </div>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
   </div>
 </div>

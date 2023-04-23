@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     this.authService.login(sanitized);
     if(this.authService.isLoggedIn()){
-      this.openSnackBar('Login correcto');
+      this.openSnackBar(`Bienvenido ${sanitized}! :)`);
       this.router.navigate(['rickandmorty']);
     } else {
       this.username.setValue('');
