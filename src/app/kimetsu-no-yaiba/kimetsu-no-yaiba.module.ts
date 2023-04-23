@@ -7,14 +7,17 @@ import { NavbarComponent } from './kimetsu-container/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DialogComponent } from './kimetsu-container/card/dialog/dialog.component';
 @NgModule({
-  declarations: [KimetsuContainerComponent,CardComponent],
+  declarations: [KimetsuContainerComponent,CardComponent,DialogComponent],
   imports: [
     CommonModule,
     KimetsuNoYaibaRoutingModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
 
   
   ]

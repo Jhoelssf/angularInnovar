@@ -7,10 +7,10 @@ import { NavbarComponent } from './kimetsu-no-yaiba/kimetsu-container/navbar/nav
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'; // Importa el módulo de iconos
 import { SoundtrackComponent } from './kimetsu-no-yaiba/kimetsu-container/soundtrack/soundtrack.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent,NavbarComponent,SoundtrackComponent],
-  imports: [BrowserModule, AppRoutingModule,MatToolbarModule,MatIconModule],
+  imports: [BrowserModule, AppRoutingModule,MatToolbarModule,MatIconModule,BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -9,9 +9,7 @@ export class SoundtrackComponent implements OnInit {
   audioPlayer: HTMLAudioElement;
   isPlaying: boolean = false;
 
-  constructor() {
-    this.audioPlayer = new Audio('/assets/static/soung-1.mp3');
-  }
+  constructor() {this.audioPlayer = new Audio('/assets/static/soung-1.mp3');}
 
   playAudio(): void {
     if (this.audioPlayer.paused) {

@@ -66,7 +66,7 @@ button{
     border: none;
     width: 50%;
     height: 30px;
-    background-image: linear-gradient(to right bottom,#ffe600 20% ,#041f96  );
+    background-image: linear-gradient(to right,#ffe600 20% ,#041f96  );
     opacity: 1;
     cursor: pointer
 
