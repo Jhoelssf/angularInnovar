@@ -22,6 +22,11 @@ export class AuthService {
     }
   }
 
+  logout(): void{
+    this.username = undefined;
+    this.authSubject$.next(this.username);
+  }
+
   isLoggedIn(): boolean{
     return this.username !== undefined;
   }
