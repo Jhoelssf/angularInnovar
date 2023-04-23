@@ -1,6 +1,6 @@
 <div class="header">
   <mat-toolbar>
-    <span class="logo">Rick & Morty</span>
+    <span class="logo">Rick & Morty <span *ngIf="username">- {{username}}</span></span>
     <span class="spacer"></span>
     <div class="menu">
       <ng-container *ngFor="let item of menuList">
