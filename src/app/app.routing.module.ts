@@ -4,8 +4,12 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    component:AppComponent,
+    redirectTo:"home",
     pathMatch: 'full',
+  },
+  {
+    path:'home',
+    loadChildren:()=>import('./kimetsu-no-yaiba/kimetsu-no-yaiba.module').then((mod)=>mod.KimetsuNoYaibaModule)
   }
 ];
 
