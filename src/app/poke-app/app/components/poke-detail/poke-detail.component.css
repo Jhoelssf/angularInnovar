@@ -1,0 +1,66 @@
+mat-card {
+    background: #fff;
+    text-align: center;
+}
+mat-card-content:first-child {
+    color: #000;
+    background: #555;
+    border-radius: 8px;
+}
+mat-card-content:nth-child(2) {
+    background: #fff;
+}
+mat-card:first-child .mat-card-content img {
+    width: 100%;
+    object-fit: adjust;
+}
+mat-card-title {
+    color: #000;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 0.5rem;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3rem;
+}
+p {
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+hr {
+    border: 1px solid #555;
+    margin: 0.5rem 2rem;
+}
+.star {
+    color: #f44336;
+    outline: none;
+    border: none;
+    background: none;
+}
+.star:hover {
+    background: none;
+}
+mat-icon {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+button {
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+}
+button:hover {
+    background: #000;
+}

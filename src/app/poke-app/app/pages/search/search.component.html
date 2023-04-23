@@ -1,0 +1,29 @@
+<div class="container">
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+    <!-- Content -->
+    <mat-card>
+        <!-- Search Form -->
+        <mat-card-content>
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                <mat-label>Search...</mat-label>
+                <mat-form-field>
+                    <input type="search" matInput formControlName="search" (keyup)="onSearchChange()">
+                    <mat-icon (click)="onSubmit()">search</mat-icon>
+                </mat-form-field>
+                <p>Found: {{pokemonListFiltered.length}}</p>
+            </form>
+        </mat-card-content>
+        <!-- Pokemon List -->
+        <mat-card-content>
+            <app-poke-list [pokemonList]="pokemonList"></app-poke-list>
+        </mat-card-content>
+        <!-- Action Buttons -->
+        <mat-card-actions *ngIf="pokemonListFiltered.length > 0">
+            <button mat-flat-button (click)="previousPage()" [ngClass]="{'disabled': isLower}">Previous</button>
+            <button mat-flat-button (click)="nextPage()" [ngClass]="{'disabled': isUpper}">Next</button>
+        </mat-card-actions>
+    </mat-card>
+    <!-- Footer -->
+    <app-footer [isLogged]="true"></app-footer>
+</div>

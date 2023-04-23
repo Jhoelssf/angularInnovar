@@ -1,0 +1,17 @@
+<div class="container">
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+    <!-- Pokemon List -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title style="font-size: 1.5rem;">Favorites</mat-card-title>
+            <mat-label *ngIf="favorites.length === 0">No favorites <span>😢</span></mat-label>
+        </mat-card-header>
+        <!-- Pokemon List -->
+        <mat-card-content>
+            <app-poke-list [pokemonList]="favorites"></app-poke-list>
+        </mat-card-content>
+    </mat-card>
+    <!-- Footer -->
+    <app-footer [isLogged]="true"></app-footer>
+</div>

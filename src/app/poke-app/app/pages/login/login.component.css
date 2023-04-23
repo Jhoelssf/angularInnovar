@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+mat-card {
+    background-color: #fff;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+mat-card-title {
+    text-align: center;
+    color: #000;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+mat-form-field {
+    width: 300px;
+    margin-bottom: 25px;
+}
+input {
+    position: absolute;
+    width: 245px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 0 15px;
+    color: #555;
+}
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+::ng-deep .mat-input-element::placeholder {
+    color: #555;
+}
+mat-placeholder {
+    color: #555;
+}
+mat-label {
+    position: absolute;
+    color: #555;
+    background-color: #fff;
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin-left: 10px;
+    padding: 0 7px;
+}
+mat-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 25px;
+    padding-left: 15px;
+}
+mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+}
+button[mat-raised-button] {
+    width: 275px;
+    margin-top: 20px;
+}
+button[mat-raised-button]:hover {
+    background-color: #1976d2;
+}
+button[mat-button] {
+    color: #1976d2;
+}
+button[mat-button][color="warn"] {
+    color: #f44336;
+}
+app-footer {
+    margin-top: auto;
+}

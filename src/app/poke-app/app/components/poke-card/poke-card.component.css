@@ -1,0 +1,57 @@
+.card {
+    background: #fff;
+    margin: 5px 5px 0 5px;
+}
+.card-image {
+    display: flex;
+    justify-content: center;
+    background: #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.card-image:hover {
+    background: #555;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+.card-image img:hover {
+    animation: rotate 0.5s ease;
+}
+
+.card-image img {
+    width: 100%;
+    object-fit: cover;
+}
+.card-image img {
+    width: 100%;
+    object-fit: cover;
+}
+.name-pokemon {
+    color: #000;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.7rem 0;
+}
+.button {
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.2rem 1rem;
+    margin: 0.1rem 0 0.8rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.button:hover {
+    background: #000;
+}

@@ -1,0 +1,23 @@
+<mat-toolbar [ngStyle]="{'justify-content': isLogged ? 'space-between' : 'center'}">
+    <img class="logo" src="assets/img/logo.png" alt="logo" [ngClass]="{'centered': !isLogged}">
+    <div *ngIf="isLogged">
+        <div class="spacer"></div>
+    </div>
+    <div class="button-group" *ngIf="isLogged">
+        <button mat-icon-button routerLink="/pokeapp/home" matTooltip="Home">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-icon-button routerLink="/pokeapp/favorites" matTooltip="Favorites">
+            <mat-icon>favorite</mat-icon>
+            <span>Favorites</span>
+        </button>
+        <button mat-icon-button routerLink="/pokeapp/search" matTooltip="Search">
+            <mat-icon>search</mat-icon>
+            <span>Search</span>
+        </button>
+        <button class="logout" mat-icon-button routerLink="/pokeapp/login" matTooltip="Logout" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

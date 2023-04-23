@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+mat-card {
+    flex-grow: 1;
+    background-color: #fff;
+}
+mat-card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+mat-card-title {
+    color: #000;
+    font-weight: 600;
+    padding: 1rem 0 0.5rem 0;
+}
+mat-label {
+    color: #000;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+app-footer {
+    margin-top: auto;
+}

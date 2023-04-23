@@ -1,0 +1,13 @@
+<div *ngIf="pokemon">
+    <div class="card">
+        <div class="card-image" (click)="goDetails(pokemonView)">
+            <img [src]="pokemonView.url_img" alt="Pokemon Image" />
+        </div>
+        <div class="card-content">
+            <p class="name-pokemon">{{ pokemonView.pokemon.name }}</p>
+        </div>
+    </div>
+    <div>
+        <button class="button" (click)="goDetails(pokemonView)">Details</button>
+    </div>
+</div>

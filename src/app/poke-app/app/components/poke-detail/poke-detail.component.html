@@ -1,0 +1,29 @@
+<mat-card *ngIf="pokemonView">
+    <mat-card-content>
+        <img [src]="pokemonView.url_img" alt="Pokemon Image" style="max-width: 100%">
+    </mat-card-content>
+    <mat-card-title>{{pokemonView.pokemon.name}}</mat-card-title>
+    <button class="star" mat-icon-button (click)="toggleFavorite()">
+        <mat-icon *ngIf="isInFavorites">delete</mat-icon>
+        <mat-icon *ngIf="!isInFavorites">{{isFavorite ? 'star' : 'star_border'}}</mat-icon>
+    </button>
+    <mat-card-content>
+        <p>Type: {{pokemonView.type}}</p>
+        <p><b>Stats:</b></p>
+        <hr>
+        <div class="stats">
+            <div>
+                <p>HP: {{pokemonView.stats.hp}}</p>
+                <p>Attack: {{pokemonView.stats.attack}}</p>
+            </div>
+            <div>
+                <p>Defense: {{pokemonView.stats.defense}}</p>
+                <p>Speed: {{pokemonView.stats.speed}}</p>
+            </div>
+        </div>
+        <hr>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button (click)="closeDialog()">Close</button>
+    </mat-card-actions>
+</mat-card>

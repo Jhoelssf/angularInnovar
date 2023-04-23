@@ -1,0 +1,21 @@
+<div class="container">
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+    <!-- Pokemon List -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title style="font-size: 1.5rem;">Pokemon List</mat-card-title>
+        </mat-card-header>
+        <!-- Pokemon List -->
+        <mat-card-content>
+            <app-poke-list [pokemonList]="pokemonList"></app-poke-list>
+        </mat-card-content>
+        <!-- Action Buttons -->
+        <mat-card-actions>
+            <button mat-flat-button (click)="previousPage()" [ngClass]="{'disabled': isLower}">Previous</button>
+            <button mat-flat-button (click)="nextPage()" [ngClass]="{'disabled': isUpper}">Next</button>
+        </mat-card-actions>
+    </mat-card>
+    <!-- Footer -->
+    <app-footer [isLogged]=" true"></app-footer>
+</div>

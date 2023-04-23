@@ -1,0 +1,15 @@
+<mat-toolbar [ngStyle]="{'height' : isLogged ? '125px' : '100px'}">
+    <p class="title">Poke App</p>
+    <p>Contact: info@pokeapp.com</p>
+    <div class="button-group" *ngIf="isLogged">
+        <button mat-icon-button routerLink="/pokeapp/home" matTooltip="Home">
+            <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="/pokeapp/favorites" matTooltip="Favorites">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="/pokeapp/search" matTooltip="Search">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
