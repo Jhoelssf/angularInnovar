@@ -6,10 +6,12 @@ import { FavoritesPokemonComponent } from './favorites-pokemon/favorites-pokemon
 
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FavCardComponent } from './fav-card/fav-card.component';
 
 @NgModule({
   declarations: [
-    FavoritesPokemonComponent
+    FavoritesPokemonComponent,
+    FavCardComponent
   ],
   imports: [
     CommonModule,

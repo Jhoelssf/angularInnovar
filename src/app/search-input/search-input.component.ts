@@ -1,6 +1,7 @@
+import { ListaPokemonBuscarService } from './../shared/lista-pokemon-buscar.service';
 import { PokemonObject } from 'src/app/models/pokemonObj';
 import { Subject, Observable, startWith, map } from 'rxjs';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { PokemonAPIService } from '../shared/pokemon-api.service';
 import { PokemonList } from '../models/pokemonList';
@@ -16,13 +17,13 @@ export class SearchInputComponent implements OnInit{
   public listaPokemons: PokemonList[] = [];
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
   myControl = new FormControl('');
-  options: string[] = ['Hola','Rei','Mundo'];
+  options: string[] = ['Hola','Rei','Vi'];
   filteredOptions!: Observable<string[]>;
 
   constructor(
     private pokeApi: PokemonAPIService,
-    public dialog: MatDialog
-
+    public dialog: MatDialog,
+    private searchServ: ListaPokemonBuscarService
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +35,15 @@ export class SearchInputComponent implements OnInit{
         this.options = this.listaPokemons.map<string>((poke:PokemonList)=>poke.name)
         this.filteredOptions = this.myControl.valueChanges.pipe(
           startWith(''),
-          map(value => this._filter(value || ''))
+          map(value =>{
+            if((value==undefined?0:value.length)>=2){
+              this.searchServ.addSearchPokemon(this._filter(value || ''));
+            }else{
+              this.searchServ.cambiarLista.emit(false);
+            }
+            return this._filter(value || '')
+          }
+          )
         );
       }
     )

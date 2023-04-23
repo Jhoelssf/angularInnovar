@@ -1,4 +1,9 @@
-<div class="gridview">
+<div *ngIf="mostrarData" class="gridview" >
+  <p *ngFor="let item of pokemonObservableSlice ">
+    <app-gridcard [pokemon]="(item|async) ?? pokemonDefecto" ></app-gridcard>
+  </p>
+</div>
+<div *ngIf="!mostrarData" class="gridview">
   <p *ngFor="let item of pokemonObjectList ">
     <app-gridcard [pokemon]="item" ></app-gridcard>
   </p>

@@ -11,12 +11,21 @@ export class FavoritesServiceService {
   
   constructor() { }
   
-  addFavoritePokemon(poke: PokemonObject){
+  addFavoritePokemon(poke: PokemonObject):boolean{
     const index = this.pokemonLista.findIndex((ele:PokemonObject) => ele.id === poke.id); // Verificamos si el elemento ya existe en el array
     if (index === -1) {
       this.pokemonLista.push(poke)
     } else {
-      console.log('El elemento ya existe en el array'); // Si existe, mostramos un mensaje de error
+      return false;
+    }
+    this.pokemonFavorito$.next(this.pokemonLista);
+    return true;
+  }
+
+  delFavoritePokemon(id: number){
+    const index = this.pokemonLista.findIndex((ele:PokemonObject) => ele.id === id); // Verificamos si el elemento ya existe en el array
+    if (index > -1) {
+      this.pokemonLista.splice(index, 1);
     }
     this.pokemonFavorito$.next(this.pokemonLista);
   }
@@ -26,13 +35,4 @@ export class FavoritesServiceService {
   }
 
 
-  // agregarCarta(carta: PokemonObject){
-  //   this.pokemonSubject.next(carta);
-  //   this.pokemonLista.push(carta)
-  //   this.seAgregoCarta.emit(carta)
-  // }
-
-  // getCarta(){
-  //   return this.pokemonSubject.asObservable();
-  // }
 }
