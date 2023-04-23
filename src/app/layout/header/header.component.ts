@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
     {name: 'Ejemplo', link: '/ejemplo'}
   ];
   username: string | undefined = undefined;
+  logedIn: boolean = false;
   
   unsubscribe$: Subject<boolean> = new Subject<boolean>();
 
@@ -27,8 +28,13 @@ export class HeaderComponent implements OnInit {
       .getUsername()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((username)=>{
-        this.username = username; 
+        this.username = username;
+        this.logedIn = username !== undefined;
       });
+  }
+
+  logOut(): void{
+    this.auth.logout();
   }
 
 }

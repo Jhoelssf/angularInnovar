@@ -11,8 +11,12 @@
         >{{item.name}}</a>
       </ng-container>
     </div>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <button mat-icon-button *ngIf="!logedIn" class="example-icon" aria-label="icon-button" routerLink="/login">
+      <mat-icon>login</mat-icon>
+    </button>
+    
+    <button mat-icon-button class="example-icon" aria-label="icon-button" routerLink="/login" (click)="logOut()">
+      <mat-icon *ngIf="logedIn">logout</mat-icon>
     </button>
   </mat-toolbar>
   
