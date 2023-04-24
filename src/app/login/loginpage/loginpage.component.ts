@@ -39,7 +39,9 @@ export class LoginpageComponent implements OnInit {
       if(this.authService.login(
         this.formLogin.value['email'],
         this.formLogin.value['password'])){
+
         console.log('logeado con exito!');
+        this.authService.setAuthToken("TOKEN_AUTENTICACION");
         this.router.navigate(['/home']);
       }else{
         console.log('loggin fallido')

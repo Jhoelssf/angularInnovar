@@ -32,7 +32,6 @@ export class NavBarComponent implements OnInit {
 
   openResponsiveMenu(){
     this.responsiveMenu = !this.responsiveMenu;
-    console.log(this.responsiveMenu)
   }
   
 }
