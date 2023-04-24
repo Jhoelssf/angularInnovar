@@ -15,5 +15,7 @@ mat-toolbar-row {
   background-color: #ffffff;
   height: 100px;
   text-align: center;
+  box-shadow: 10px 50px 40px rgb(0, 0, 0, 0.2) inset;
+  box-shadow: 10px 2px 4px rgb(0, 0, 0, 0.2);
 
 }
