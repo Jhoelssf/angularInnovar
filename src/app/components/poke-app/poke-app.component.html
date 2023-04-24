@@ -1,0 +1,11 @@
+<!--<div class="pokemon-list">
+        <app-poke-detail 
+        *ngFor="let pokemon of pokeService.pokemons; index as i" 
+        [pokemon]="pokemon.name" 
+        [numero]="i+1"
+        ></app-poke-detail>
+ </div>
+-->
+<app-poke-detail
+  *ngFor="let pokemon of pokeService.pokemons"
+  [pokemon]="pokemon"></app-poke-detail>

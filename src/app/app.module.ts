@@ -1,15 +1,29 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing.module';
-import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+import { PokeAppComponent } from './components/poke-app/poke-app.component';
+import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { PokemonService } from './services/pokemon.service';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    PokeAppComponent,
+    PokeDetailComponent,
+    FooterComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
+  providers: [PokemonService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

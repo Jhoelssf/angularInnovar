@@ -1,0 +1,8 @@
+
+:host{
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-evenly;
+  background-color: rgb(51, 50, 48);
+
+}
