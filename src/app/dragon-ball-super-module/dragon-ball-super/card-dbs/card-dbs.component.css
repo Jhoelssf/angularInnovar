@@ -45,7 +45,10 @@
 }
 .favorite-icon-container{
     position: absolute;
-    color: #ffffff;
+    color: #ff1d68ec;
+    background: linear-gradient(to right, #e4004c, rgb(255, 0, 191));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .mat-icon{
     font-size:35px;
@@ -112,7 +115,7 @@ button{
     border: none;
     width: 50%;
     height: 30px;
-    background-image: linear-gradient(to right bottom,#36393a ,#4b4b4e );
+    background-image: linear-gradient(to right ,#242323 ,#383735 ,#140303);
     opacity: 1;
     cursor: pointer;
     border-radius: 0.3mm;
