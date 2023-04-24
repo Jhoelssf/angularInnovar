@@ -2,8 +2,8 @@
 <div class="card">
     <div class="card-img-container">
         <img src={{character.img}} >
-        <div style="border: none;background-color:transparent;"
-            class="favorite-icon-container"  (click)="onHeartClick()" [ngClass]="{'pulse': isPulsing}">
+        <div #asfavorite style="border: none;background-color:transparent;"
+            class="favorite-icon-container" (click)="change()" (click)="onHeartClick()" [ngClass]="{'pulse': isPulsing}">
             <mat-icon>favorite</mat-icon>
         </div>
     </div>
@@ -17,7 +17,7 @@
         </div>
         <hr class="line-1">
         <div class="content-1">
-            <h2>Race:&nbsp;{{character.gender}}</h2>
+            <h2>gender:&nbsp;{{character.gender}}</h2>
         </div>
         <hr class="line-1">
         <div class="button-card">

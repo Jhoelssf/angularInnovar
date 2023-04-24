@@ -3,7 +3,7 @@
     height: 400px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .card-img-container{
     width: 100%;
@@ -45,10 +45,7 @@
 }
 .favorite-icon-container{
     position: absolute;
-    color: #ff1d68ec;
-    background: linear-gradient(to right, #e4004c, rgb(255, 0, 191));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffffec;
 }
 .mat-icon{
     font-size:35px;
@@ -60,7 +57,7 @@
       transform: scale(1);
     }
     100% {
-      transform: scale(1.2);
+      transform: scale(2);
     }
     300% {
       transform: scale(1);
@@ -120,5 +117,5 @@ button{
     cursor: pointer;
     border-radius: 0.3mm;
     align-self: flex-end;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 }

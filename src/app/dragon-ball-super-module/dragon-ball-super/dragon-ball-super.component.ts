@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RootObject } from 'src/app/interface/model';
+import { Character, RootObject } from 'src/app/interface/model';
 import { ReactiveServiceService } from 'src/app/service/reactive-service.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ReactiveServiceService } from 'src/app/service/reactive-service.service
   styleUrls: ['./dragon-ball-super.component.css']
 })
 export class DragonBallSuperComponent implements OnInit {
-
+  favorites: string[]=[];
   objectCharacters: RootObject|any;
   baseUrl= "https://dragon-ballz-super-api.site/api";
   constructor(

@@ -8,7 +8,7 @@
         <!-- <app-pokemon-card-component *ngFor="let pokemon of pokemons" [pokemon]="pokemon">
         </app-pokemon-card-component> -->
         <div *ngIf="objectCharacters; else Block" class="container">
-            <app-card-dbs *ngFor='let character of objectCharacters' [character]="character"></app-card-dbs>
+            <app-card-dbs *ngFor='let character of objectCharacters' [character]="character" [favorites]="favorites"></app-card-dbs>
         </div>
         <ng-template #Block >   
             <app-loading ></app-loading>
