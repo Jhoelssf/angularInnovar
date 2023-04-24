@@ -16,4 +16,5 @@ export class ReactiveService {
   setInfoPokemon(obj: RootObject) {
     this.infoPokemon.next(obj);
   }
+
 }

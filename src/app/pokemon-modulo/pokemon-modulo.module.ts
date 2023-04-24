@@ -12,13 +12,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PokemonCardComponent } from './pokemon-cards/pokemon-card/pokemon-card.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FavoritesComponent } from './pokemon-cards/favorites/favorites.component';
 
 
 @NgModule({
   declarations: [
     PokemonCardsComponent,
     PokemonCardsComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    FavoritesComponent
   ],
   imports: [
     CommonModule,

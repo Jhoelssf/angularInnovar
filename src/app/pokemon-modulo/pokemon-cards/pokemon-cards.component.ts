@@ -5,6 +5,7 @@ import { RootObject } from './model';
 import {PageEvent} from '@angular/material/paginator';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { MatDialog } from '@angular/material/dialog';
+import { PokemonFavoritesService } from 'src/app/shared/pokemon-favorites.service';
 
 @Component({
   selector: 'app-pokemon-cards',
@@ -29,13 +30,19 @@ export class PokemonCardsComponent implements OnInit {
 
   pageEvent!: PageEvent;
   objectPokemon!:RootObject | undefined;
+  icon: string = "star_border";
+  ListFav: RootObject[] = [];
+  bool_Fav: boolean = false;
+
+  
 
  
 
   constructor(
     private http: HttpClient,
     private reactiveService: ReactiveService,
-    private matDialog:MatDialog
+    private matDialog:MatDialog,
+    private Action: PokemonFavoritesService,
   ) {}
 
   ngOnInit(): void {
@@ -101,5 +108,18 @@ export class PokemonCardsComponent implements OnInit {
       },
     });
   }
+
+  onFavorite(Pokemon: RootObject){
+    //if(ListFav.includes(Pokemon))
+    if(!this.bool_Fav)
+    {
+      this.icon = "star";
+      this.bool_Fav = true;
+    }else{
+      this.icon = "star_border"
+      this.bool_Fav = false;
+    }
+  }
+
 
 }
