@@ -27,7 +27,7 @@ export class CardDbsComponent implements OnInit {
     openDialog() {
       this.dialog.open(DialogComponent, {
         data: {
-          url: "panda",
+          character: this.character,
         },
       });
     }

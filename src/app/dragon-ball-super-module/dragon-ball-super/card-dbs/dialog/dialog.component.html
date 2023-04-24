@@ -1,16 +1,14 @@
 
 <div mat-dialog-content class="card-dialog">
     <div class="img-dialog-container">
-        <img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/07/Tengen_anime.png" >
+        <img src={{data.character.img}}>
     </div>
     <div class="card-dialog-container">
-        <mat-list>
-            <mat-list-item>I</mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item>Item 2</mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item>Item 3</mat-list-item>
-        </mat-list>
+        <div class="header-container">
+          <h1>Biografy</h1>
+          <p>{{data.character.bio}}</p>
+        </div>
+        
     </div>
     
   <!--<ul>
