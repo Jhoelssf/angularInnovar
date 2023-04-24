@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,14 +18,16 @@ const routes: Routes = [
     loadChildren: () => 
       import('./favorites/favorites.module').then(
         (m) => m.FavoritesModule
-      )
+      ),
+    canActivate: [AuthGuard]
   },
   {
     path: 'catalogo',
     loadChildren: () => 
       import('./grid-pokemons/grid-pokemons.module').then(
         (m) => m.GridPokemonsModule
-      )
+      ),
+    canActivate: [AuthGuard]
   },
   {
     path: 'ejemplo',
