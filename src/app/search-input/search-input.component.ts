@@ -1,5 +1,4 @@
 import { ListaPokemonBuscarService } from './../shared/lista-pokemon-buscar.service';
-import { PokemonObject } from 'src/app/models/pokemonObj';
 import { Subject, Observable, startWith, map } from 'rxjs';
 import { Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { FormControl } from '@angular/forms';

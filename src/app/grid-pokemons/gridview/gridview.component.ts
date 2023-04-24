@@ -1,4 +1,4 @@
-                                                                      
+                                                                     
 import { PokemonObject } from './../../models/pokemonObj'             ;
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core'              ;
 import { MatPaginator, PageEvent } from '@angular/material/paginator';

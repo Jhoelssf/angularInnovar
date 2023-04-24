@@ -32,6 +32,13 @@ const routes: Routes = [
       import('./ejemplo-modulo/ejemplo-modulo.module').then(
         (mod) => mod.EjemploModuloModule
       ),
+  },
+  {
+    path: 'login',
+    loadChildren: () => 
+      import('./login/login.module').then(
+        (m) => m.LoginModule
+      )
   }
 ];
 
