@@ -1,0 +1,18 @@
+<div>
+    <app-navbar></app-navbar>
+</div>
+<h1 style="text-align: center;margin-top: 40px;font-size:xx-large;
+        font-weight:bolder;font-variant: small-caps;">La Batalla De Los Dioses</h1>
+<div  class="container-main">
+    <div >
+        <!-- <app-pokemon-card-component *ngFor="let pokemon of pokemons" [pokemon]="pokemon">
+        </app-pokemon-card-component> -->
+        <div *ngIf="objectCharacters; else Block" class="container">
+            <app-card-dbs *ngFor='let character of objectCharacters' [character]="character"></app-card-dbs>
+        </div>
+        <ng-template #Block >   
+            <app-loading ></app-loading>
+        </ng-template>
+    
+    </div>
+</div>

@@ -9,8 +9,9 @@ const routes: Routes = [
   },
   {
     path:'home',
-    loadChildren:()=>import('./kimetsu-no-yaiba/kimetsu-no-yaiba.module').then((mod)=>mod.KimetsuNoYaibaModule)
+    loadChildren:()=>import('./dragon-ball-super-module/dragon-ball-super-module.module').then((mod)=>mod.DragonBallSuperModuleModule)
   }
+
 ];
 
 @NgModule({

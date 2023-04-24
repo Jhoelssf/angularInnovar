@@ -1,0 +1,19 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+img{
+  width: 20%;
+  margin: 0;
+  padding: 0;
+  height: 170px;
+  margin-top: 70px;
+
+}
+mat-toolbar-row {
+
+  background-color: #ffffff;
+  height: 100px;
+  text-align: center;
+
+}
