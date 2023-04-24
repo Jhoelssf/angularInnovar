@@ -1,7 +1,7 @@
 <div class="header">
   <div class="logo">Pokedex Project</div>
   <app-search-input *ngIf="showBuscador" ></app-search-input>
-  <nav [ngClass]="{'nav-responsive':responsiveMenu}">
+  <nav *ngIf="!hideNav" [ngClass]="{'nav-responsive':responsiveMenu}">
     <ul>
       <li>
         <button id="navResButton" (click)="openResponsiveMenu()" class="btn-responsive">

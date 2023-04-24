@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-loginpage',
@@ -7,22 +9,41 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginpageComponent implements OnInit {
-  form!: FormGroup;
+  public formLogin!: FormGroup;
 
   hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
   
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.formLogin = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    })
+    
   }
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
+    if (this.formLogin.controls['email'].hasError('required')) {
       return 'You must enter a value';
     }
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    return this.formLogin.controls['email'].hasError('email') ? 'Not a valid email' : '';
+  }
+
+  login(){
+    if(this.formLogin.valid){
+      if(this.authService.login(
+        this.formLogin.value['email'],
+        this.formLogin.value['password'])){
+        console.log('logeado con exito!');
+        this.router.navigate(['/home']);
+      }else{
+        console.log('loggin fallido')
+      }
+    }
   }
 }

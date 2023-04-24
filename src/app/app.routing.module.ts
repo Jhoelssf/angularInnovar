@@ -5,13 +5,9 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'favoritos',
@@ -35,6 +31,7 @@ const routes: Routes = [
       import('./ejemplo-modulo/ejemplo-modulo.module').then(
         (mod) => mod.EjemploModuloModule
       ),
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -42,7 +39,12 @@ const routes: Routes = [
       import('./login/login.module').then(
         (m) => m.LoginModule
       )
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
