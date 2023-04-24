@@ -1,26 +1,28 @@
 <div class="body">
+<div class="nav-bar-div">
+  <p>
+    <mat-toolbar class="nav-bar">
+      <mat-toolbar-row>
+        <span>
+          <img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="Logo Pokemon">
+        </span>
+        <span class="example-spacer"></span>
 
-<p>
-  <mat-toolbar class="nav-bar">
-    <mat-toolbar-row>
-      <span>
-        <img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="Logo Pokemon">
-      </span>
-      <span class="example-spacer"></span>
+      </mat-toolbar-row>
 
-    </mat-toolbar-row>
+      <mat-toolbar-row>
+        <span class="example-spacer"></span>
+        <div class="example-button-row">
+          <button mat-stroked-button routerLink="/home" >Home</button>
+          <button mat-stroked-button routerLink="/cards/cards">Pokédex</button>
+          <button  mat-stroked-button routerLink="/cards/favorite">Favoritos</button>
+        </div>
 
-    <mat-toolbar-row>
-      <span class="example-spacer"></span>
-      <div class="example-button-row">
-        <button mat-stroked-button routerLink="/home" >Home</button>
-        <button mat-stroked-button routerLink="/cards/cards">Pokédex</button>
-        <button  mat-stroked-button routerLink="/cards/favorite">Favoritos</button>
-      </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </p>
 
-    </mat-toolbar-row>
-  </mat-toolbar>
-</p>
+</div>
 
 
 <router-outlet></router-outlet>

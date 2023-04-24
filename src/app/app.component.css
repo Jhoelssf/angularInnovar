@@ -23,6 +23,13 @@
   background: rgb(178,34,34);
 background: linear-gradient(33deg, rgba(178,34,34,1) 0%, rgba(178,34,34,1) 47%,
  rgba(0,0,0,1) 47%, rgba(0,0,0,1) 52%, rgba(255,255,255,1) 52%, rgba(255,255,255,1) 100%);
+
+}
+.nav-bar-div{
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
 }
 button{
   /* background-color: #FFA500; */
