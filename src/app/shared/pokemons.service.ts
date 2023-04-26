@@ -26,9 +26,21 @@ export class PokemonsService {
     return this.http.get(`${this.API_pokemon}${pokemon}`);
 
   }
+  //Funcion agrgar o borrar
+  AddDeleteFavoritePokemon(name_pokemon:string){
+    if(this.favoritePokemons.includes(name_pokemon)){
+      //si esta incluido, eliminarlo
+      this.favoritePokemons = this.favoritePokemons.filter(item => item !== name_pokemon);
+    }else{
+      //si no esta incluido, agregarlo
+      this.favoritePokemons.push(name_pokemon);
+    }
+    this.favoritePokemons$.next(this.favoritePokemons);
+  }
 
   //funciones para favorites
   addFavoritePokemon(name_pokemon: string){
+    //validar ingreso
     this.favoritePokemons.push(name_pokemon);
     this.favoritePokemons$.next(this.favoritePokemons);
   }

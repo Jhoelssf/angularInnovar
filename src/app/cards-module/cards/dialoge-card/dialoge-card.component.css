@@ -8,7 +8,7 @@
 .img-container{
     margin-left: 50px;
     margin-right: 50px;
-  
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -20,8 +20,10 @@
     background-size: cover;
 }
 .sub-card {
-    width: 150px;
-    height: 150px;
+    max-width: 900px;
+    max-height: 150px;
+    /* width: 400px;
+    height: 150px; */
     background-color: #696969;
     color: white;
 }
@@ -54,5 +56,18 @@
     display: flex;
     justify-content: center;
     font-size: x-large;
+}
+.color-add {
+  background-color: green;
+  color: white;
+}
+
+.color-added {
+  background-color: red;
+  color: white;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
 }
 

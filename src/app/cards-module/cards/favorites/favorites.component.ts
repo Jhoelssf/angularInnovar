@@ -62,6 +62,7 @@ export class FavoritesComponent implements OnInit {
     this.favoritePokemons = this.pokeAction.favoritePokemons;
     this.len_favoritePokemons = this.favoritePokemons.length;
     this.onUpdatePokemons(1, this.len_favoritePokemons);
+    console.log(this.favoritePokemons);
 
   }
   // funcion para eliminar de favoritos
@@ -95,6 +96,9 @@ export class FavoritesComponent implements OnInit {
         pokemonData:  Pokemon,
       },
     })
+    // .afterClosed().subscribe(result => {
+    //   window.location.reload();
+    // })
   }
 
   onChangePage(e: PageEvent) {

@@ -26,7 +26,6 @@
       <div>
         <mat-card class="sub-card">
           <mat-card-header >
-
             <mat-card-title >
               Tipo
             </mat-card-title>
@@ -39,7 +38,9 @@
           </mat-card-content>
         </mat-card>
 
-
+      </div>
+      <div>
+        <mat-icon>mood</mat-icon>
       </div>
     </mat-card-content>
     <mat-card-actions>
@@ -47,9 +48,11 @@
 
       <div class="button-container">
 
-        <button mat-fab color="link" aria-label="Example icon button with a heart icon"
-        (click)="onAddFavorites(infoPokemon.name)">
-          <mat-icon>favorite</mat-icon>
+        <button mat-fab
+        color="link" aria-label="Example icon button with a heart icon"
+        (click)="onAddDeleteFavorites (infoPokemon.name)"
+        [ngClass]="{'color-added':toggle_added_color,'color-add':!toggle_added_color}" >
+          <mat-icon >favorite</mat-icon>
         </button>
       </div>
 

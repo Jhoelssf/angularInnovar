@@ -26,6 +26,12 @@ export class DialogeCardComponent implements OnInit {
 
   array_types!: Type[] ;
 
+  color_button:string[] = ["red","green"];
+  color_start: number = 0;// empieza en rojo
+
+  toggle_added_color = true;
+  status = 'Added'
+
   constructor(
 
 
@@ -50,17 +56,54 @@ export class DialogeCardComponent implements OnInit {
 
   }
 
-  onAddFavorites(pokemon: string ){
-    // this.favorites.push(pokemon);
-    // console.log(this.favorites)
+  onAddDeleteFavorites(pokemon: string){
     this.pokeAction.favoritePokemons$.subscribe((res) => {
       this.favoritesPokemon = res
-      console.log(this.favoritesPokemon)
     })
-    this.pokeAction.addFavoritePokemon(pokemon)
+    this.pokeAction.AddDeleteFavoritePokemon(pokemon)
 
-
+    this.toggle_added_color = !this.toggle_added_color
   }
+
+  // onAddFavorites(pokemon: string ){
+
+  //   this.pokeAction.favoritePokemons$.subscribe((res) => {
+  //     this.favoritesPokemon = res
+  //     //console.log(this.favoritesPokemon)
+  //   })
+  //   this.pokeAction.addFavoritePokemon(pokemon)
+
+  //   //console.log(this.color_button[1])
+
+  //   // this.toggle_added_color = !this.toggle_added_color;
+  //   // this.status = this.toggle_added_color ? 'Added':'Add';
+  //   // console.log(this.status)
+
+  // }
+
+  // onChangeButtonColor(){
+  //   // if(this.color_start == 0){
+  //   //   this.color_start = 1
+  //   // }else{
+  //   //   this.color_start = 0
+  //   // }
+  //   // return this.color_button[this.color_start]
+  //   if(this.color_start == 0){
+  //     this.color_start = 1;
+  //     return{
+  //       'color-add' :true,
+  //       'color-eliminate' : false
+  //     };
+  //   }else{
+  //     this.color_start = 0;
+  //     return{
+  //       'colo-add' : false,
+  //       'color-eliminate' : true
+  //     }
+  //   }
+
+
+  // }
   //funcion para colocar imagen
   onSetImageNull(Pokemon: RootObject){
     if(Pokemon.sprites.front_default == null){
