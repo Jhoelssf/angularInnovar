@@ -6,6 +6,7 @@ import { RootObject } from '../ejemplo-modulo/ejemplo/model';
   providedIn: 'root',
 })
 export class ReactiveService {
+  private favorite: Subject<any>=new Subject<any>()
   private infoPokemon: Subject<RootObject> = new Subject<RootObject>();
   // infoPokemon: BehaviorSubject<RootObject | null> = new BehaviorSubject<RootObject | null>(null);
 
@@ -15,5 +16,11 @@ export class ReactiveService {
   }
   setInfoPokemon(obj: RootObject) {
     this.infoPokemon.next(obj);
+  }
+  setDialog(obj:any){
+    this.favorite.next(obj)
+  }
+  getDialog(){
+    return this.favorite.asObservable()
   }
 }

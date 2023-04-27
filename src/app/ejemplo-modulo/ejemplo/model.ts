@@ -24,7 +24,10 @@ export interface Ability {
   is_hidden: boolean;
   slot: number;
 }
-
+export interface Pok{
+  name:string;
+  sprites: Sprites;
+}
 export interface Species {
   name: string;
   url: string;
