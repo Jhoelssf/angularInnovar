@@ -15,9 +15,9 @@ export class EjemploComponent implements OnInit {
   List_Pokemon:any[]=[];
   Dialog:any[]=[];
   Favorite:any[]=[];
-  favorite:any[]=[]
   id_pokemon:any
-  
+  id_favorite:any
+
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
   hidden!: boolean;
   constructor(
@@ -31,16 +31,16 @@ export class EjemploComponent implements OnInit {
       // this.reactiveService.setInfoPokemon(this.objectPokemon);
       console.log(this.objectPokemon);
     });
-    for (let index = 1; index < 500; index++) {
+    for (let index = 1; index < 100; index++) {
       this.http.get<RootObject>(`${this.baseUrl}${index}`).subscribe(
         res=>{
           this.List_Pokemon.push({name:res.name,url:res.sprites.other?.home.front_shiny})
         }
-      )       
+      )
     }
     console.log(this.List_Pokemon)
-    // console.log(this.Dialog)
-    console.log(this.favorite)
+    console.log(this.Favorite)
+
 
   }
   // hideReactive() {
@@ -61,13 +61,22 @@ export class EjemploComponent implements OnInit {
   }
   dialogo(id:number|string){
      this.id_pokemon=id
-     console.log(this.id_pokemon)
+    //  console.log(this.id_pokemon)
     this.http.get<RootObject>(`${this.baseUrl}${this.id_pokemon}`).subscribe(
       d=>{
-        this.Favorite.push({name:d.name,url:d.sprites.other?.home.front_shiny});
-        this.Dialog[0]={name:d.name,url:d.sprites.other?.home.front_shiny}
-        this.favorite.push(this.Favorite)
+       this.Dialog[0]={name:d.name,url:d.sprites.other?.home.front_shiny}
        this.reactiveService.setDialog(this.Dialog)
+      //  this.reactiveService.setFavorite( this.Favorite.push({name:d.name,url:d.sprites.other?.home.front_shiny}))
+      //  console.log(this.Favorite)
+      }
+    );
+  }
+  favorite(id:number|string){
+    this.id_favorite=id
+     console.log(this.id_favorite)
+    this.http.get<RootObject>(`${this.baseUrl}${this.id_favorite}`).subscribe(
+      d=>{
+       this.reactiveService.setFavorite( this.Favorite.push({name:d.name,url:d.sprites.other?.home.front_shiny}))
       }
     );
   }

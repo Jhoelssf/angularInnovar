@@ -11,6 +11,7 @@ import { EjemploChild2Component } from './ejemplo/ejemplo-child2/ejemplo-child2.
 import { EjemploComponent } from './ejemplo/ejemplo.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { FavoriteComponent } from '../reactive-example/favorite/favorite.component';
 // import { DialogComponent } from './ejemplo/dialog/dialog.component'
 
 
@@ -20,6 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
     EjemploComponent,
     EjemploChildComponent,
     EjemploChild2Component,
+    // FavoriteComponent
 
   ],
   imports: [

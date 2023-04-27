@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ReactiveService } from 'src/app/shared/reactive.service';
 
 @Component({
@@ -8,12 +9,13 @@ import { ReactiveService } from 'src/app/shared/reactive.service';
 })
 export class DialogComponent implements OnInit {
   @Input() dial: any[]=[];
-  constructor(private reactiveService:ReactiveService) { }
+  constructor(private reactiveService:ReactiveService,public dialog: MatDialog) { }
+
   ngOnInit(): void {
     this.reactiveService.getDialog().subscribe(
       res=>{
         this.dial=res
-        console.log(this.dial)
+        // console.log(this.dial)
       }
     )
   }

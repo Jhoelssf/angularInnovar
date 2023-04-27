@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EjemploComponent } from './ejemplo/ejemplo.component';
+import { FavoriteComponent } from '../reactive-example/favorite/favorite.component';
 // import { DialogComponent } from './ejemplo/dialog/dialog.component';
 
 const routes: Routes = [

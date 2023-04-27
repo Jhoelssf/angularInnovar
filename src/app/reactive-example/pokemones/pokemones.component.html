@@ -1,16 +1,18 @@
  <div class="container">
     <div class="lista" *ngFor="let list of lista let cont=index">
-      <div class="m">  
+      <div class="m">
         <div class="nombre">
           <h1 class="nombre">{{list.name}}</h1>
         </div>
-        <div (click)="Dialog(cont+1)"> 
-          <button mat-button ><img src={{list.url}} alt=""></button>    
+        <div (click)="Dialog(cont+1)">
+          <button mat-button (click)="openDialog()"><img src={{list.url}} alt=""></button>
         </div>
-        <div class="favorite">
-          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-          </button>
+        <div class="favorite" >
+          <div (click)="openFavorite(cont+1)">
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
         </div>
       </div>
     </div>

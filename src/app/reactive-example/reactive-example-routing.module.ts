@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 const routes: Routes = [
   {
