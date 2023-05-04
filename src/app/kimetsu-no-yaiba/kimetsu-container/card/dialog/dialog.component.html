@@ -1,0 +1,23 @@
+
+<div mat-dialog-content class="card-dialog">
+  <div class="img-dialog-container">
+      <img src={{CharacterDetaills?.image}}>
+  </div>
+  <div class="card-dialog-container">
+
+      <div class="dialog-container-detaills" *ngFor="let item of objectToArray(CharacterDetaills)">
+        <div *ngIf="item[0]!='gallery' && item[0]!='image'" >
+          <h2>{{ item[0] }}:&nbsp;{{ item[1] }}</h2>
+          <hr class="line-1">
+        </div>
+      </div>
+  </div>
+
+<!--<ul>
+  <li>
+    <span >&#10003;</span> {{data.url}}
+  </li>
+
+</ul>-->
+</div>
+

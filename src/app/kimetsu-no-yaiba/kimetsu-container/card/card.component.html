@@ -1,0 +1,21 @@
+
+<div class="card"  >
+    <div class="card-img-container">
+      <img src={{character.image}} >
+      <div #asfavorite style="border: none;background-color:transparent;"
+          class="favorite-icon-container" (click)="change()" (click)="onHeartClick()" [ngClass]="{'pulse': isPulsing}">
+          <mat-icon>favorite</mat-icon>
+      </div>
+    </div>
+    <div class="card-content-container">
+        <div class="card-content-header" >
+            <h1>{{character.name}}</h1>
+        </div>
+        <hr class="line-1">
+        <div class="button-card">
+            <button mat-button (click)="openDialog()">Details</button>
+        </div>
+
+    </div>
+
+</div>

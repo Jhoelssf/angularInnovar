@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://demon-slayer-api.onrender.com/v1/",
+      "secure": true,
+      "changeOrigin": true
+    }
+  }

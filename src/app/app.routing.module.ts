@@ -1,24 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-
+import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'ejemplo',
+    redirectTo:"home",
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'ejemplo',
-    loadChildren: () =>
-      import('./ejemplo-modulo/ejemplo-modulo.module').then(
-        (mod) => mod.EjemploModuloModule
-      ),
-  },
+    path:'home',
+    loadChildren:()=>import('./kimetsu-no-yaiba/kimetsu-no-yaiba.module').then((mod)=>mod.KimetsuNoYaibaModule)
+  }
 ];
 
 @NgModule({
