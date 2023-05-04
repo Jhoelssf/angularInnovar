@@ -1,8 +1,8 @@
-
 :host{
   display: flex;
   flex-wrap: wrap;
-  place-content: space-evenly;
-  background-color: rgb(51, 50, 48);
-
+  place-content: center;
+  background-color: rgb(75, 72, 71);
+  padding: 5rem;
 }
+

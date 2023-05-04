@@ -1,10 +1,20 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>
+  <img src="../../../assets/images/pokelogo.png" alt="pokedex" width="80" height="60">
+  </div>
+  
+        <div class="example-button-row">
+          <button mat-stroked-button color="basic" [routerLink]="['/home']">Pokemons</button>
+          <button mat-stroked-button color="basic" routerLinkActive="active" [routerLink]="['/favorite']">Favourites</button>
+          <button mat-stroked-button color="basic" [routerLink]="['/home']">Other</button>
+        </div>
+    
+</mat-toolbar>
 
-      <nav class="nav">
-      <!-- Imagen que quieres en el header-->
-       <img src="../../../assets/images/pokelogo.png" alt="pokedex" width="40" height="40" (click)='home()'>
-      
-      <li class="nav-item"><button class="btn btn-header contenido" id="contenido">contenido</button></li>
-      <li class="nav-item"><button class="btn btn-header favorito" id="favorito">favoritos</button></li>
-      
-    </nav>
-     
+     <!--
+         <div class="nav-item" routerLinkActive="active">
+  <span class="nav-link" [routerLink]="['/home']">Inicio</span></div>
+
+  <div class="nav-item" routerLinkActive="active">
+  <span class="nav-link" [routerLink]="['/']"> Favourites </span></div>
+     -->

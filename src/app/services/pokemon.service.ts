@@ -11,9 +11,8 @@ import { map, mergeMap } from 'rxjs/operators';
 export class PokemonService{
   public pokemons: Pokemon[] = [];
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
+  constructor(private httpClient: HttpClient,) {
+    
     const allPokemonsUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
     this.httpClient.get<any>(allPokemonsUrl).pipe(
