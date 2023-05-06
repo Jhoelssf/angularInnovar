@@ -1,0 +1,60 @@
+<h1>list of Pokemon</h1>
+<hr>
+<input type="text"
+        class="form-control"
+        placeholder="Search Pokemon"
+        #txtSearch
+        (keyup)="onSearchPokemon(txtSearch.value)"
+/>
+
+<div class="content">
+   
+    <mat-card class="card" *ngFor="let poke of pokemons | filtro:page:search" >
+        <mat-card-header># {{poke.id}}</mat-card-header>
+        <!-- <hr> -->
+        <mat-card-subtitle>{{poke.name}}</mat-card-subtitle>
+        <!-- <hr> -->
+        <mat-card-content >
+            <img mat-card-image 
+            [src]="poke.picture"
+            [ngStyle]="{'width':'80px'}" 
+            >
+
+            <!-- [src]="poke.picture" 
+            [alt]="poke.name"
+            [ngStyle]="{'width':'75px'}" -->
+        
+        </mat-card-content>
+                
+    
+    </mat-card>
+</div>
+
+<div>
+    <button class="btn btn-primary"
+    (click)="prevPage()"
+    >
+        Anterior
+    </button>
+    &nbsp;
+    <button class="btn btn-primary"
+    (click)="nextPage()"
+    [disabled]="(pokemons | filtro:page:search).length===0"
+    >
+        Siguiente
+    </button>
+</div>
+  
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Sprite</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table> -->
