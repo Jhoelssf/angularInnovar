@@ -1,0 +1,8 @@
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.nav{
+    /* width: 50px; */
+    height:80px;
+}

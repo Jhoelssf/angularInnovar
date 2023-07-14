@@ -2,19 +2,27 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveExampleModule } from '../reactive-example/reactive-example.module';
 import { EjemploModuloRoutingModule } from './ejemplo-modulo-routing.module';
 import { EjemploChildComponent } from './ejemplo/ejemplo-child/ejemplo-child.component';
 import { EjemploChild2Component } from './ejemplo/ejemplo-child2/ejemplo-child2.component';
 import { EjemploComponent } from './ejemplo/ejemplo.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { FavoriteComponent } from '../reactive-example/favorite/favorite.component';
+// import { DialogComponent } from './ejemplo/dialog/dialog.component'
+
+
 
 @NgModule({
   declarations: [
     EjemploComponent,
     EjemploChildComponent,
     EjemploChild2Component,
+    // FavoriteComponent
+
   ],
   imports: [
     MatButtonModule,
@@ -23,6 +31,9 @@ import { EjemploComponent } from './ejemplo/ejemplo.component';
     HttpClientModule,
     EjemploModuloRoutingModule,
     ReactiveExampleModule,
+    MatToolbarModule,
+    MatIconModule,
+    FormsModule
   ],
 })
 export class EjemploModuloModule {}
